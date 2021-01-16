@@ -9,7 +9,7 @@ module.exports = {
     usage: 's!stop',
     aliases: ['sp','stop-playing'],
     run: async (Client, message, args) => {
-        if(message.member.hasPermission('MANAGE_MESSAGES')) return
+    if(message.member.hasPermission('MANAGE_MESSAGES')) return
     
     let queue = Client.distube.getQueue(message);
 

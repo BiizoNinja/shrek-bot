@@ -27,6 +27,7 @@ module.exports = {
             .setDescription('For more info do \`s!help <command>\` Eg: \`s!help ping\`')
             .addFields(categories)
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
+            .setThumbnail('https://media.discordapp.net/attachments/753832377054396448/799276629599584256/shrek1.jpg?width=461&height=461')
             .setColor(' #7dff02 ');
 
              return message.channel.send(embed)

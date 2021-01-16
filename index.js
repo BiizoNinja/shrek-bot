@@ -1,11 +1,18 @@
 const Discord = require('discord.js')
+const { Intents } = require("discord.js")
 const fs = require('fs')
 const mongoose = require('mongoose')
-const Client = new Discord.Client()
+const Client = new Discord.Client({
+    disableMentions: 'everyone',
+    fetchAllMembers: false,
+    partials: ['REACTION', 'MESSAGE', 'CHANNEL'],
+    ws: { Intents: Intents.All },
+  });
 const Config = require('./config.json') 
 const { on, config } = require('process')
 const prefix = 's!'
 const DisTube = require('distube')
+
 
 Client.distube = new DisTube(Client, { searchSongs: false, emitNewSongOnly: true });
 Client.distube
@@ -43,11 +50,30 @@ Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 
-Client.on('ready', () => {
+const activity = [
+    `s!help in ${Client.guilds.cache.size} servers!`,
+    `${Client.users.cache.size} users :O`,
+    `corona is bad`,
+    `you should really consider watching shrek`,
+    `i was made by BiizoNinja#3337... i love him`,
+    `if you have problem, join support`,
+    `do s!aboutme I DARE YOU!`,
+    ]   
+    
+    Client.on('ready', () =>{
+        console.log(`${Client.user.username} is online`);
+        let i = 0;
+    
+        setInterval(()=>{
+            const index = Math.floor(i);
+            Client.user.setActivity(activity[index],{type: "PLAYING"})
+            i = i +1;
+            if(i === activity.length) i = i -activity.length;
+    
+        },30000)
+       
+    });
 
-    Client.user.setActivity(`s!help in ${Client.guilds.cache.size} servers!`)
-    console.log(`${Client.user.username} is ready!`)
-})
 let ascii = require('ascii-table')
 const play = require('./Commands/🎵   Music/play')
 let table = new ascii("Commands")
@@ -72,6 +98,12 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 console.log(table.toString())
 
 Client.on('message', async message => {
+    if(message.content === '<@!789129116015525918> help ') {
+        message.reply('Do `s!help` for a full list of commands!')
+    }
+    if(message.content === '<@!789129116015525918> ') {
+        message.channel.send(' My prefix is `s!`')
+    }
     if(message.author.bot) return;
 
     if(!message.content.startsWith(prefix)) return; 
@@ -84,5 +116,5 @@ Client.on('message', async message => {
     if(!command) command = Client.commands.get(Client.aliases.get(cmd));
     if(command) command.run(Client, message, args)
 })
-Client.login(process.env.token)
-//Client.login('Nzg5MTI5MTE2MDE1NTI1OTE4.X9tjwg.I3xEdIpbhBIFJ-fmLZyHnoMzxgA')
+//Client.login(process.env.token)
+Client.login('BOT_TOKEN')
