@@ -11,10 +11,10 @@ module.exports = {
         return joke
       }
       let jokeValue = await getJoke();
-      message.reply(` *${jokeValue.setup}*
-       
+      message.reply(` Here is a joke!
+      Q: ${jokeValue.setup}
       
-    **${jokeValue.punchline}**`);
+    A: **${jokeValue.punchline}**`);
     }
     }
 
