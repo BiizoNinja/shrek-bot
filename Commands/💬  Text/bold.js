@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["bold"],
     usage: 's!boldify <message>',
     examples: 's!boldify hello',
-    run:async (Client, message, args)  => {
+    execute: async (Client, message, args) => {
         const fullMessage = args.slice(0).join(" ")
 
         if(!fullMessage) return message.reply('You need to specify something to bold.')

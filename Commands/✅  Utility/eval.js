@@ -3,7 +3,8 @@ const Discord = require("discord.js")
 module.exports = {
  name: 'eval',
  description: '**ONLY DEVELOPER**',
- run:async(Client, message, args) => {
+ execute: async(Client, message, args) => {
+
 
    const evalcommand = args.slice(0).join(" ")
    const { inspect } = require('util')

@@ -4,7 +4,7 @@ module.exports = {
     description: 'Look at how many guilds the bot is in',
     aliases: ["usg"],
     usage: 's!usage',
-    run: async(Client, message, args) => {
+    execute: async(Client, message, args) => {
 
         let usageEmbed = new Discord.MessageEmbed()
         .setTitle('Usage')

@@ -4,7 +4,7 @@ module.exports = {
    description: 'Shows the bot\'s ping',
    aliases: ["beep"],
    usage: 's!ping',
-   run:async(Client, message, args) => {
+   execute:async(Client, message, args) => {
 
     await message.channel.send('PINGING!').then(pingMessage => {
             

@@ -2,7 +2,7 @@ module.exports = {
     name: 'shuffle',
     description: 'With this command, you can Shuffle the sonds if there are many songs playing in the queue',
     usage: 's!shuffle',
-    run: async (Client, message, args) => {
+    execute: async (Client, message, args) => {
     let queue = Client.distube.getQueue(message);
 
     if(queue) {

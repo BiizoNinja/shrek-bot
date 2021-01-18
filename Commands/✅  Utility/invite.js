@@ -4,7 +4,7 @@ module.exports = {
    description: 'Get info about the bot.',
    aliases: ["ame"],
    usage: 's!aboutme',
-   run:async (Client, message, args)  => {
+   execute: async(Client, message, args) => {
 
        let inviteEmbed = new Discord.MessageEmbed()
 

@@ -8,7 +8,7 @@ module.exports = {
     usage: 's!play <SONG NAME OR URL>',
     examples: 's!play RickRoll',
     aliases: ['p'],
-    run: async (Client, message, args) => {
+    execute: async (Client, message, args) => {
         
 
     const music = args.join(" ")

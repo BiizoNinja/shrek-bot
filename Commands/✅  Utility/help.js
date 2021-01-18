@@ -4,7 +4,7 @@ const { readdirSync } = require('fs')
 module.exports = {
     name: 'help',
     description: 'list of the commands!',
-    run: async(Client, message, args) => {
+    execute: async(Client, message, args) => {
         if(!args[0]) {
             let categories = [];
             readdirSync('./Commands').forEach(dir => {

@@ -114,7 +114,7 @@ Client.on('message', async message => {
     let command = Client.commands.get(cmd)
 
     if(!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command) command.run(Client, message, args)
+    if(command) command.execute(Client, message, args)
 })
 //Client.login(process.env.token)
-Client.login('BOT_TOKEN')
+Client.login('Nzg5MTI5MTE2MDE1NTI1OTE4.X9tjwg.fEcoG4R8dWQbF4XxY58xcNLOFnE')
