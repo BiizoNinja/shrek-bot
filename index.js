@@ -114,6 +114,7 @@ Client.on('message', async message => {
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
 
+    
     if(!command) command = Client.commands.get(Client.aliases.get(cmd));
     if(command) command.execute(Client, message, args)
 })
