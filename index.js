@@ -51,13 +51,14 @@ Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 
 const activity = [
-    `s!help in ${Client.guilds.cache.size} servers!`,
-    `${Client.users.cache.size} users :O`,
     `corona is bad`,
     `you should really consider watching shrek`,
     `i was made by BiizoNinja#3337... i love him`,
     `if you have problem, join support`,
     `do s!aboutme I DARE YOU!`,
+    `happy`,
+    `my prefix is s!`,
+    `go to biizo's youtube channel ;)`
     ]   
     
     Client.on('ready', () =>{
@@ -70,12 +71,12 @@ const activity = [
             i = i +1;
             if(i === activity.length) i = i -activity.length;
     
-        },30000)
+        },5)
        
     });
 
 let ascii = require('ascii-table')
-const play = require('./Commands/🎵   Music/play')
+const play = require('./Commands/🎵-Music/play')
 let table = new ascii("Commands")
 table.setHeading("Command", "Status");
 
