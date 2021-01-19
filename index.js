@@ -71,7 +71,7 @@ const activity = [
             i = i +1;
             if(i === activity.length) i = i -activity.length;
     
-        },5)
+        },4000)
        
     });
 
@@ -114,7 +114,7 @@ Client.on('message', async message => {
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
 
-    
+
     if(!command) command = Client.commands.get(Client.aliases.get(cmd));
     if(command) command.execute(Client, message, args)
 })
