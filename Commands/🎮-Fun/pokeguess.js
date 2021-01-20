@@ -14,10 +14,10 @@ module.exports  = {
     const filter = m => m.author.id === message.author.id;
  
     const embed = new MessageEmbed()
-        .setAuthor("Guess the pokemon <a:Charmander_brrr:801453301539274752>")
+        .setAuthor("Guess the pokemon <a:charmander_vibe:801454612154023937>")
         .setColor("#FFFF00")
         .setImage(pokemon.imageURL)
-        .setFooter(`Requested by: ${message.author}`,message.author.displayAvatarURL({ dynamic: true }))
+        .setFooter(`Requested by: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
     
     await message.channel.send(embed);
  
