@@ -14,14 +14,15 @@ module.exports  = {
     const filter = m => m.author.id === message.author.id;
  
     const embed = new MessageEmbed()
-        .setAuthor("Guess the pokemon")
+        .setAuthor("Guess the pokemon <a:Charmander_brrr:801453301539274752>")
         .setColor("#FFFF00")
-        .setImage(pokemon.imageURL);
+        .setImage(pokemon.imageURL)
+        .setFooter(`Requested by: ${message.author}`,message.author.displayAvatarURL({ dynamic: true }))
     
     await message.channel.send(embed);
  
     message.channel.awaitMessages(filter, {
-        max: 1,
+        max: 3,
         error: ["time"],
         time: 15000
     })
