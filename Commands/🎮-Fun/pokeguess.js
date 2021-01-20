@@ -15,7 +15,7 @@ module.exports  = {
  
     const embed = new MessageEmbed()
         .setTitle("Guess the pokemon <a:charmander_vibe:801454612154023937>")
-        .setColor("#FFFF00")
+        .setColor("RANDOM")
         .setImage(pokemon.imageURL)
         .setFooter(`Requested by: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
     
