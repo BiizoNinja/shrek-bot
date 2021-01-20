@@ -14,7 +14,7 @@ module.exports  = {
     const filter = m => m.author.id === message.author.id;
  
     const embed = new MessageEmbed()
-        .setAuthor("Guess the pokemon <a:charmander_vibe:801454612154023937>")
+        .setTitle("Guess the pokemon <a:charmander_vibe:801454612154023937>")
         .setColor("#FFFF00")
         .setImage(pokemon.imageURL)
         .setFooter(`Requested by: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
@@ -22,7 +22,7 @@ module.exports  = {
     await message.channel.send(embed);
  
     message.channel.awaitMessages(filter, {
-        max: 3,
+        max: 1,
         error: ["time"],
         time: 15000
     })
