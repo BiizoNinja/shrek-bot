@@ -52,6 +52,7 @@ Client.categories = fs.readdirSync('./Commands')
 
 const activity = [
     `corona is bad`,
+    `eshan is cool`,
     `you should really consider watching shrek`,
     `i was made by BiizoNinja#3337... i love him`,
     `if you have problem, join support`,

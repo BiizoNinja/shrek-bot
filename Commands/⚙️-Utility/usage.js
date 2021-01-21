@@ -14,6 +14,7 @@ module.exports = {
             {name: 'USERS', value: `\`${Client.users.cache.size}\``},
             {name: 'CHANNELS', value: `\`${Client.channels.cache.size}\``},
         )
+        .setColor(" #36393f ")
         message.channel.send(usageEmbed)
 
     
