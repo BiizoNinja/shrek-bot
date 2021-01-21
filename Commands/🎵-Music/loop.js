@@ -5,7 +5,7 @@ const distube = require('distube')
 module.exports = {
     name: 'repeat',
     description: 'With this command, you can loop any song using ShrekBot',
-    usage: 's!repeat <SONG NAME OR URL>',
+    usage: 's!repeat',
     aliases: ['loop'],
     execute: async (Client, message, args) => {
         let queue = Client.distube.getQueue(message);
