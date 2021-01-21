@@ -72,7 +72,7 @@ const activity = [
             i = i +1;
             if(i === activity.length) i = i -activity.length;
     
-        },4000)
+        },40000)
        
     });
 
