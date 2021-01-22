@@ -140,7 +140,7 @@ module.exports = {
                         if (this.reaction == '🇨') this.input_answer = 3
                         if (this.reaction == '🇩') this.input_answer = 4
                         if (this.input_answer == this.correct_answer) {
-                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + '<a:TICK:801450801200758795>'
+                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + '  <a:TICK:801450801200758795>'
                             this.question_embed = new discord.MessageEmbed()
                                 .setColor('#0099ff')
                                 .setTitle(atob(this.question.results[0].question))
