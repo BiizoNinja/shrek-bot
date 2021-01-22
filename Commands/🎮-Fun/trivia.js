@@ -140,14 +140,14 @@ module.exports = {
                         if (this.reaction == '🇨') this.input_answer = 3
                         if (this.reaction == '🇩') this.input_answer = 4
                         if (this.input_answer == this.correct_answer) {
-                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:Correct:795640470407348224>'
+                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + '<a:TICK:801450801200758795>'
                             this.question_embed = new discord.MessageEmbed()
                                 .setColor('#0099ff')
                                 .setTitle(atob(this.question.results[0].question))
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit('You got it correct! :smile:')
+                            this.question_message.edit('You got it correct! <a:COOL_BLOB:802181718395584583>')
                             this.end_game()
                         }
                         else {
@@ -158,11 +158,11 @@ module.exports = {
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit('You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
+                            this.question_message.edit(' <a:XMARK:801450921112371232> | You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
                             this.end_game()
                         }
                     }).catch(() => {
-                        this.question_message.edit('You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
+                        this.question_message.edit('<a:XMARK:801450921112371232> | You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
                         this.end_game()
                     })
             }
