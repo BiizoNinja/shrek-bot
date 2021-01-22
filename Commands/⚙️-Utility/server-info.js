@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['si'],
     description: "This shows the server info",
     usage: "s!server-info",
-    run: async (Client, message, args) => {
+    execute: async (Client, message, args) => {
         const Discord = require('discord.js');
 
         const botSize = message.guild.members.cache.filter(m => m.user.bot).size
