@@ -151,7 +151,7 @@ module.exports = {
                             this.end_game()
                         }
                         else {
-                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <:Wrong:795640470435921930>'
+                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <a:XMARK:801450921112371232>'
                             this.question_embed = new discord.MessageEmbed()
                                 .setColor('#0099ff')
                                 .setTitle(atob(this.question.results[0].question))
