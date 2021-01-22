@@ -21,7 +21,7 @@ module.exports = {
                 .addField('Total Bots', botSize, true) 
                 .addField('Roles', roles.cache.size, true)
                 .setFooter(`Server Created on`)
-                .setColor('#FF0000')
+                .setColor('RANDOM')
                 .setTimestamp(createdAt)
         )
             .catch((e) => message.channel.send(`error: ${e.message}`))

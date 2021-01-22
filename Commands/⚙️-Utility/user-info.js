@@ -33,7 +33,7 @@ module.exports = {
         if (!member.user.activities) member.user.activities = { name: "none" }
         const embed = new MessageEmbed()
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-            .setColor("#FF0000")
+            .setColor("RANDOM")
             .addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Discriminator:** ${member.user.discriminator}`,

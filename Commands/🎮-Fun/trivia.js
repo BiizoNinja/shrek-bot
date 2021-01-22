@@ -3,7 +3,7 @@ module.exports = {
     name: 'trivia',
     description: 'Answer trivia questions',
     usage: 's!trivia',
-    run: async (client, message, args) => {
+    execute: async (Client, message, args) => {
         const discord = require('discord.js')
         const fetch = require("node-fetch");
         const atob = require('atob')
