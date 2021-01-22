@@ -17,10 +17,12 @@
     "distube": "^2.8.8",
     "ffmpeg-static": "^4.2.7",
     "figlet": "^1.5.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.11.10",
     "node-fetch": "^2.6.1",
     "pokecord": "^1.0.0",
     "reconlx": "^1.0.73",
+    "request": "^2.88.2",
     "util": "^0.12.3",
     "ytdl-core": "^4.4.3"
   }
