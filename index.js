@@ -45,6 +45,14 @@ Client.distube
 
     }
     )
+    .on("empty", message => message.channel.send("Queue Empty! Leaving the voice channel!"))
+    .on("error", (message, err) => message.channel.send(
+        " An error occured, Please try running the command again" +err
+    ));
+Client.distube = new DisTube(Client, { searchSongs: false, emitNewSongOnly: true });
+Client.distube
+    .on("finish", message => message.channel.send("No more songs in queue! Do `s!play <song>` to add more!"));
+
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
