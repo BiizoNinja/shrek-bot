@@ -58,7 +58,7 @@ Client.categories = fs.readdirSync('./Commands')
 
     
 Client.on('ready', () =>{
-    Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`)
+    Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`, {type: 'WATCHING'}) 
     console.log(`${Client.user.username} is online`);
 });
     
