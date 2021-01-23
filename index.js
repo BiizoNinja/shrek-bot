@@ -55,31 +55,14 @@ Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 
-const activity = [
-    `corona is bad`,
-    `eshan is cool`,
-    `you should really consider watching shrek`,
-    `i was made by BiizoNinja#3337... i love him`,
-    `if you have problem, join support`,
-    `do s!aboutme I DARE YOU!`,
-    `happy`,
-    `my prefix is s!`,
-    `go to biizo's youtube channel ;)`
-    ]   
+
     
-    Client.on('ready', () =>{
-        console.log(`${Client.user.username} is online`);
-        let i = 0;
+Client.on('ready', () =>{
+    Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`)
+    console.log(`${Client.user.username} is online`);
+});
     
-        setInterval(()=>{
-            const index = Math.floor(i);
-            Client.user.setActivity(activity[index],{type: "PLAYING"})
-            i = i +1;
-            if(i === activity.length) i = i -activity.length;
-    
-        },40000)
-       
-    });
+
 
 let ascii = require('ascii-table')
 const play = require('./Commands/🎵-Music/play')
@@ -126,4 +109,4 @@ Client.on('message', async message => {
 })
 Client.login(process.env.token)
 
-//Client.login('Nzg5MTI5MTE2MDE1NTI1OTE4.X9tjwg.fEcoG4R8dWQbF4XxY58xcNLOFnE')
+//Client.login('Nzg5MTI5MTE2MDE1NTI1OTE4.X9tjwg.fEcoG4R8dWQbF4XxY58xcNLOFnE') 
