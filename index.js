@@ -14,42 +14,6 @@ const prefix = 's!'
 const DisTube = require('distube')
 
 
-Client.distube = new DisTube(Client, { searchSongs: false, emitNewSongOnly: true });
-Client.distube
-    .on("playSong",  async (message, queue, song) => {
-        let playEmbed = new Discord.MessageEmbed()
-
-        .setTitle('Play Command! <a:peepoSing:798873229539409931> ')
-        .setDescription('ShrekBot Music System! Using the `Distube` Package!')
-        .addFields(
-            {name: `Playing` , value:`\`${song.name}\``},
-            {name: `Duration` , value:`\`${song.formattedDuration}\``},
-            {name: `Requested by`, value:`${song.user}`},
-        )
-        .setColor('#46ff00');
-       await message.channel.send(playEmbed)
-
-    }
-    )
-    .on("addSong", async(message, queue, song) => {
-        let queueEmbed = new Discord.MessageEmbed()
-        .setTitle('Added Song <:sicko:798873188213850144>')
-        .setDescription('ShrekBot Music System! Using the `Distube` Package!')
-        .addFields(
-            {name: `Playing` , value:`\`${song.name}\``},
-            {name: `Duration` , value:`\`${song.formattedDuration}\``},
-            {name: `Requested by`, value:`${song.user}`},
-        )
-        .setColor('#46ff00');
-       await message.channel.send(queueEmbed)
-
-    }
-    )
-    .on("empty", message => message.channel.send("Queue Empty! Leaving the voice channel!"))
-    .on("finish", message => message.channel.send("No more songs in queue! Do `s!play <song>` to add more!"))
-
-
-
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
@@ -65,7 +29,6 @@ Client.on('ready', () =>{
 
 
 let ascii = require('ascii-table')
-const play = require('./Commands/🎵-Music/play')
 let table = new ascii("Commands")
 table.setHeading("Command", "Status");
 
