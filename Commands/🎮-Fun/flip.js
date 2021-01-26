@@ -9,6 +9,9 @@ module.exports = {
 
         let result = Math.floor((Math.random() * replies.length));
 
-        message.channel.send('Fliping a Coin').then(msg => msg.edit(`> :coin: The Result was **${replies[result]}**`))
+        const flip  = await message.channel.send('Fliping a Coin!')
+        .setTimeout (() => {
+            msg.edit(`> :coin:  I flipped ${replies[result]} `)
+        }, 1000);
     }
 }
