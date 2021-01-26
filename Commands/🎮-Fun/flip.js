@@ -9,6 +9,6 @@ module.exports = {
 
         let result = Math.floor((Math.random() * replies.length));
 
-        message.channel.send('Fliping a Coin').then(msg => msg.edit(`> :coin: The Result was **${result}**`))
+        message.channel.send('Fliping a Coin').then(msg => msg.edit(`> :coin: The Result was **${replies[result]}**`))
     }
 }
