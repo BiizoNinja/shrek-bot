@@ -11,7 +11,7 @@ module.exports = {
 
         const flip  = await message.channel.send('Fliping a Coin!')
         setTimeout (() => {
-            msg.edit(`> :coin:  I flipped ${replies[result]} `)
+            message.edit(`> :coin:  I flipped ${replies[result]} `)
         }, 1000);
     }
 }
