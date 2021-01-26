@@ -5,7 +5,7 @@ module.exports = {
     usage: 's!flip',
     examples: 's!flip',
     execute: async(Client, message, args) => {
-        let replies = ["Heads", "Tails", ];
+        let replies = ["Heads", "Tails"];
 
         let result = Math.floor((Math.random() * replies.length));
 
