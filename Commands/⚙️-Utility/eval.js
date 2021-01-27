@@ -5,7 +5,8 @@ module.exports = {
  description: '**ONLY DEVELOPER**',
  execute: async(Client, message, args) => {
 
-
+  // Number Of Guilds! Client.guilds.cache.map(s => s.name)
+  
    const evalcommand = args.slice(0).join(" ")
    const { inspect } = require('util')
 
