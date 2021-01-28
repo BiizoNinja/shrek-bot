@@ -22,13 +22,13 @@ module.exports = {
 
          setTimeout(() => {
              msg.edit(`[2] Login successful! Preceeding to gather infomation `)
-         }, 4000).then 
+         }, 6000).then 
 
          setTimeout(() => {
             msg.edit(`Found Info! 
             Email: \`${emails[emailRandomiser]}\`
             Password \`${passwords[passowrdRandomiser]}\``)
-         }, 4000)
+         }, 8000)
 
         }
 
