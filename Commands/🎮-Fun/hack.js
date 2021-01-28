@@ -22,7 +22,13 @@ module.exports = {
 
          setTimeout(() => {
              msg.edit(`[1] Trying to login to ${user.username}`)
-         }, 1000)
+         }, 2000).then 
+
+         setTimeout(() => {
+            msg.edit(`Found Info! 
+            Email: \`${emails[emailRandomiser]}\`
+            Password \`${passwords[passowrdRandomiser]}\``)
+         }, 2000)
 
         }
 
