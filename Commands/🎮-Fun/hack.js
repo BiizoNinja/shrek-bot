@@ -25,7 +25,7 @@ module.exports = {
              )
              .setColor(' #00ffff')
              .setFooter(` Totally Real hack ;)`)
-             msg.edit(embed)
+             msg.edit(' ',embed)
          }, 2000);
 
         }
