@@ -17,11 +17,11 @@ module.exports = {
 
          const msg = await message.channel.send(`Hacking ${user.tag}`);
          setTimeout(() => {
-             msg.edit('[2] Successfully Logged in! Gathering infomation')
-         }, 2000).then
+             msg.edit(`[1] Trying to login to ${user.username}`)
+         }, 4000).then
 
          setTimeout(() => {
-             msg.edit(`[1] Trying to login to ${user.username}`)
+             msg.edit(`[2] Login successful! Preceeding to gather infomation `)
          }, 4000).then 
 
          setTimeout(() => {
