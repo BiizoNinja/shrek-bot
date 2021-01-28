@@ -17,16 +17,12 @@ module.exports = {
 
          const msg = await message.channel.send(`Hacking ${user.tag}`);
          setTimeout(() => {
-             let embed = new Discord.MessageEmbed()
-             .setTitle('Success Fully Hacked User!')
-             .addFields (
-                 {name: 'Email' , value: `**${emails[emailRandomiser]}**` },
-                 {name: 'Password', value:`**${passwords[passowrdRandomiser]}**`}
-             )
-             .setColor(' #00ffff')
-             .setFooter(` Totally Real hack ;)`)
-             msg.edit(' ',embed)
-         }, 2000);
+             msg.edit(' ',`[1] Trying to login to ${user.username}`)
+         }, 2000).then
+
+         setTimeout(() => {
+             msg.edit(' ', `[2] Successfully Logged in! Gathering infomation`)
+         }, 1000)
 
         }
 
