@@ -17,7 +17,7 @@ module.exports = {
 
          const msg = await message.channel.send(`Hacking ${user.tag}`);
          setTimeout(() => {
-             msg.edit(' ',`[1] Trying to login to ${user.username}`)
+             msg.edit('[1] Trying to login to ${user.username}')
          }, 2000).then
 
          setTimeout(() => {
