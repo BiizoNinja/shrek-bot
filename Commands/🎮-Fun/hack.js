@@ -21,7 +21,7 @@ module.exports = {
          }, 2000).then
 
          setTimeout(() => {
-             msg.edit(' ', `[2] Successfully Logged in! Gathering infomation`)
+             msg.edit('[2] Successfully Logged in! Gathering infomation')
          }, 1000)
 
         }
