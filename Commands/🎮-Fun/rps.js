@@ -14,10 +14,7 @@ module.exports = {
       .setFooter("")
       .setDescription("")
       .addFields(
-        {
-          name: "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-",
-          value: "\u200B",
-        },
+
         {
           name: "🗻 | Rock",
           value: "\u200B",
@@ -30,10 +27,7 @@ module.exports = {
           name: "✂ | Scissors",
           value: "\u200B",
         },
-        {
-          name: "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-",
-          value: "\u200B",
-        }
+
       )
       .setTimestamp();
 
