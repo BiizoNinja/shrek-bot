@@ -10,7 +10,7 @@ module.exports = {
     if(message.author.id !== "546631496673394688") return
 
     Client.destroy()
-    await Client.login(token)
+    await Client.login(process.env.token)
 
     message.channel.send('Restarted!')
     
