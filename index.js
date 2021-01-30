@@ -67,14 +67,17 @@ Client.on('message', async message => {
     if(!message.content.startsWith(prefix)) return; 
     if(!message.guild) return;
 
-    let args = message.content.slice(prefix.length).trim().split(' ')
-    let cmd = args.shift().toLowerCase()
-    let command = Client.commands.get(cmd)
+
 
     if(data) {
         const prefix = data.Prefix;
 
         if (!message.content.startsWith(prefix)) return;
+
+        let args = message.content.slice(prefix.length).trim().split(' ')
+        let cmd = args.shift().toLowerCase()
+        let command = Client.commands.get(cmd)
+
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
         commandfile.execute(Client, message, args);
     } else if (!data) {
@@ -82,6 +85,10 @@ Client.on('message', async message => {
         const prefix = "s!";
         
         if (!message.content.startsWith(prefix)) return;
+        let args = message.content.slice(prefix.length).trim().split(' ')
+        let cmd = args.shift().toLowerCase()
+        let command = Client.commands.get(cmd)
+        
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
         commandfile.execute(Client, message, args);
     }
