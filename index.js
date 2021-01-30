@@ -80,7 +80,7 @@ Client.on('message', async message => {
         let cmd = args.shift().toLowerCase()
         let command = Client.commands.get(cmd)
 
-        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
         commandfile.execute(Client, message, args);
 
     } else if (!data) {
@@ -93,7 +93,7 @@ Client.on('message', async message => {
         let cmd = args.shift().toLowerCase()
         let command = Client.commands.get(cmd)
 
-        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
         commandfile.execute(Client, message, args);
     }
 })
