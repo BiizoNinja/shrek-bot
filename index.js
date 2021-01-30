@@ -10,8 +10,7 @@ const Client = new Discord.Client({
   });
 const Config = require('./config.json') 
 const { on, config } = require('process')
-const prefix = 's!'
-
+const prefix = require('./models/prefix')
 mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {useNewUrlParser: true}, {useUnifiedTopology: true})
 
 Client.commands = new Discord.Collection()
@@ -55,7 +54,12 @@ Client.on('message', async message => {
     }
     if(message.content === '<@!789129116015525918> ') {
         message.channel.send(' My prefix is `s!`')
+        
     }
+    const data = await prefix.findOne({
+        GuildID: message.guild.id
+    });
+
     if(message.author.bot) return;
 
     if(!message.content.startsWith(prefix)) return; 
@@ -65,10 +69,23 @@ Client.on('message', async message => {
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
 
+    if(data) {
+        const prefix = data.Prefix;
 
-    if(!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command) command.execute(Client, message, args)
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.execute(Client, message, args);
+    } else if (!data) {
+        //set the default prefix here
+        const prefix = "s!";
+        
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = Client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.execute(Client, message, args);
+    }
 })
+
+
 Client.login(process.env.token)
 
 //Client.login('Nzg5MTI5MTE2MDE1NTI1OTE4.X9tjwg.fEcoG4R8dWQbF4XxY58xcNLOFnE') 
