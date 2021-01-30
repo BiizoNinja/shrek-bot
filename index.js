@@ -64,9 +64,6 @@ Client.on('message', async message => {
 
     if(message.author.bot) return;
 
-    if(!message.content.startsWith(prefix)) return; 
-    if(!message.guild) return;
-
     let args = message.content.slice(prefix.length).trim().split(' ')
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
@@ -75,6 +72,7 @@ Client.on('message', async message => {
         const prefix = data.Prefix;
 
         if (!message.content.startsWith(prefix)) return;
+        if(!message.guild) return;
 
         let args = message.content.slice(prefix.length).trim().split(' ')
         let cmd = args.shift().toLowerCase()
@@ -88,6 +86,8 @@ Client.on('message', async message => {
         const prefix = "s!";
         
         if (!message.content.startsWith(prefix)) return;
+        if(!message.guild) return;
+
 
         let args = message.content.slice(prefix.length).trim().split(' ')
         let cmd = args.shift().toLowerCase()
