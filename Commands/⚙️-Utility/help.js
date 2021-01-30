@@ -26,7 +26,7 @@ module.exports = {
             .setTitle('Help Command!')
             .setDescription('For more info do \`s!help <command>\` Eg: \`s!help ping\`')
             .addFields( categories,
-                { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918" ), inline: true },
+                { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
             .setThumbnail('https://media.discordapp.net/attachments/753832377054396448/799276629599584256/shrek1.jpg?width=461&height=461')
