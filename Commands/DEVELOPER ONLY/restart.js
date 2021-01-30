@@ -12,10 +12,7 @@ module.exports = {
     Client.destroy()
     await Client.login(process.env.token)
 
-    message.channel.send('Restarted!')
-    
-
-
+    message.channel.send('Restarted!') 
     
  }
 }
