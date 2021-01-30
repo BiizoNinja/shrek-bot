@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const { readdirSync } = require('fs')
-const prefix = require('../../models/prefix')
 
 module.exports = {
     name: 'help',
@@ -25,7 +24,7 @@ module.exports = {
             })
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(`Current Prefix is ${prefix}. Do ${prefix}help <command> for more info!`)
+            .setDescription(` Do help <command> for more info!`)
             .addFields( categories,
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
