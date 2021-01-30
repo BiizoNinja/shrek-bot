@@ -79,7 +79,7 @@ Client.on('message', async message => {
         let command = Client.commands.get(cmd)
 
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
-        commandfile.execute(Client, message, args);
+        command.execute(Client, message, args);
 
     } else if (!data) {
         //set the default prefix here
@@ -94,7 +94,7 @@ Client.on('message', async message => {
         let command = Client.commands.get(cmd)
 
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
-        commandfile.execute(Client, message, args);
+        command.execute(Client, message, args);
     }
 })
 
