@@ -7,7 +7,7 @@ module.exports = {
     usage: 's!setprefix [New Prefix]',
     examples: 's!setprefix !',
     execute: async(Client, message, args) => {
-    if(!message.author.hasPermission('ADMINISTRATOR')) return message.channel.send('You need Administator Permission for that!')
+    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You need Administator Permission for that!')
 
     const data = await prefixModel.findOne({
         GuildID: message.guild.id
