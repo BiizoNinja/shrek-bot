@@ -11,9 +11,8 @@ const Client = new Discord.Client({
 const Config = require('./config.json') 
 const { on, config } = require('process')
 const prefix = 's!'
-const DisTube = require('distube')
 
-
+mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {useNewUrlParser: true}, {useUnifiedTopology: true})
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
