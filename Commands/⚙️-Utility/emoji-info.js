@@ -17,6 +17,7 @@ module.exports = {
              {name: 'Animated?' , value: `${emoji.animated}`}
 
          )
+         message.channel.send(emoji)
      }
      
     
