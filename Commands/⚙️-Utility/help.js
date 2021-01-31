@@ -28,7 +28,7 @@ module.exports = {
                 });
             const prefix = dataPrefix.Prefix
 
-            
+            if(dataPrefix) {
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
             .setDescription(` Do ${prefix}help <command> for more info!`)
@@ -39,8 +39,22 @@ module.exports = {
             .setThumbnail('https://media.discordapp.net/attachments/753832377054396448/799276629599584256/shrek1.jpg?width=461&height=461')
             .setColor(' #7dff02 ');
 
-             return message.channel.send(embed)
-             
+             message.channel.send(embed)
+            } 
+            if(!dataPrefix) {
+                let embed1 = new Discord.MessageEmbed()
+            .setTitle('Help Command!')
+            .setDescription(` Do s!help <command> for more info!`)
+            .addFields( categories,
+                { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
+            )
+            .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
+            .setThumbnail('https://media.discordapp.net/attachments/753832377054396448/799276629599584256/shrek1.jpg?width=461&height=461')
+            .setColor(' #7dff02 ');
+
+             message.channel.send(embed1)
+                
+            }
 
         } else {
             let command = Client.commands.get(args[0].toLowerCase()) || Client.commands.find((C) => c.aliases.include(args[0].toLowerCase()))
