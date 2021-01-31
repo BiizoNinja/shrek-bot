@@ -15,20 +15,18 @@ module.exports = {
          const passwords = [`${user.username}iscool123`, "1234567890", "P@SSW0RD"]
          const passowrdRandomiser = Math.floor((Math.random()* passwords.length));
 
-         const msg = await message.channel.send(`Hacking ${user.tag}`);
-         setTimeout(() => {
-             msg.edit(`[1] Trying to login to ${user.username}`)
-         }, 4000).then
+         const ips = ["1.22.333.4444", "3.23.32.3232.23"]
+         const ipRandomiser = Math.floor((Math.random()* ips.length));
 
-         setTimeout(() => {
-             msg.edit(`[2] Login successful! Preceeding to gather infomation `)
-         }, 4000).then 
+         const msg = await message.channel.send(`Hacking ${user.tag}`);
 
          setTimeout(() => {
             msg.edit(`Found Info! 
             Email: \`${emails[emailRandomiser]}\`
-            Password \`${passwords[passowrdRandomiser]}\``)
-         }, 4000)
+            Password \`${passwords[passowrdRandomiser]}\`
+            IP: \`${ips[ipRandomiser]}\` `)
+            
+         }, 20000)
 
         }
 
