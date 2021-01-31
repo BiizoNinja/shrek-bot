@@ -51,10 +51,10 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 console.log(table.toString())
 
 Client.on('message', async message => {
-    if(message.content === '<@!789129116015525918> help ') {
+    if(message.content = '<@!789129116015525918> help ') {
         message.reply('Do `s!help` for a full list of commands!')
     }
-    if(message.content === '<@!789129116015525918> ') {
+    if(message.content = '<@!789129116015525918> ') {
         message.channel.send(' My prefix is `s!`')
         
     }
