@@ -26,7 +26,7 @@ Client.once('ready', () =>{
 
     setInterval(()=>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
-    })
+    }, 40000)
 })
 let ascii = require('ascii-table')
 let table = new ascii("Commands")
