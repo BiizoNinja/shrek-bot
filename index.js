@@ -54,6 +54,9 @@ Client.on('message', async message => {
     const data = await prefix.findOne({
         GuildID: message.guild.id
     }) 
+    if(message.author.bot) return;
+    if(!message.guild) return;
+
     const prefix = data.Prefix
     const ping = ["<@!789129116015525918>"];
     if (ping.some(word => message.content.includes(word))) {
@@ -66,10 +69,6 @@ Client.on('message', async message => {
     } 
 
     }
-    
-    const data = await prefix.findOne({
-        GuildID: message.guild.id
-    });
 
     if(message.author.bot) return;
 
