@@ -51,13 +51,22 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 console.log(table.toString())
 
 Client.on('message', async message => {
-    if(message.content = '<@!789129116015525918> help ') {
-        message.reply('Do `s!help` for a full list of commands!')
+    const data = await prefix.findOne({
+        GuildID: message.guild.id
+    }) 
+    const prefix = data.Prefix
+    const ping = ["<@!789129116015525918>"];
+    if (ping.some(word => message.content.includes(word))) {
+        message.reply(`My prefix for this server is \`${prefix}\`. Type \`${prefix}help\` for a list of commands!`);
+    } 
+    if(!data) {
+    const ping = ["<@!789129116015525918>"];
+    if (ping.some(word => message.content.includes(word))) {
+        message.reply(`My prefix for this server is \`s!\`. Type \`s!help\` for a list of commands!`);
+    } 
+
     }
-    if(message.content = '<@!789129116015525918> ') {
-        message.channel.send(' My prefix is `s!`')
-        
-    }
+    
     const data = await prefix.findOne({
         GuildID: message.guild.id
     });
