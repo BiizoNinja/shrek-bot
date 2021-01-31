@@ -23,10 +23,10 @@ module.exports = {
                 categories.push(data)
 
             })
-            const data = await prefix.findOne({
+            const dataPrefix = await prefix.findOne({
                 GuildId: message.guild.id
                 });
-            const prefix = data.Prefix
+            const prefix = dataPrefix.Prefix
 
             
             let embed = new Discord.MessageEmbed()
