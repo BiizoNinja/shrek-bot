@@ -21,12 +21,13 @@ module.exports = {
          const msg = await message.channel.send(`Hacking ${user.tag}`);
 
          setTimeout(() => {
-            msg.edit(`Found Info! 
-            Email: \`${emails[emailRandomiser]}\`
-            Password \`${passwords[passowrdRandomiser]}\`
-            IP: \`${ips[ipRandomiser]}\` `)
+            msg.edit(` <:info_symbol:805408924474802206> __**Found Info!**__
+        **Email:** \`${emails[emailRandomiser]}\`
+        **Password:** \`${passwords[passowrdRandomiser]}\`
+        **IP:** \`${ips[ipRandomiser]}\` 
+        pretty pog ngl <:PogChampFixed:773876300816842753> `)
             
-         }, 20000)
+         }, 5000)
 
         }
 
