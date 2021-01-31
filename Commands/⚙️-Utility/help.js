@@ -23,14 +23,11 @@ module.exports = {
                 categories.push(data)
 
             })
-            const data = await prefix.findOne({
-                GuildId: message.guild.id
-            });
-            const prefix = data.Prefix;
+
             
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(` Do ${prefix}help <command> for more info!`)
+            .setDescription(` Do help <command> for more info!`)
             .addFields( categories,
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
@@ -39,6 +36,7 @@ module.exports = {
             .setColor(' #7dff02 ');
 
              return message.channel.send(embed)
+             
 
         } else {
             let command = Client.commands.get(args[0].toLowerCase()) || Client.commands.find((C) => c.aliases.include(args[0].toLowerCase()))
