@@ -77,7 +77,6 @@ Client.on('message', async message => {
     let command = Client.commands.get(cmd)
 
     if(data) {
-        const prefix = data.Prefix;
 
         if (!message.content.startsWith(prefix)) return;
         if(!message.guild) return;
