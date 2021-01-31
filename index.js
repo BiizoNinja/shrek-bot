@@ -79,6 +79,7 @@ Client.on('message', async message => {
         let command = Client.commands.get(cmd)
 
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
+        if (!command) command = Client.commands.get(Client.aliases.get(cmd));
         command.execute(Client, message, args);
 
     } else if (!data) {
@@ -94,6 +95,7 @@ Client.on('message', async message => {
         let command = Client.commands.get(cmd)
 
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
+        if (!command) command = Client.commands.get(Client.aliases.get(cmd));
         command.execute(Client, message, args);
     }
 })
