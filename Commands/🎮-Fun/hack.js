@@ -22,9 +22,11 @@ module.exports = {
 
          setTimeout(() => {
             msg.edit(` <:info_symbol:805408924474802206> __**Found Info!**__
+
         **Email:** \`${emails[emailRandomiser]}\`
         **Password:** \`${passwords[passowrdRandomiser]}\`
         **IP:** \`${ips[ipRandomiser]}\` 
+        
         pretty pog ngl <:PogChampFixed:773876300816842753> `)
             
          }, 5000)
