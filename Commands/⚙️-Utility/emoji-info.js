@@ -8,7 +8,8 @@ module.exports = {
      const emoji = args[0]
 
      if(!emoji) return message.channel.send('<a:XMARK:801450921112371232> You have not supplied an emoji') 
-     
+     if(emoji.animated === true) return 'True'
+     if(emoji.animated === false) return 'False'
      if(emoji) {
          let embed = new Discord.MessageEmbed()
          .setTitle('Emoji Info!')
