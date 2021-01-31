@@ -20,14 +20,14 @@ Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 
 
-    
-Client.on('ready', () =>{
-    Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`, {type: 'WATCHING'}) 
-    console.log(`${Client.user.username} is online`);
-});
-    
+client.once('ready', () =>{
+    console.log(`${Client.user.username} is online!` );
 
 
+    setInterval(()=>{
+        client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
+    })
+})
 let ascii = require('ascii-table')
 let table = new ascii("Commands")
 table.setHeading("Command", "Status");
