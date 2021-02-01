@@ -11,7 +11,7 @@ module.exports = {
         if(!amount) {
             message.channel.send('You need to specify an amount to gamble. <:FLOOSHED:805796808159658026> ')
         }
-        const gamble = Math.floor(Math.random()* (1000 - amount) + amount)
+        const gamble = Math.floor(Math.random()* (1001 - amount) + amount)
 
         if(amount > 1000) return message.channel.send('You can\'t gamble amount more than 1000.')
 
