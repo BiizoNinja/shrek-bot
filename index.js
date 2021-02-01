@@ -7,7 +7,7 @@ mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.
 
 const Client = new Discord.Client({
     disableMentions: 'everyone',
-    fetchAllMembers: false,
+    fetchAllMembers: true,
     partials: ['REACTION', 'MESSAGE', 'CHANNEL'],
     ws: { Intents: Intents.All },
   });
