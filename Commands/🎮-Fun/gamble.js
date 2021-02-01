@@ -19,7 +19,7 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setTitle(` I win! <:msgrinlegs:805805225255895050> `) 
-        .setDescription(`I got ${gamble}! GG! It was fun playing with you`)
+        .setDescription(`I got **${gamble}**! haha you suck noob, begone! Go play fortnite :/`)
         .setFooter(`Note: This data WON'T be saved, this is just a fun command`)
         .setTimestamp()
         .setColor('#ff0000')
@@ -31,7 +31,7 @@ module.exports = {
 
         let embed1 = new Discord.MessageEmbed()
         .setTitle(` I lost <:pepe_cry:805807162864959489>`) 
-        .setDescription(`I got ${gamble}! GG! It was fun playing with you`)
+        .setDescription(`I got **${gamble}**! I know your using hax, don't worry gonna repost soon :eyes:`)
         .setFooter(`Note: This data WON'T be saved, this is just a fun command`)
         .setTimestamp()
         .setColor('#00ff00')
