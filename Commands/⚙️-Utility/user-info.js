@@ -23,7 +23,7 @@ module.exports = {
     description: "Shows a users info",
     usage: 's!user-info, >user-info <mention>',
     aliases: ['ui'],
-    execute: async (client, message, args) => {
+    execute: async (Client, message, args) => {
         const member = message.mentions.members.last() ||  message.member;
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
