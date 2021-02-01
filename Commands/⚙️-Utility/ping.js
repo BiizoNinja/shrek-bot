@@ -21,6 +21,7 @@ module.exports = {
 
            pingMessage.delete()
            message.channel.send(pingembed)
+           
        })
 
    }
