@@ -31,7 +31,7 @@ module.exports = {
 
         let embed1 = new Discord.MessageEmbed()
         .setTitle(` I lost <:pepe_cry:805807162864959489>`) 
-        .setDescription(`I got **${gamble}**! I know your using hax, don't worry gonna repost soon :eyes:`)
+        .setDescription(`I got **${gamble}**! I know your using hax, don't worry gonna report soon :eyes:`)
         .setFooter(`Note: This data WON'T be saved, this is just a fun command`)
         .setTimestamp()
         .setColor('#00ff00')
