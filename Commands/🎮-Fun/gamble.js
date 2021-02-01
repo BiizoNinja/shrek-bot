@@ -37,17 +37,6 @@ module.exports = {
 
         message.channel.send(embed1)
 
-        if(gamble = amount) return 
-
-        let embed2 = new Discord.MessageEmbed()
-        .setTitle(`equal <:FLOOSHED:805796808159658026> `) 
-        .setDescription(`I got ${gamble}! GG! It was fun playing with you`)
-        .setFooter(`Note: This data WON'T be saved, this is just a fun command`)
-        .setTimestamp()
-        .setColor('#00ffff')
-
-        message.channel.send(embed2)
-
         
 
     } 
