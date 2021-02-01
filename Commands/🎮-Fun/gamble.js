@@ -13,6 +13,8 @@ module.exports = {
         }
         const gamble = Math.floor(Math.random()* (1000 - amount) + amount)
 
+        if(amount > 1000) return message.channel.send('You can\'t gamble amount more than 1000.')
+
         if(gamble > amount) return 
 
         let embed = new Discord.MessageEmbed()
