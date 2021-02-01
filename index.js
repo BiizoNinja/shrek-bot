@@ -78,6 +78,11 @@ Client.on('message', async message => {
         let cmd = args.shift().toLowerCase()
         let command = Client.commands.get(cmd)
 
+        const ping = ["<@!789129116015525918>"];
+        if (ping.some(word => message.content.includes(word))) {
+            message.reply(`My prefix for this server is \`${prefix}\`. Do \`${prefix}help\` for a list of commands!`);
+        }
+
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
         if (!command) command = Client.commands.get(Client.aliases.get(cmd));
         command.execute(Client, message, args);
@@ -93,6 +98,11 @@ Client.on('message', async message => {
         let args = message.content.slice(prefix.length).trim().split(' ')
         let cmd = args.shift().toLowerCase()
         let command = Client.commands.get(cmd)
+
+        const ping = ["<@!789129116015525918>"];
+        if (ping.some(word => message.content.includes(word))) {
+            message.reply(`My prefix for this server is \`s!\`. Do \`s!help\` for a list of commands!`);
+        }
 
         const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
         if (!command) command = Client.commands.get(Client.aliases.get(cmd));
