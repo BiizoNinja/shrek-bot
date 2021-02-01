@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', { useNewUrlParser: true, useUnifiedTopology: true })
 
 const Client = new Discord.Client({
-    disableMentions: 'everyone',
     fetchAllMembers: true,
     partials: ['REACTION', 'MESSAGE', 'CHANNEL'],
     ws: { Intents: Intents.All },
