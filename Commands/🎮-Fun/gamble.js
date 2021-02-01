@@ -15,7 +15,7 @@ module.exports = {
 
         if(amount > 1000) return message.channel.send('You can\'t gamble amount more than 1000.')
 
-        if(gamble > amount) return 
+         else if(gamble > amount) {
 
         let embed = new Discord.MessageEmbed()
         .setTitle(` I win! <:msgrinlegs:805805225255895050> `) 
@@ -25,8 +25,9 @@ module.exports = {
         .setColor('#ff0000')
 
         message.channel.send(embed);
+        }
 
-        if(gamble < amount) return 
+        else if(gamble < amount) {
 
         let embed1 = new Discord.MessageEmbed()
         .setTitle(` I lost <:pepe_cry:805807162864959489>`) 
@@ -36,6 +37,7 @@ module.exports = {
         .setColor('#00ff00')
 
         message.channel.send(embed1)
+    }
 
         
 
