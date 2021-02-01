@@ -8,7 +8,7 @@ module.exports = {
 
         let usageEmbed = new Discord.MessageEmbed()
         .setTitle('Usage')
-        .setDescription(`Look at how many guilds our bot is on... Pretty epic. [Click Here](https://dsc.gg/shrebot) to invite the bot!`)
+        .setDescription(`Look at how many guilds our bot is on... Pretty epic. [Click Here](https://dsc.gg/shrekbot) to invite the bot!`)
         .addFields(
             {name: 'GUILDS (servers)', value: `\`${Client.guilds.cache.size}\``},
             {name: 'USERS', value: `\`${Client.users.cache.size}\``},
