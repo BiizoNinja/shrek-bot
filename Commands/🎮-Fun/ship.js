@@ -3,7 +3,7 @@ module.exports = {
   name: "ship",
   description: "ship someone!",
   usage: "s!ship",
-  excute: async (Client, message, args) => {
+  execute: async (Client, message, args) => {
     let ship = Math.floor(Math.random() * 100) + 1;
 
     let user = message.mentions.users.first();
