@@ -3,6 +3,12 @@ const { Intents } = require("discord.js")
 const fs = require('fs')
 
 const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {
+    
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      
+})
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
