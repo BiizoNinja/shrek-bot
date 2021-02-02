@@ -22,5 +22,7 @@ module.exports = {
         .setDescription(` ${target.username} has **${coins}** coins.`)
         .setFooter('pretty cool huh :flushed:')
 
+        message.channel.send(embed)
+
     }
 }
