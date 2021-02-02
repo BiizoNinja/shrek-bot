@@ -1,3 +1,4 @@
 {
-    "prefix": "s!"
+    "prefix": "s!",
+    "mongopath": "mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data" 
 }

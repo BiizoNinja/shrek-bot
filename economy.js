@@ -1,3 +1,4 @@
+const mongo = require('./mongo')
 const mongoose = require('mongoose')
 const profileSchema = require('./models/profile-schema')
 
