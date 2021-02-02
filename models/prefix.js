@@ -7,4 +7,4 @@ const PrefixSchema = new mongoose.Schema({
     GuildID: String
 });
 
-const MessageModel = module.exports = mongoose.model('prefixes', PrefixSchema);
+ module.exports = mongoose.model('prefixes', PrefixSchema);
