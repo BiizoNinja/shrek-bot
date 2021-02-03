@@ -22,7 +22,7 @@ module.exports = {
       `**THE GOD HIMSELF!** Donated ${coins} coins to <@${userID}>!`,
       `**Hackerboi 69** Donated ${coins} coins to <@${userID}>!`,
       `**FiredragonPlayz** Donated ${coins} to <@${userID}>!`,
-      `**mallusrgreatv2** Donated ${coins} coins to <${userID}>!`,
+      `**mallusrgreatv2** Donated ${coins} coins to <@${userID}>!`,
       `**Pewdiepie** Donated ${coins} coins to <@${userID}>!`,
       `**Mr.Beast** Donated ${coins} coins to <@${userID}>!`,
       `**gamer123LOL** Donated ${coins} coins to <@${userID}>!`,
