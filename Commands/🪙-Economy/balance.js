@@ -20,7 +20,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
         .setTitle(`${target.tag}'s Balance!`)
         .setDescription(` ${target.username} has **${coins}** coins.`)
-        .setFooter('pretty cool huh :flushed:')
+        .setFooter('pretty cool huh 😳 ')
 
         message.channel.send(embed)
 

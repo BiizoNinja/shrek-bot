@@ -48,13 +48,14 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 console.log(table.toString())
 
 Client.on('message', async message => {
-    const prefix = "s!";
+
     if(message.author.bot) return;
 
     let args = message.content.slice(prefix.length).trim().split(' ')
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
 
+    const prefix = "s!";
         
     if (!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
