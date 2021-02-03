@@ -21,6 +21,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.11.10",
     "node-fetch": "^2.6.1",
+    "parse-ms": "^2.1.0",
     "pokecord": "^1.0.0",
     "reconlx": "^1.0.73",
     "request": "^2.88.2",

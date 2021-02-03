@@ -21,6 +21,7 @@ module.exports = {
         .setTitle(`${target.tag}'s Balance!`)
         .setDescription(` ${target.username} has **${coins}** coins.`)
         .setFooter('pretty cool huh 😳 ')
+        .setColor('RANDOM')
 
         message.channel.send(embed)
 
