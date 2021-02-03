@@ -11,7 +11,6 @@ const Client = new Discord.Client({
   });
 const Config = require('./config.json') 
 const { on, config } = require('process')
-const prefix = require('./models/prefix-schema')
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
