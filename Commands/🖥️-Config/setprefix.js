@@ -1,4 +1,4 @@
-const prefixModel = require("../../models/prefix");
+const prefixModel = require("../../models/prefix-schema");
 const { description } = require("../⚙️-Utility/help");
 
 module.exports = {

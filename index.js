@@ -1,14 +1,9 @@
 const Discord = require('discord.js')
 const { Intents } = require("discord.js")
 const fs = require('fs')
-
+const mongo = require('./mongo')
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {
-    
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      
-})
+mongoose.connect(mongo)
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
@@ -17,7 +12,7 @@ const Client = new Discord.Client({
   });
 const Config = require('./config.json') 
 const { on, config } = require('process')
-const prefix = require('./models/prefix')
+const prefix = require('./models/prefix-schema')
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
