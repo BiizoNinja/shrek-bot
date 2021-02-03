@@ -7,7 +7,7 @@ module.exports = {
     usage: 's!setprefix [New Prefix]',
     examples: 's!setprefix !',
     execute: async(Client, message, args) => {
-        message.channel.send('Currently Disabled!')
+        message.channel.send(`I'm sorry! This command is currently disabled for a problem. We are fixing it!`)
     /*if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You need Administator Permission for that!')
 
     const data = await prefixModel.findOne({
