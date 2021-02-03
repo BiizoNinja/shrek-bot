@@ -50,12 +50,12 @@ console.log(table.toString())
 Client.on('message', async message => {
 
     if(message.author.bot) return;
+    const prefix = "s!";
 
     let args = message.content.slice(prefix.length).trim().split(' ')
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
 
-    const prefix = "s!";
         
     if (!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
