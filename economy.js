@@ -9,7 +9,7 @@ module.exports = (Client) => {}
 module.exports.addCoins = async (guildId, userId, coins) => {
   return await mongo().then(async (mongoose) => {
     try {
-
+      
       const result = await profileSchema.findOneAndUpdate(
         {
           guildId,
@@ -25,6 +25,8 @@ module.exports.addCoins = async (guildId, userId, coins) => {
         {
           upsert: true,
           new: true,
+          useFindAndModify: true
+
         }
       )
 
