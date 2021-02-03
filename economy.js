@@ -25,7 +25,7 @@ module.exports.addCoins = async (guildId, userId, coins) => {
         {
           upsert: true,
           new: true,
-          useFindAndModify: true
+          useFindAndModify: false
 
         }
       )
