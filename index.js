@@ -62,10 +62,6 @@ Client.on('message', async message => {
     if(!message.guild) return;
 
 
-    let args = message.content.slice(prefix.length).trim().split(' ')
-    let cmd = args.shift().toLowerCase()
-    let command = Client.commands.get(cmd)
-
     const commandfile = Client.commands.get(cmd.slice(prefix.length)) || Client.commands.get(Client.aliases.get(cmd.slice(prefix.length)));
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
     command.execute(Client, message, args);
