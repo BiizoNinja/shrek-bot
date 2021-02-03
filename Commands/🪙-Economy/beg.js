@@ -8,20 +8,7 @@ module.exports = {
     usage: 's!beg',
     aliases: [],
     execute: async(Client, message, args) => { 
-    let amount = 0;
-    let timeout = 45000;
 
-    if (begCooldown !== null && timeout - (Date.now() - begCooldown) > 0) {
-      let time = ms(timeout - (Date.now() - begCooldown));
-
-      let embed = new Discord.MessageEmbed()
-        .setDescription(
-          `Stop begging so much\nWait: ${time.hours} hours ${time.minutes} minutes ${time.seconds} seconds`
-        )
-        .setTitle("Woah, slow down!")
-        .setColor("#ff0000");
-      message.channel.send(embed);
-    }
     let guildID = message.guild.id;
     let userID = message.author.id
     let coins = Math.floor(Math.random()(1001 - 30) + 30)
