@@ -11,7 +11,7 @@ module.exports = {
 
     let guildID = message.guild.id;
     let userID = message.author.id
-    let coins = Math.floor(Math.random()(1001 - 30) + 30)
+    let coins = Math.floor(Math.random()* (1001 - 30) + 30)
 
     const replies = [
       `**Papa Jim** Donated ${coins} coins to <@${userID}>!`,
