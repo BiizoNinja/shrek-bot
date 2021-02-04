@@ -30,7 +30,6 @@ module.exports = {
         const newCoins = await economy.addCoins(guildID, userID, coins)
 
         let embed = new Discord.MessageEmbed()
-        .setTitle(`\u200c`)
         .setDescription(`<a:TICK:801450801200758795> You work as a **${jobs[random]}** and earn **${newCoins}**. `)
         .setColor('#69b1fa')
         .setFooter('You can work every hour.')
