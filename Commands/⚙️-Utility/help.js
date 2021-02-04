@@ -57,7 +57,7 @@ module.exports = {
                 {name: "Usage" , value: usage, inline: true },
                 {name: "Examples" , value: examples, inline: true },
                 {name: "Aliases" , value: aliases, inline: true },
-                {name: 'Cooldown', value: timeout, inline: true }
+                {name: 'Cooldown', value: cooldown, inline: true }
             )
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
             .setColor(' #7dff02')
