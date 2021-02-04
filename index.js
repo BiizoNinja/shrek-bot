@@ -65,16 +65,7 @@ Client.on('message', async message => {
 
 
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command) {
-        if(command.cooldown) {
-            if(cooldown.has(`${command.name}${message.author.id}`)) return message.channel.send(`Whoa! Slow down! You can use this command after :**${ms(cooldown.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}**.`)
-            command.execute(Client, message, args);
-            cooldown.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
-            setTimeout(() => {
-                cooldown.delete(`${command.name}${message.author.id}`)
-            }, command.timeout)
-        }
-    }
+    if(command) command.execute(Client, message, args);
     
 })
 
