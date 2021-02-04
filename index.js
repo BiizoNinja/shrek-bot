@@ -3,7 +3,7 @@ const { Intents } = require("discord.js")
 const fs = require('fs')
 const mongo = require('./mongo')
 const mongoose = require('mongoose');
-const ms = require('parse-ms')
+const ms = require('ms')
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
@@ -15,8 +15,8 @@ const { on, config } = require('process')
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
-Client.cooldown = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
+const Timeout = new Set();
 
 
 
@@ -65,7 +65,17 @@ Client.on('message', async message => {
 
 
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command) command.execute(Client, message, args);
+    if(command) {
+        if(Timeout.has(`${message.author.id}${command.name}`)) {
+           return message.reply(`You can use this command in ${ms(command.timeout)}!`)
+        } else  {
+            Timeout.add(`${message.author.id}${command.name}`)
+            setTimeout(() => {
+                Timeout.delete(`${message.author.id}${command.name}`)
+            }, command.timeout);
+        }
+        command.execute(Client, message, args)
+    }
     
 })
 
