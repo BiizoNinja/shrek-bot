@@ -5,7 +5,7 @@ module.exports = {
     name: 'work',
     description: 'beg for coins <:flushed_squish:806402949235736627>',
     usage: 's!beg',
-    timeout: 360000,
+    timeout: 3600000,
     aliases: [],
     execute: async(Client, message, args) => { 
         const userID = message.author.id;
