@@ -15,7 +15,7 @@ const { on, config } = require('process')
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
-const cooldown = new Discord.Collection()
+Client.cooldown = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 
 
@@ -28,7 +28,8 @@ Client.once('ready', () =>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
-let ascii = require('ascii-table')
+let ascii = require('ascii-table');
+const { cooldown } = require('./Commands/🪙-Economy/beg');
 let table = new ascii("Commands")
 table.setHeading("Command", "Status");
 
@@ -68,6 +69,10 @@ Client.on('message', async message => {
         if(command.timeout) {
             if(cooldown.has(`${command.name}${message.author.id}`)) return message.channel.send(`Whoa! Slow down! You can use this command after :**${ms(cooldown.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}**.`)
             command.execute(Client, message, args);
+            cooldown.set(`${command.name}${message.author.id}`, Date.now() + command.timeout)
+            setTimeout(() => {
+                Timeout.delete(`${command.name}${message.author.id}`)
+            }, command.timeout)
         }
     }
     
