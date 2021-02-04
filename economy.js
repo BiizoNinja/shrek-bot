@@ -6,6 +6,41 @@ const coinsCache = {} // { 'guildId-userId': coins }
 
 module.exports = (Client) => {}
 
+module.exports.removeCoins = async (guildId, userId, coins) => {
+  return await mongo().then(async (mongoose) => {
+    
+     try {
+      
+      const result = await profileSchema.findOneAndUpdate(
+        {
+          guildId,
+          userId,
+        },
+        {
+          guildId,
+          userId,
+          $dec: {
+            coins,
+          },
+        },
+        {
+          upsert: true,
+          new: true,
+          useFindAndModify: false
+
+        }
+      )
+
+      coinsCache[`${guildId}-${userId}`] = result.coins
+
+      return result.coins
+    } finally {
+      mongoose.connection.close()
+    }
+  })
+}
+
+
 module.exports.addCoins = async (guildId, userId, coins) => {
   return await mongo().then(async (mongoose) => {
     try {

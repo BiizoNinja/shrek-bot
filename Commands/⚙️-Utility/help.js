@@ -46,6 +46,7 @@ module.exports = {
             let examples = command.examples || "no examples provided"
             let usage = command.usage || "No usage provided"
             let aliases = command.aliases || "No aliases provided"
+            let cooldown = command.cooldown || "No cooldown provided!"
 
             let embed2 = new Discord.MessageEmbed()
             .setTitle(`${(args[0])} Command!`) 
@@ -55,6 +56,7 @@ module.exports = {
                 {name: "Usage" , value: usage, inline: true },
                 {name: "Examples" , value: examples, inline: true },
                 {name: "Aliases" , value: aliases, inline: true },
+                {name: 'Cooldown', value: cooldown, inline: true }
             )
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
             .setColor(' #7dff02')

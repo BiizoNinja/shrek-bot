@@ -6,6 +6,7 @@ module.exports = {
     name: 'beg',
     description: 'beg for coins <:flushed_squish:806402949235736627>',
     usage: 's!beg',
+    cooldown: 45000,
     aliases: [],
     execute: async(Client, message, args) => { 
 

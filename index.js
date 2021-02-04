@@ -3,6 +3,7 @@ const { Intents } = require("discord.js")
 const fs = require('fs')
 const mongo = require('./mongo')
 const mongoose = require('mongoose');
+const ms = require('parse-ms')
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
@@ -14,7 +15,9 @@ const { on, config } = require('process')
 
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
+const cooldown = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
+
 
 
 Client.once('ready', () =>{
@@ -55,14 +58,18 @@ Client.on('message', async message => {
     let args = message.content.slice(prefix.length).trim().split(' ')
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
-
         
     if (!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
 
 
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command)command.execute(Client, message, args);
+    if(command) {
+        if(command.timeout) {
+            if(cooldown.has(`${command.name}${message.author.id}`)) return message.channel.send(`Whoa! Slow down! You can use this command after :**${ms(cooldown.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}**.`)
+            command.execute(Client, message, args);
+        }
+    }
     
 })
 
