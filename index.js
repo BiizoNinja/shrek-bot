@@ -67,7 +67,7 @@ Client.on('message', async message => {
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
     if(command) {
         if(Timeout.has(`${message.author.id}${command.name}`)) {
-           return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, you can use this command in: **${ms(command.timeout.get(`${message.author.id}${command.name}`))}**!`)
+           return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, The cooldown for this command is: **${ms(command.timeout)}**!`)
         } else  {
             Timeout.add(`${message.author.id}${command.name}`)
             setTimeout(() => {
