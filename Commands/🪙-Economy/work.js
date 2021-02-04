@@ -10,7 +10,7 @@ module.exports = {
     execute: async(Client, message, args) => { 
         const userID = message.author.id;
         const guildID = message.guild.id
-        const coins = Math.floor(Math.random()* (15000 - 5000) + 5000)
+        const coins = Math.floor(Math.random()* (3000 - 100) + 100)
         
         const jobs =[
             'Mr.Beast Burger Worker',
@@ -34,7 +34,6 @@ module.exports = {
         .setDescription(`<a:TICK:801450801200758795> You work as a **${jobs[random]}** and earn **${newCoins}**. `)
         .setColor('#69b1fa')
         .setFooter('You can work every hour.')
-        .setThumbnail('https://images-ext-1.discordapp.net/external/kf8w9ggxI4-JJfdlqzBa6gVeqeqTMeVR6ThM5AR5DUI/%3Fv%3D1/https/cdn.discordapp.com/emojis/767857900126863390.png?width=115&height=115')
 
         message.channel.send(embed)
 
