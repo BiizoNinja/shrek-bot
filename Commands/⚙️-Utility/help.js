@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
-const { readdirSync } = require('fs')
+const { readdirSync } = require('fs');
+const { timeout } = require('../🪙-Economy/beg');
 
 module.exports = {
     name: 'help',
@@ -46,7 +47,7 @@ module.exports = {
             let examples = command.examples || "no examples provided"
             let usage = command.usage || "No usage provided"
             let aliases = command.aliases || "No aliases provided"
-            let cooldown = command.cooldown || "No cooldown provided!"
+            let cooldown = command.timemout || "No cooldown provided!"
 
             let embed2 = new Discord.MessageEmbed()
             .setTitle(`${(args[0])} Command!`) 
@@ -56,7 +57,7 @@ module.exports = {
                 {name: "Usage" , value: usage, inline: true },
                 {name: "Examples" , value: examples, inline: true },
                 {name: "Aliases" , value: aliases, inline: true },
-                {name: 'Cooldown', value: cooldown, inline: true }
+                {name: 'Cooldown', value: timeout, inline: true }
             )
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
             .setColor(' #7dff02')
