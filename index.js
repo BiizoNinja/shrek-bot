@@ -71,7 +71,7 @@ Client.on('message', async message => {
             command.execute(Client, message, args);
             cooldown.set(`${command.name}${message.author.id}`, Date.now() + command.timeout)
             setTimeout(() => {
-                Timeout.delete(`${command.name}${message.author.id}`)
+                cooldown.delete(`${command.name}${message.author.id}`)
             }, command.timeout)
         }
     }
