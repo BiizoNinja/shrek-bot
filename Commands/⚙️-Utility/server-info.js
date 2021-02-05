@@ -8,20 +8,23 @@ module.exports = {
 
         var EMBED = new Discord.MessageEmbed()
         .setTitle("server info")
-        .addField("server name 🎗️", `${message.guild.name}`)
-        .addField("server id 🆔", `${message.guild.id}`)
-        .addField("server owner 👑", `${message.guild.owner}`)
-        .addField("members 👥", `${message.guild.memberCount}`)
-        .addField("Server roles 🔐", `${message.guild.roles.cache.size}`)
-    .addField(" channels 💬", `  ${message.guild.channels.cache.filter(r => r.type === "text").size} Text
-          ${message.guild.channels.cache.filter(r => r.type === "voice").size} Voice`)
-        .addField("server region 🌍", `${message.guild.region}`)  
-        .addField("Verification Level 📑", `${message.guild.verificationLevel}`)
-    .addField("created in 📆 ", `${message.guild.createdAt.toLocaleString()}`)
-    .addField("Boosts ✨", `${message.guild.premiumSubscriptionCount}`)
-    .setColor("RANDOM")
-    .setFooter(`Requsted by ${message.author.username}`, message.author.displayAvatarURL( {dynamic: true}))
-    .setThumbnail(message.guild.iconURL({ dynamic: true }))
+        .addFields( 
+            {name: `Server name 🎗️`, value: `${message.guild.name}`, inline: true },
+            {name: `Server id 🆔`, value: `${message.guild.id}`, inline: true },
+            {name: `Server owner 👑`, value: `${message.guild.owner}`, inline: true },
+            {name: `Members 👥`, value: `${message.guild.memberCount}`, inline: true },
+            {name: `Server roles 🔐`, value: `${message.guild.channels.cache.filter(r => r.type === "text").size} Text
+            ${message.guild.channels.cache.filter(r => r.type === "voice").size} Voice`, inline: true },
+            {name: `Channels 💬 `, value: `${message.guild.owner}`, inline: true },
+            {name: `Server region 🌍`, value: `${message.guild.region}`, inline: true },
+            {name: `Verification Level 📑`, value: `${message.guild.verificationLevel}`, inline: true },
+            {name: `Created in 📆`, value: `${message.guild.guild.createdAt.toLocaleString()}`, inline: true },
+            {name: `Boosts ✨`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
+
+        )
+        .setThumbnail(message.guild.iconURL({ dynamic: true, format: png }))
+        .setColor('RANDOM');
+
         message.channel.send(EMBED)
       }
     
