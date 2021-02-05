@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'work',
-    description: 'beg for coins <:flushed_squish:806402949235736627>',
-    usage: 's!beg',
+    description: 'work for your coins ;0',
+    usage: 's!work',
     timeout: 3600000,
     aliases: [],
     execute: async(Client, message, args) => { 
