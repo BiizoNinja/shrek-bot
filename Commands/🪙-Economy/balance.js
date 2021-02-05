@@ -10,12 +10,10 @@ module.exports = {
     execute: async(Client, message, args) => { 
 
         const target = message.mentions.users.first() || message.author;
-        const targetid = target.id;
 
-        const guildID = message.guild.id
         const userID = target.id;
 
-        const coins = await economy.getCoins(guildID, userID);
+        const coins = await economy.getCoins(userID);
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`${target.tag}'s Balance!`)

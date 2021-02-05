@@ -10,7 +10,6 @@ module.exports = {
     aliases: [],
     execute: async(Client, message, args) => { 
 
-    let guildID = message.guild.id;
     let userID = message.author.id
     let coins = Math.floor(Math.random()* (1001 - 30) + 30)
 
@@ -31,7 +30,7 @@ module.exports = {
     ]
     const random = Math.floor((Math.random()* replies.length))
 
-    const newCoins = await economy.addCoins(guildID, userID, coins); 
+    const newCoins = await economy.addCoins(userID, coins); 
     message.channel.send(`${replies[random]}`);
     
  } 

@@ -10,7 +10,6 @@ module.exports = {
     aliases: [],
     execute: async(Client, message, args) => { 
 
-     const guildID = message.guild.id;
      const userID = message.author.id 
      let coins = 2500; 
 
@@ -20,7 +19,7 @@ module.exports = {
      .setTimestamp()
      .setColor('RANDOM')
 
-     await economy.addCoins(guildID, userID, coins)
+     await economy.addCoins(userID, coins)
      message.channel.send(embed)
 
     }

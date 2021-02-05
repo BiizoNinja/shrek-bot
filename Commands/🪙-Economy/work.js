@@ -9,7 +9,6 @@ module.exports = {
     aliases: [],
     execute: async(Client, message, args) => { 
         const userID = message.author.id;
-        const guildID = message.guild.id
         let coins = Math.floor((Math.random() * 6000) + 1000)
         
         const jobs =[
@@ -27,7 +26,7 @@ module.exports = {
         ]
         const random = Math.floor((Math.random()* jobs.length))
 
-        const newCoins = await economy.addCoins(guildID, userID, coins)
+        const newCoins = await economy.addCoins(userID, coins)
 
         let embed = new Discord.MessageEmbed()
         .setDescription(`<a:TICK:801450801200758795> You work as a **${jobs[random]}** and earn **${newCoins}**. `)
