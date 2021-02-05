@@ -5,7 +5,7 @@ module.exports = {
     name: 'bet',
     description: 'bet your coins ',
     usage: 's!bet <amount-of-coins>',
-    timeout: 600000,
+    timeout: 300000,
     aliases: [],
     execute: async(Client, message, args) => {
         const userID = message.author.id
