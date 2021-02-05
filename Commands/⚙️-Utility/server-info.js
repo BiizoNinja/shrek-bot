@@ -18,7 +18,7 @@ module.exports = {
             {name: `Channels 💬 `, value: `${message.guild.owner}`, inline: true },
             {name: `Server region 🌍`, value: `${message.guild.region}`, inline: true },
             {name: `Verification Level 📑`, value: `${message.guild.verificationLevel}`, inline: true },
-            {name: `Created in 📆`, value: `${message.guild.guild.createdAt.toLocaleString()}`, inline: true },
+            {name: `Created in 📆`, value: `${message.guild.createdAt.toLocaleString()}`, inline: true },
             {name: `Boosts ✨`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
 
         )
