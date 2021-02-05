@@ -10,7 +10,7 @@ module.exports = {
     execute: async(Client, message, args) => { 
         const userID = message.author.id;
         const guildID = message.guild.id
-        let coins = Math.floor(Math.random()* (3000 - 100) + 100)
+        let coins = Math.floor((Math.random() * 6000) + 1000)
         
         const jobs =[
             'Mr.Beast Burger Worker',
