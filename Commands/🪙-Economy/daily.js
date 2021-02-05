@@ -15,7 +15,7 @@ module.exports = {
 
      let embed = new Discord.MessageEmbed()
      .setTitle('Daily Coins!')
-     .setDescription(`<a:TICK:801450801200758795> The sum  of > **${coins}** <:Shrek_Coin:807140320507854878 were placed in your wallet! Come back tomorrow for more`)
+     .setDescription(`<a:TICK:801450801200758795> The sum  of **${coins}** <:Shrek_Coin:807140320507854878> were placed in your wallet! Come back tomorrow for more`)
      .setTimestamp()
      .setColor('RANDOM')
 
