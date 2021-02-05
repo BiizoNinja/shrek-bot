@@ -20,7 +20,7 @@ module.exports = {
     .addField("created in 📆 ", `${message.guild.createdAt.toLocaleString()}`)
     .addField("Boosts ✨", `${message.guild.premiumSubscriptionCount}`)
     .setColor("RANDOM")
-    .setFooter(`Requsted by ${message.author.username}`, message.member.displayAvatarURL( {dynamic: true}))
+    .setFooter(`Requsted by ${message.author.username}`, message.author.displayAvatarURL( {dynamic: true}))
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
         message.channel.send(EMBED)
       }
