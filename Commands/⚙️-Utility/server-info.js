@@ -7,7 +7,8 @@ module.exports = {
         const Discord = require('discord.js');
 
         var EMBED = new Discord.MessageEmbed()
-        .setTitle("server info")
+        .setTitle("Server-Info!")
+        .setDescription('Some simple server info!')
         .addFields( 
             {name: `Server name 🎗️`, value: `${message.guild.name}`, inline: true },
             {name: `Server id 🆔`, value: `${message.guild.id}`, inline: true },
