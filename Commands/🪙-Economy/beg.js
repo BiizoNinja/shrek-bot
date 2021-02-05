@@ -14,19 +14,19 @@ module.exports = {
     let coins = Math.floor(Math.random()* (1001 - 30) + 30)
 
     const replies = [
-      `**Papa Jim** Donated ${coins} coins to <@${userID}>!`,
-      `**James Charles** Donated ${coins} coins to <@${userID}>!`,
-      `**Selena Gomez** Donated ${coins} coins to <@${userID}>!`,
-      `**Granny** Donated ${coins} coins to <@${userID}>!`,
-      `**Shre the t** Donated ${coins} coins to <@${userID}>!`,
-      `**THE GOD HIMSELF!** Donated ${coins} coins to <@${userID}>!`,
-      `**Hackerboi 69** Donated ${coins} coins to <@${userID}>!`,
-      `**FiredragonPlayz** Donated ${coins} to <@${userID}>!`,
-      `**mallusrgreatv2** Donated ${coins} coins to <@${userID}>!`,
-      `**Pewdiepie** Donated ${coins} coins to <@${userID}>!`,
-      `**Mr.Beast** Donated ${coins} coins to <@${userID}>!`,
-      `**gamer123LOL** Donated ${coins} coins to <@${userID}>!`,
-      `**The kekw guy** Donated ${coins} coins to <@${userID}>`
+      `**Papa Jim** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**James Charles** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Selena Gomez** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Granny** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Shre the t** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**THE GOD HIMSELF!** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Hackerboi 69** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**FiredragonPlayz** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**mallusrgreatv2** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Pewdiepie** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**Mr.Beast** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**gamer123LOL** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>!`,
+      `**The kekw guy** Donated ${coins} <:Shrek_Coin:807140320507854878> to <@${userID}>`
     ]
     const random = Math.floor((Math.random()* replies.length))
 

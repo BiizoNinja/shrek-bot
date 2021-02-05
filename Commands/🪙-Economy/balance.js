@@ -17,7 +17,7 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`${target.tag}'s Balance!`)
-        .setDescription(` ${target.username} has **${coins}** coins.`)
+        .setDescription(` ${target.username} has **${coins}** <:Shrek_Coin:807140320507854878>.`)
         .setFooter('pretty cool huh 😳 ')
         .setColor('RANDOM')
 
