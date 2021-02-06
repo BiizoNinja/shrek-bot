@@ -27,7 +27,7 @@ module.exports = {
 
         }
         if(random() === true) {
-            const winAmout = amountToBet * 2
+            const winAmout = amountToBet + 1000
             message.channel.send(`gg, you won **${winAmout}** <:Shrek_Coin:807140320507854878>. atleast your luck is better than my future :clap: `)
             await economy.addCoins(userID, winAmout)
 

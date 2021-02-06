@@ -67,7 +67,7 @@ Client.on('message', async message => {
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
     if(command) {
         if(Timeout.has(`${message.author.id}${command.name}`)) {
-           return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, wait: **${ms(command.timeout.get(`${message.author.id}${command.name}`))}**!`)
+           return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, wait: **${ms(command.timeout(`${message.author.id}${command.name}`))}**!`)
         } else  {
             Timeout.add(`${message.author.id}${command.name}`)
             setTimeout(() => {
