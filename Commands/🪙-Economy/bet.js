@@ -19,7 +19,7 @@ module.exports = {
         const amountToBet = parseInt(amount)
         const bal = economy.getCoins(userID)
 
-        if(bal(message.author.id) < amountToBet) return message.channel.send(`you don't that kinda money in yer wallet. How can you bet something you don't have? :thinking:`)
+        if(economy.getCoins(userID) < amountToBet) return message.channel.send(`you don't that kinda money in yer wallet. How can you bet something you don't have? :thinking:`)
 
         function random() {
             const num = Math.floor(Math.random()* 2)
