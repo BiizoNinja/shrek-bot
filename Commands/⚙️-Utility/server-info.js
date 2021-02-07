@@ -20,7 +20,7 @@ module.exports = {
             {name: `Server region 🌍`, value: `${message.guild.region}`, inline: true },
             {name: `Verification Level 📑`, value: `${message.guild.verificationLevel}`, inline: true },
             {name: `Created in 📆`, value: `${message.guild.createdAt.toLocaleString()}`, inline: true },
-            {name: `Boosts <:BoostyMcBoostface:633355155965739018>`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
+            {name: `Boosts <a:boost_animated:807845397396586526>`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
 
         )
         .setThumbnail(message.guild.iconURL({ dynamic: true }))
