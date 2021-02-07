@@ -4,16 +4,16 @@ module.exports = {
     usage: 's!infinity',
     aliases: [`inf`],
     execute: async(Client, message, args) => { 
-        
+
       const Discord = require('discord.js')
 
       let embed = new Discord.MessageEmbed()
       .setTitle(`These people have INFINITY COINS!`)
       .setDescription(`Note: There is no way you can get Infinity coins! This was just a fun event for 1 day only! Don't expect you guys to get Infinity coins :/ `)
       .addFields(
-        {name: '' , value: '`639734140157165569` Hackerboi 69' },
-        {name: '' , value: '`709686745473613834` DuckWaterOlie' },
-        {name: '' , value: '`639734140157165569` mallusrgreatv2' }
+        {name: '\u200c' , value: '`639734140157165569` Hackerboi 69' },
+        {name: '\u200c' , value: '`709686745473613834` DuckWaterOlie' },
+        {name: '\u200c' , value: '`639734140157165569` mallusrgreatv2' }
       )
       .setFooter('arent these people pog', message.guil.iconURl({dynamic: true}))
       .setColor('RANDOM')
