@@ -6,7 +6,7 @@ module.exports = {
     usage: 's!leave',
     examples: 's!leave',
     aliases: ["disconnect"],
-    execute: async(message, args) => {
+    execute: async(Client, message, args) => {
         const voiceChannel = message.member.voice.channel;
  
         if(!voiceChannel) return message.channel.send("You need to be in a voice channel to stop the music!");
