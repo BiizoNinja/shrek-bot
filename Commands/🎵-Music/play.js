@@ -65,7 +65,7 @@ module.exports = {
             .addFields(
                 {name: 'Currenty Playing', value: `\`${video.title}\``},
                 {name: 'Duration', value: `\`${video.timestamp}\``},
-                {name: 'Views', value: `👀 -\`${video.views}\` `}
+                {name: 'Views', value: `\`${video.views}\` `}
             )
             .setColor("GREEN")
  
