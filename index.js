@@ -32,6 +32,7 @@ Client.on('guildCreate', (guild) => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
 
     if (!channel) return;
+    console.log(`I got added to ${guild.name}`)
     const { MessageEmbed } = require('discord.js');
     channel.send(
         new MessageEmbed()
