@@ -27,16 +27,17 @@ module.exports = {
  
         if(validURL(args[0])){
  
-            const  connection = await voiceChannel.join();
+            const connection = await voiceChannel.join();
             const stream  = ytdl(args[0], {filter: 'audioonly'});
- 
+            const video = await validURL(args[0]);
+
             connection.play(stream, {seek: 0, volume: 1})
             .on('finish', () =>{
                 voiceChannel.leave();
                 message.channel.send('leaving channel');
             });
  
-            await message.reply(`:thumbsup: Now Playing ***Your Link!***`)
+            await message.channel.send(`Now Playing ${video} `)
  
             return
         }

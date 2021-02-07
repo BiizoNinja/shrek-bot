@@ -7,7 +7,7 @@ module.exports = {
     examples: 's!leave',
     aliases: ["disconnect"],
     execute: async(Client, message, args) => {
-        if(message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You don\'t have the right permissions')
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You don\'t have the right permissions')
         const voiceChannel = message.member.voice.channel;
  
         if(!voiceChannel) return message.channel.send("You need to be in a voice channel to stop the music!");
