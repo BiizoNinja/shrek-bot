@@ -28,6 +28,20 @@ Client.once('ready', () =>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
+Client.on('guildCreate', (guild) => {
+    const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
+
+    if (!channel) return;
+    const { MessageEmbed } = require('discord.js');
+    channel.send(
+        new MessageEmbed()
+            .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
+            .setTitle('Thank You!')
+            .setDescription(`Thank you for inviting me! My prefix is \`f!\`\n You can do \`f!help\` for a list of commads! \n I'll do my best to help! \n If you need help check the [Support Server](https://discord.gg/FCP2HWksBU) `)
+            .setColor("GREEN")
+            .setTimestamp()
+    )
+})
 let ascii = require('ascii-table');
 const { cooldown } = require('./Commands/🪙-Economy/beg');
 let table = new ascii("Commands")
