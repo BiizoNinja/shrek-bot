@@ -67,6 +67,7 @@ module.exports = {
                 {name: 'Duration', value: `\`${video.timestamp}\``},
                 {name: 'Views', value: `👀 -\`${video.views}\` `}
             )
+            .setColor("GREEN")
  
             await message.channel.send(embed)
         } else {
