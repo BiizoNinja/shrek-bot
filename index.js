@@ -37,7 +37,7 @@ Client.on('guildCreate', (guild) => {
         new MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
             .setTitle('Thank You!')
-            .setDescription(`Thank you for inviting me! My prefix is \`f!\`\n You can do \`f!help\` for a list of commads! \n I'll do my best to help! \n If you need help check the [Support Server](https://discord.gg/FCP2HWksBU) `)
+            .setDescription(`Thank you for inviting me! My prefix is \`s!\`\n You can do \`s!help\` for a list of commads! \n I'll do my best to help! \n If you need help check the [Support Server](https://discord.gg/FCP2HWksBU) `)
             .setColor("GREEN")
             .setTimestamp()
     )
