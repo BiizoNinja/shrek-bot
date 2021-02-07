@@ -15,7 +15,7 @@ module.exports = {
         {name: '\u200c' , value: '`709686745473613834` DuckWaterOlie' },
         {name: '\u200c' , value: '`639734140157165569` mallusrgreatv2' }
       )
-      .setFooter('arent these people pog', message.guil.iconURl({dynamic: true}))
+      .setFooter('arent these people pog', message.guil.iconURL({dynamic: true}))
       .setColor('RANDOM')
       
       message.channel.send(embed)
