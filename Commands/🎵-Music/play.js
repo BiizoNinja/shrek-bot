@@ -13,6 +13,7 @@ module.exports = {
         const voiceChannel = message.member.voice.channel;
  
         if (!voiceChannel) return message.channel.send('You need to be in a channel to execute this command!');
+
         if (!args.length) return message.channel.send('You need to send the second argument!');
  
         const validURL = (str) =>{
@@ -58,9 +59,18 @@ module.exports = {
             .on('finish', () =>{
                 voiceChannel.leave();
             });
+            let embed = new Discord.MessageEmbed()
+            .setTitle('Play Command! <a:peepoSing:798873229539409931>')
+            .setDescription(`ShrekBot music system!`)
+            .addFields(
+                {name: 'Currenty Playing', value: `\`${video.title}\``},
+                {name: 'Duration', value: `\`${video.timestamp}\``},
+                {name: 'Views', value: `👀 -\`${video.views}\` `}
+            )
  
-            await message.reply(`:thumbsup: Now Playing ***${video.title}***`)
+            await message.channel.send(embed)
         } else {
+       
             message.channel.send('No video results found');
         }
     }

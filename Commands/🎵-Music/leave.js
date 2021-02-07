@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 module.exports = {
     name: 'leave',
     description: 'stop the bot and leave the channel',
