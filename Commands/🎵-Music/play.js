@@ -13,9 +13,6 @@ module.exports = {
         const voiceChannel = message.member.voice.channel;
  
         if (!voiceChannel) return message.channel.send('You need to be in a channel to execute this command!');
-        const permissions = voiceChannel.permissionsFor(message.Client.user);
-        if (!permissions.has('CONNECT')) return message.channel.send('You dont have the correct permissins');
-        if (!permissions.has('SPEAK')) return message.channel.send('You dont have the correct permissins');
         if (!args.length) return message.channel.send('You need to send the second argument!');
  
         const validURL = (str) =>{
