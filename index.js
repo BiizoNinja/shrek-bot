@@ -93,6 +93,8 @@ Client.on('message', async message => {
     }
     
 })
+Client.snipes = new Discord.Collection()
+
 Client.on('messageDelete', async message => { 
     if(message.author.bot) return;
     Client.snipes.set(message.channel.id, {
