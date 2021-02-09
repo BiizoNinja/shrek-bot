@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 module.exports = {
     name: 'snipe',
     description: 'This is the snipe command, when someone deletes a message this command will show the contest on the deleted message!',
