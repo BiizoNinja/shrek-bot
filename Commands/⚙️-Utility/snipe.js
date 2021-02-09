@@ -4,8 +4,16 @@ module.exports = {
     aliases: ['sn'],
     usage: 's!snipe',
     execute: async(Client, message, args) => {
-        message.channel.send('IN PROGRESS')
 
-    }
-
+    const msg = Client.snipes.get(message.channel.id)
+    const embed = new Discord.MessageEmbed()
+    .setAuthor(msg.author, msg.member.user.displayAvatarURL())
+    .setDescription(msg.content)
+    .setTimestamp();
+    message.channel.send(embed);
 }
+}
+
+
+    
+

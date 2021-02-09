@@ -93,6 +93,15 @@ Client.on('message', async message => {
     }
     
 })
+Client.on('messageDelete', async message => { 
+    if(message.author.bot) return;
+    Client.snipes.set(message.channel.id, {
+      content: message.content,
+      author: message.author.tag,
+      member: message.member,
+      image: message.attachments.first() ? message.attachments.first().proxyURL : null
+    })
+})
 
 Client.login(process.env.token)
 
