@@ -3,7 +3,7 @@ module.exports = {
     description: 'This is the snipe command, when someone deletes a message this command will show the contest on the deleted message!',
     aliases: ['sn'],
     usage: 's!snipe',
-    execute: async(Client, message, args) => {
+    execute: async(Client, message, args, messageDelete) => {
 
     const msg = Client.snipes.get(message.channel.id)
     const embed = new Discord.MessageEmbed()
