@@ -8,6 +8,8 @@ module.exports = {
     execute: async(Client, message, args, messageDelete) => {
 
     const msg = Client.snipes.get(message.channel.id)
+
+    if(!msg) return message.channel.send(`There is nothing deleted recenty in this channel!`)
     const embed = new Discord.MessageEmbed()
     .setAuthor(msg.author, msg.member.user.displayAvatarURL())
     .setDescription(msg.content)
