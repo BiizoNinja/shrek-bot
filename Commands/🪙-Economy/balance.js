@@ -13,7 +13,7 @@ module.exports = {
 
         const userID = target.id;
 
-        const coins = await economy.getCoins(userID, coins)
+        const coins = await economy.getCoins(userID)
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`${target.tag}'s Balance!`)
