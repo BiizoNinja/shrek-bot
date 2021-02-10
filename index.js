@@ -19,6 +19,12 @@ Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 const Timeout = new Set();
 
+//Connect to mongoose 
+
+mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 
 //Ready Event
 Client.once('ready', () =>{
