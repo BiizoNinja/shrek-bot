@@ -1,3 +1,4 @@
+//Basic Connections
 const Discord = require('discord.js')
 const { Intents } = require("discord.js")
 const fs = require('fs')
@@ -14,6 +15,7 @@ const Client = new Discord.Client({
 const Config = require('./config.json') 
 const { on, config } = require('process')
 
+//All the properties
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
