@@ -19,7 +19,7 @@ module.exports = {
      .setTimestamp()
      .setColor('RANDOM')
 
-     await Client.add(userID, coins)
+     await economy.addCoins(userID, coins)
      message.channel.send(embed)
 
     }

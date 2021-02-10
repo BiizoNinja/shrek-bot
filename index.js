@@ -1,11 +1,9 @@
-//Basic Connections
 const Discord = require('discord.js')
 const { Intents } = require("discord.js")
 const fs = require('fs')
 const mongo = require('./mongo')
 const mongoose = require('mongoose');
 const ms = require('ms')
-const profileschema = require('./models/profile-schema')
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
@@ -15,18 +13,11 @@ const Client = new Discord.Client({
 const Config = require('./config.json') 
 const { on, config } = require('process')
 
-//All the properties
 Client.commands = new Discord.Collection()
 Client.aliases = new Discord.Collection()
 Client.categories = fs.readdirSync('./Commands')
 const Timeout = new Set();
 
-//Connect to mongoose 
-
-mongoose.connect('mongodb+srv://BiizoNinja:Shashank2007!@cluster0.th9eb.mongodb.net/Data', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
 
 //Ready Event
 Client.once('ready', () =>{
@@ -119,35 +110,6 @@ Client.on('messageDelete', async message => {
     })
 })
 //Economy Functions 
-Client.bal = (id) => new Promise(async ful => {
-    const data = await profileschema.findOne({id})
-    if(!data) return ful(0)
-    ful(data.coins)
-})
-
-Client.add = (id, coins) => {
-    profileschema.findOne({ id}, async(err, data) => {
-        if(err) throw err;
-        if(data) {
-            data.coins += coins;
-        }else {
-            data = new schema({id, coins})
-        }
-        data.save
-    })
-}
-Client.remove = (id, coins) => {
-    profileschema.findOne({ id}, async(err, data) => {
-        if(err) throw err;
-        if(data) {
-            data.coins -= coins;
-        }else {
-            data = new schema({id, coins: -coins})
-        }
-        data.save
-    })
-}
-
 
 Client.login(process.env.token)
 

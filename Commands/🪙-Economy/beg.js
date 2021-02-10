@@ -30,7 +30,7 @@ module.exports = {
     ]
     const random = Math.floor((Math.random()* replies.length))
 
-    await Client.add(userID, coins); 
+    await economy.addCoins(userID, coins )
     message.channel.send(`${replies[random]}`);
     
  } 
