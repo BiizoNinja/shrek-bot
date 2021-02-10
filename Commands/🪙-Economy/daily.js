@@ -10,7 +10,7 @@ module.exports = {
     aliases: [],
     execute: async(Client, message, args) => { 
 
-     const userID = message.author.id 
+     const userId = message.author.id 
      let coins = 2500; 
 
      let embed = new Discord.MessageEmbed()
@@ -19,7 +19,7 @@ module.exports = {
      .setTimestamp()
      .setColor('RANDOM')
 
-     await economy.addCoins(userID, coins)
+     await economy.addCoins(userId, coins)
      message.channel.send(embed)
 
     }
