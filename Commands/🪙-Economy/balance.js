@@ -11,9 +11,9 @@ module.exports = {
 
         const target = message.mentions.users.first() || message.author;
 
-        const userId = target.id;
+        const userID = target.id;
 
-        const coins = await economy.getCoins(userId)
+        const coins = await economy.getCoins(userID);
 
         let embed = new Discord.MessageEmbed()
         .setTitle(`${target.tag}'s Balance!`)

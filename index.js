@@ -19,7 +19,7 @@ Client.categories = fs.readdirSync('./Commands')
 const Timeout = new Set();
 
 
-//Ready Event
+
 Client.once('ready', () =>{
     console.log(`${Client.user.username} is online!` );
 
@@ -28,7 +28,6 @@ Client.once('ready', () =>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
-//GuildCreate Event
 Client.on('guildCreate', (guild) => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
 
@@ -44,8 +43,6 @@ Client.on('guildCreate', (guild) => {
             .setTimestamp()
     )
 })
-
-//console ascii feature
 let ascii = require('ascii-table');
 const { cooldown } = require('./Commands/🪙-Economy/beg');
 let table = new ascii("Commands")
@@ -69,7 +66,6 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 })
 console.log(table.toString())
 
-//Message Event
 Client.on('message', async message => {
 
     if(message.author.bot) return;
@@ -97,7 +93,6 @@ Client.on('message', async message => {
     }
     
 })
-//Message Delete Event
 Client.snipes = new Discord.Collection()
 
 Client.on('messageDelete', async message => { 
@@ -109,7 +104,6 @@ Client.on('messageDelete', async message => {
       image: message.attachments.first() ? message.attachments.first().proxyURL : null
     })
 })
-//Economy Functions 
 
 Client.login(process.env.token)
 
