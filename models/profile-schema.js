@@ -6,7 +6,7 @@ const reqSting = {
 }
 
 const profileSchema = new mongoose.Schema({
-    userId: reqSting,
+    id: reqSting,
     coins: {
         type: Number,
         required: true

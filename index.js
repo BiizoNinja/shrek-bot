@@ -4,6 +4,7 @@ const fs = require('fs')
 const mongo = require('./mongo')
 const mongoose = require('mongoose');
 const ms = require('ms')
+const profileschema = require('./models/profile-schema')
 
 const Client = new Discord.Client({
     fetchAllMembers: true,
@@ -19,7 +20,7 @@ Client.categories = fs.readdirSync('./Commands')
 const Timeout = new Set();
 
 
-
+//Ready Event
 Client.once('ready', () =>{
     console.log(`${Client.user.username} is online!` );
 
@@ -28,6 +29,7 @@ Client.once('ready', () =>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
+//GuildCreate Event
 Client.on('guildCreate', (guild) => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
 
@@ -43,6 +45,8 @@ Client.on('guildCreate', (guild) => {
             .setTimestamp()
     )
 })
+
+//console ascii feature
 let ascii = require('ascii-table');
 const { cooldown } = require('./Commands/🪙-Economy/beg');
 let table = new ascii("Commands")
@@ -66,6 +70,7 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 })
 console.log(table.toString())
 
+//Message Event
 Client.on('message', async message => {
 
     if(message.author.bot) return;
@@ -93,6 +98,7 @@ Client.on('message', async message => {
     }
     
 })
+//Message Delete Event
 Client.snipes = new Discord.Collection()
 
 Client.on('messageDelete', async message => { 
@@ -104,6 +110,36 @@ Client.on('messageDelete', async message => {
       image: message.attachments.first() ? message.attachments.first().proxyURL : null
     })
 })
+//Economy Functions 
+Client.bal = (id) => new Promise(async ful => {
+    const data = await profileschema.findOne({id})
+    if(!data) return ful(0)
+    ful(data.coins)
+})
+
+Client.add = (id, coins) => {
+    profileschema.findOne({ id}, async(err, data) => {
+        if(err) throw err;
+        if(data) {
+            data.coins += coins;
+        }else {
+            data = new schema({id, coins})
+        }
+        data.save
+    })
+}
+Client.remove = (id, coins) => {
+    profileschema.findOne({ id}, async(err, data) => {
+        if(err) throw err;
+        if(data) {
+            data.coins -= coins;
+        }else {
+            data = new schema({id, coins: -coins})
+        }
+        data.save
+    })
+}
+
 
 Client.login(process.env.token)
 

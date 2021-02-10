@@ -25,7 +25,7 @@
     "node-fetch": "^2.6.1",
     "parse-ms": "^2.1.0",
     "pokecord": "^1.0.0",
-    "reconlx": "^1.0.73",
+    "reconlx": "^1.0.462",
     "request": "^2.88.2",
     "util": "^0.12.3",
     "yt-search": "^2.7.1",
