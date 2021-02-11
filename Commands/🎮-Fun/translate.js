@@ -7,7 +7,11 @@ module.exports = {
         const translate = require('translate')
 
         const toTranslate = args.join(' ')
-        const translation = await translate(toTranslate, {from: "auto-detect" , to: "es"})
+        const translation = await translate(toTranslate, {to: "es"})
+        
+        if(!toTranslate) {
+            message.channel.send('You need to specify something to translate!')
+        }
 
         let embed = new Discord.MessageEmbed()
         .setTitle('Translation done!')
