@@ -3,9 +3,9 @@ const {MessageEmbed} = require('discord.js');
 
 module.exports = {
     name: 'trash',
-    description: "appends baguette on provided text",
-    usage: 's!baguette <text>',
-    examples: 's!baguette Hello',
+    description: "you become trash",
+    usage: 's!trash [@user]',
+    examples: 's!trash || s!trash @BiizoNinja',
     execute: async(Client, message, args) => {
         const user = message.mentions.users.first()
 
@@ -23,7 +23,7 @@ module.exports = {
 
         }
         if(user) {
-            const userURL = message.user.displayAvatarURL({dynamic: true})
+            const userURL = user.displayAvatarURL({dynamic: true})
             fetch(`https://nekobot.xyz/api/imagegen?type=trash&url=${userURL}`)
             .then((res) => res.json())
             .then((body) => {
