@@ -1,3 +1,4 @@
+//Basic Variables
 const Discord = require('discord.js')
 const { Intents } = require("discord.js")
 const fs = require('fs')
@@ -19,7 +20,7 @@ Client.categories = fs.readdirSync('./Commands')
 const Timeout = new Set();
 
 
-
+//Ready Event
 Client.once('ready', () =>{
     console.log(`${Client.user.username} is online!` );
 
@@ -28,6 +29,7 @@ Client.once('ready', () =>{
         Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
+//Guild Create Event
 Client.on('guildCreate', (guild) => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
 
@@ -43,6 +45,7 @@ Client.on('guildCreate', (guild) => {
             .setTimestamp()
     )
 })
+//Ascii Table
 let ascii = require('ascii-table');
 const { cooldown } = require('./Commands/🪙-Economy/beg');
 let table = new ascii("Commands")
@@ -66,6 +69,7 @@ fs.readdirSync('./Commands/.').forEach(dir => {
 })
 console.log(table.toString())
 
+//Message Event
 Client.on('message', async message => {
 
     if(message.author.bot) return;
@@ -93,6 +97,7 @@ Client.on('message', async message => {
     }
     
 })
+//snipe event
 Client.snipes = new Discord.Collection()
 
 Client.on('messageDelete', async message => { 
@@ -104,7 +109,7 @@ Client.on('messageDelete', async message => {
       image: message.attachments.first() ? message.attachments.first().proxyURL : null
     })
 })
-
+//loging to the bot
 Client.login(process.env.token)
 
 
