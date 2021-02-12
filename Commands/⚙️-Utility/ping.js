@@ -16,7 +16,7 @@ module.exports = {
            let pingembed = new Discord.MessageEmbed()
                .setColor('#FF0000')
                .setTitle(`🏓**Pong!**`)
-               .setDescription(`Bot Latency: **${subtraction}** ms. \n WebSocket (API LATENCY): **${Math.round(Client.ws.ping)}** ms.`)
+               .setDescription(`Bot Latency: **${subtraction}** ms. \n WebSocket : **${Math.round(Client.ws.ping)}** ms.`)
                .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({dyanamic: true}));
 
            pingMessage.delete()
