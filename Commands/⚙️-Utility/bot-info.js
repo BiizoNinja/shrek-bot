@@ -7,7 +7,7 @@ module.exports = {
    execute: async(Client, message, args) => {
 
     let uptime = ``;
-    let totalseconds = (client.uptime / 1000)
+    let totalseconds = (Client.uptime / 1000)
     let hours = Math.floor(totalseconds / 3600)
     totalseconds %= 3600
     let minutes = Math.floor(totalseconds / 60)
