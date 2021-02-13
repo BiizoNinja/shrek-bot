@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 module.exports = {
-    name: 'usage',
+    name: 'stats',
     description: 'Look at how many guilds the bot is in',
-    aliases: ["usg"],
+    aliases: ["stats"],
     usage: 's!usage',
     execute: async(Client, message, args) => {
 
