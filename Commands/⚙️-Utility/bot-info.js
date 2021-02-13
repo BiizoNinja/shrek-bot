@@ -30,7 +30,7 @@ module.exports = {
        .setDescription('Do \`s!help\` do get a list of commands')
        .addFields(
            {name: 'Server Count', value: `${Client.guilds.cache.size} Servers`, inline: true},
-           {name: 'Language', value: `**JavaScript ES6**, Including **Node.js** for **discord.js**`, inline: true},
+           {name: 'Language', value: `JavaScript ES6, Including Node.js for discord.js`, inline: true},
            {name: 'Bot Version', value: `2.1`, inline: true},
            {name: 'Commands', value: `44 Currently Working Commands`, inline: true},
            {name: 'Add ShrekBot to your server', value: `[Click here](https://dsc.gg/shrekbot)`, inline: true},
