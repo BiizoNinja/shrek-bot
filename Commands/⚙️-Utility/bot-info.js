@@ -38,7 +38,7 @@ module.exports = {
            {name: 'Support Server', value: `[Click Here](https://discord.gg/CgzBqZjz2v)`, inline: true},
            {name: 'Uptime', value: uptime, inline: true}
        )
-       .setFooter(`pretty vool ain't it?`)
+       .setFooter(`pretty cool ain't it?`)
        .setColor('RANDOM')
 
 
