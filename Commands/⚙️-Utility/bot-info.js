@@ -23,7 +23,7 @@ module.exports = {
         minutes = 0;
     }
 
-    uptime += `**${days}** days, **${hours}** hours, **${minutes}** minutes and **${seconds}** seconds`
+    uptime += ` **${hours}** hours, **${minutes}** minutes and **${seconds}** seconds`
 
        let embed = new Discord.MessageEmbed()
        .setTitle('About ShrekBot!', user.displayAvatarURL())
