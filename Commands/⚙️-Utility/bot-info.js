@@ -19,11 +19,6 @@ module.exports = {
 
     }
 
-    if(week > 0) {
-        uptime += `${week} week,`
-
-    }
-
     if(minutes > 60) {
         minutes = 0;
     }
