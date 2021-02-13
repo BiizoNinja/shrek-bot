@@ -26,7 +26,7 @@ module.exports = {
     uptime += ` **${hours}** hours, **${minutes}** minutes and **${seconds}** seconds`
 
        let embed = new Discord.MessageEmbed()
-       .setTitle('About ShrekBot!', message.user.displayAvatarURL())
+       .setTitle('About ShrekBot!')
        .setDescription('Do \`s!help\` do get a list of commands')
        .addFields(
            {name: 'Server Count', value: `${Client.guilds.chache.size} Servers`, inline: true},
