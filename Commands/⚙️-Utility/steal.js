@@ -20,7 +20,7 @@ module.exports = {
             const name = args.slice(1).join(" ");
             try {
                 const Added = new Discord.MessageEmbed()
-                    .setColor(message.member.displayHexColor())
+                    .setColor(message.member.displayHexColor)
                     .setTitle(` Emoji Added`)
                     .setDescription(
                         `Emoji Has Been Added! \nName : ${name || `${customemoji.name}`} \nPreview : [Click Me](${Link})`
