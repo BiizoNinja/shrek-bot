@@ -19,7 +19,7 @@ module.exports = {
                 }`;
             const name = args.slice(1).join(" ");
             try {
-                const Added = new MessageEmbed()
+                const Added = new Discord.MessageEmbed()
                     .setColor(message.member.displayHexColor())
                     .setTitle(` Emoji Added`)
                     .setDescription(
