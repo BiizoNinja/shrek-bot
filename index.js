@@ -26,7 +26,8 @@ Client.once('ready', () =>{
 
 
     setInterval(()=>{
-        Client.user.setActivity(`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
+        Client.user.setActivity(`Verification Soon!`, {type: "WATCHING"})
+            //`${Client.guilds.cache.size} Guilds! | s!help`,{type: "WATCHING"})
     }, 40000)
 })
 //Guild Create Event
