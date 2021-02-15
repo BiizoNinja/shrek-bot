@@ -36,7 +36,7 @@ module.exports = {
            {name: 'Add ShrekBot to your server', value: `[Click here](https://dsc.gg/shrekbot)`, inline: true},
            {name: 'Vote For ShrekBot', value: `[Click Here](https://top.gg/bot/789129116015525918)`, inline: true},
            {name: 'Support Server', value: `[Click Here](https://discord.gg/CgzBqZjz2v)`, inline: true},
-           {name: 'Uptime', value: uptime, inline: true}
+           {name: 'Time Until Last Restarted', value: uptime, inline: true}
        )
        .setFooter(`pretty cool ain't it?`)
        .setColor('RANDOM')
