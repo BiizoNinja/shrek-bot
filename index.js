@@ -36,14 +36,13 @@ Client.on('guildCreate', (guild) => {
     if (!channel) return;
     console.log(`I got added to ${guild.name}`)
     const { MessageEmbed } = require('discord.js');
-    channel.send(
-        new MessageEmbed()
+       const embed = new  Discord.MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
             .setTitle('Thank You!')
             .setDescription(`Thank you for inviting me! My prefix is \`s!\`\n You can do \`s!help\` for a list of commads! \n I'll do my best to help! \n If you need help check the [Support Server](https://discord.gg/CgzBqZjz2v) `)
             .setColor("GREEN")
             .setTimestamp()
-    )
+        channel.send(embed)
 })
 //Ascii Table
 let ascii = require('ascii-table');
@@ -97,18 +96,7 @@ Client.on('message', async message => {
     }
     
 })
-//snipe event
-Client.snipes = new Discord.Collection()
 
-Client.on('messageDelete', async message => { 
-    if(message.author.bot) return;
-    Client.snipes.set(message.channel.id, {
-      content: message.content,
-      author: message.author.tag,
-      member: message.member,
-      image: message.attachments.first() ? message.attachments.first().proxyURL : null
-    })
-})
 //loging to the bot
 Client.login(process.env.token)
 
