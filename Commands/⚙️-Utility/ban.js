@@ -4,7 +4,7 @@ module.exports = {
     description:'Bans a user!',
     execute: async(Client, message, args) => {
 
-        if(!message.author.permissions.has('BAN_MEMBERS'))
+        if(!message.author.hasPermission('BAN_MEMBERS'))
         return message.reply('You don\'t have the permissions')
     
        const user = message.mentions.users.first(); 
