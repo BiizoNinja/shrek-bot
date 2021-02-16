@@ -9,7 +9,7 @@ module.exports = {
         if(!args[0]) {
             let categories = [];
             readdirSync('./Commands').forEach(dir => {
-                if(dir()=== 'DEVELOPER ONLY') return
+                if(dir.toLowerCase()=== 'DEVELOPER ONLY') return
                 let commands = readdirSync(`./Commands/${dir}/`).filter(f=>f.endsWith(".js"))
                 let cmds = commands.map((command) => {
                     let file = require(`../../Commands/${dir}/${command}`)
