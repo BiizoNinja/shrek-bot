@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const blacklist = require('../../models/blacklisted-schema')
 const Discord = require('discord.js')
+const { message } = message
 
 module.exports = {
     name: 'blacklist',
