@@ -5,7 +5,7 @@ const fs = require('fs')
 const mongo = require('./mongo')
 const mongoose = require('mongoose');
 const ms = require('ms')
-
+const blacklist = require('./models/blacklisted-schema')
 const Client = new Discord.Client({
     fetchAllMembers: true,
     partials: ['REACTION', 'MESSAGE', 'CHANNEL'],
@@ -80,22 +80,28 @@ Client.on('message', async message => {
     let command = Client.commands.get(cmd)
         
     if (!message.content.startsWith(prefix)) return;
-    if(!message.guild) return;
-
-
-    if (!command) command = Client.commands.get(Client.aliases.get(cmd));
-    if(command) {
-        if(Timeout.has(`${message.author.id}${command.name}`)) {
-           return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, the cooldown for this command is: **${ms(command.timeout)}**!`)
-        } else  {
-            Timeout.add(`${message.author.id}${command.name}`)
-            setTimeout(() => {
-                Timeout.delete(`${message.author.id}${command.name}`)
-            }, command.timeout);
+    blacklist.findOne({userId: message.author.id}, async(err, data) => {
+     if(err) throw err;
+     if(!data) {
+        if(!message.guild) return;
+        if (!command) command = Client.commands.get(Client.aliases.get(cmd));
+        if(command) {
+            if(Timeout.has(`${message.author.id}${command.name}`)) {
+               return message.reply(`<a:slow_roach:806819955475349534> Whoa! Slow down there bud, the cooldown for this command is: **${ms(command.timeout)}**!`)
+            } else  {
+                Timeout.add(`${message.author.id}${command.name}`)
+                setTimeout(() => {
+                    Timeout.delete(`${message.author.id}${command.name}`)
+                }, command.timeout);
+            }
+            command.execute(Client, message, args)
+        } else {
+            message.channel.send(`You are black listed from ShrekBot! \n If you believe this is an error, contact the DEVs \`BiizoNinja#9999\``)
         }
-        command.execute(Client, message, args)
-    }
-    
+
+     }
+    })
+   
 })
 
 //loging to the bot
