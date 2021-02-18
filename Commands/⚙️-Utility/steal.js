@@ -27,7 +27,7 @@ module.exports = {
                     );
                 await message.guild.emojis.create(
                     `${Link}`,
-                    `${name || `${customemoji.name}`}`
+                    `${name || `${customemoji}`}`
                 )
                 return message.channel.send(Added)
             } catch (err) {
