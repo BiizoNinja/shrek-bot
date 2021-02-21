@@ -7,21 +7,13 @@ module.exports = {
     usage: 's!bal [@user]',
     examples: 's!bal || s!bal @BiizoNinja',
     aliases: ["bal", "coins"],
-    execute: async(Client, message, args) => { 
+    execute: async(Client, messsage, args, profileData) => {
 
-        const target = message.mentions.users.first() || message.author;
-
-        const userID = target.id;
-
-        const coins = await economy.getCoins(userID);
-
-        let embed = new Discord.MessageEmbed()
-        .setTitle(`${target.tag}'s Balance!`)
-        .setDescription(` ${target.username} has **${coins}** <:Shrek_Coin:807140320507854878>.`)
-        .setFooter('pretty cool huh 😳 ')
-        .setColor('RANDOM')
-
-        message.channel.send(embed)
-
+    const embed = new Discord.MessageEmbed()
+    .setTitle(`${message.author.tag}'s Balance!`, messsage.author.displayAvatarURL({dynamic: true}))
+    .setDescription(`**Wallet:** ${profileData.coins}\n **Bank:** ${profileData.bank}`)
+    .setFooter('pretty cool right? 😳')
+    
+    messsage.channel.send(embed)
     }
 }
