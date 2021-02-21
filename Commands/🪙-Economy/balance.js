@@ -25,6 +25,6 @@ module.exports = {
     .setDescription(`**Wallet:** ${profileData.coins}\n **Bank:** ${profileData.bank}`)
     .setFooter('pretty cool right? 😳')
 
-    messsage.channel.send(embed)
+    message.channel.send(embed)
     }
 }
