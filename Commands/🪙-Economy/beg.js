@@ -1,4 +1,3 @@
-const economy = require('../../economy')
 const Discord = require('discord.js')
 const ms = require('parse-ms')
 

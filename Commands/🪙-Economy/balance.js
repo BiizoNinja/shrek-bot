@@ -1,4 +1,3 @@
-const economy = require('../../economy')
 const Discord = require('discord.js')
 
 module.exports = {
@@ -13,7 +12,7 @@ module.exports = {
     .setTitle(`${message.author.tag}'s Balance!`, messsage.author.displayAvatarURL({dynamic: true}))
     .setDescription(`**Wallet:** ${profileData.coins}\n **Bank:** ${profileData.bank}`)
     .setFooter('pretty cool right? 😳')
-    
+
     messsage.channel.send(embed)
     }
 }

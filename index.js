@@ -48,6 +48,7 @@ Client.on('guildCreate', (guild) => {
 //Ascii Table
 let ascii = require('ascii-table');
 const { cooldown } = require('./Commands/🪙-Economy/beg');
+const { profile } = require('console');
 let table = new ascii("Commands")
 table.setHeading("Command", "Status");
 
@@ -78,7 +79,20 @@ Client.on('message', async message => {
     let args = message.content.slice(prefix.length).trim().split(' ')
     let cmd = args.shift().toLowerCase()
     let command = Client.commands.get(cmd)
-        
+    
+    const profileSchema = require('./models/profileSchema')
+
+    let profileData;
+    try{
+        profileData = profileSchema.findOne({ userId: message.author.id})
+        if(!profileData) {
+            userId: message.author.id
+            coins: 0
+            bank: 0 
+        }
+    } catch(err) {
+    console.log(err)
+    }
     if (!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
     if (!command) command = Client.commands.get(Client.aliases.get(cmd));
