@@ -9,7 +9,7 @@ module.exports = {
     execute: async(Client, message, args, profileData) => {
 
     const embed = new Discord.MessageEmbed()
-    .setTitle(`${message.author.tag}'s Balance!`, messsage.author.displayAvatarURL({dynamic: true}))
+    .setTitle(`${message.author.tag}'s Balance!`, message.author.displayAvatarURL({dynamic: true}))
     .setDescription(`**Wallet:** ${profileData.coins}\n **Bank:** ${profileData.bank}`)
     .setFooter('pretty cool right? 😳')
 
