@@ -6,7 +6,7 @@ module.exports = {
     usage: 's!bal [@user]',
     examples: 's!bal || s!bal @BiizoNinja',
     aliases: ["bal", "coins"],
-    execute: async(Client, messsage, args, profileData) => {
+    execute: async(Client, message, args, profileData) => {
 
     const embed = new Discord.MessageEmbed()
     .setTitle(`${message.author.tag}'s Balance!`, messsage.author.displayAvatarURL({dynamic: true}))

@@ -5,7 +5,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'blacklist',
     description: '**DEVELOPER ONLY**',
-    execute: async(Client, messsage, args) => {
+    execute: async(Client, message, args) => {
         if(message.author.id !== "546631496673394688") return message.channel.send(`This command can only be used by Developers, Current Devs are: BiizoNinja#9999`)
 
         const user = messsage.guild.members.cache.get(args[0])
