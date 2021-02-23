@@ -10,7 +10,7 @@ module.exports = client;
 client.commands = new Collection();
 client.prefix = config.prefix;
 client.aliases = new Collection();
-client.categories = fs.readdirSync(path.resolve('commands'));
+client.categories = fs.readdirSync(path.resolve('Commands'));
 
 ["command"].forEach(handler => {
     require(path.resolve(`handlers/${handler}`))(client);
