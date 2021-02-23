@@ -4,6 +4,6 @@ client.on('ready', () => {
     console.log(`${client.user.tag} is now online!`);
 
     setInterval(() => {
-        client.user.setActivity(`Rewrite In progress! Will Be Inactive`, {type: 'PLAYING'})
+        client.user.setActivity(`Verification Soon!`, {type: 'WATCHING'})
     }, 40000)
 })
