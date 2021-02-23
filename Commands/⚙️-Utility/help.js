@@ -7,11 +7,11 @@ module.exports = {
     run: async(client, message, args) => {
         if(!args[0]) {
             let categories = [];
-            readdirSync('./commands').forEach(dir => {
+            readdirSync('./Commands').forEach(dir => {
                 if(dir.toLowerCase()=== 'DEVELOPER ONLY') return
-                let commands = readdirSync(`./commands/${dir}/`).filter(f=>f.endsWith(".js"))
+                let commands = readdirSync(`./Commands/${dir}/`).filter(f=>f.endsWith(".js"))
                 let cmds = commands.map((command) => {
-                    let file = require(`../../commands/${dir}/${command}`)
+                    let file = require(`../../Commands/${dir}/${command}`)
                     if(!file.name) return "No Name Provided"
                     let name = file.name.replace(".js", "")
                      return `\`${name}\``
