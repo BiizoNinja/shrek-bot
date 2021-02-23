@@ -1,30 +1,23 @@
+const { MessageEmbed } = require('discord.js')
 module.exports = {
-   name: 'ping',
-   description: "Gets the bot ping",
-   usage: 's!ping',
-   aliases: ['beep'],
-   execute: async (Client, message, args) => {
-       const Discord = require('discord.js');
+    name : 'ping',
+    category : 'info',
+    description : 'Returns latency and API ping',
 
+    /**
+     * @param {Client} client
+     * @param {Message} message
+     * @param {String[]} args
+     */
 
-       message.channel.send('<a:red_loading:803500709713543178>').then(pingMessage => {
+    run : async(client, message, args) => {
+        const msg = await message.channel.send(`🏓 Pinging...`)
+        const embed = new MessageEmbed()
+            .setTitle('Pong!')
+            .setDescription(`**WebSocket** ping is ${client.ws.ping}ms\n**Message edit** ping is ${Math.floor(msg.createdAt - message.createdAt)}ms!`)
+            .setColor("RED")
+            await message.channel.send(embed)
+            msg.delete()
 
-           const start = message.createdTimestamp;
-           const end = pingMessage.createdTimestamp;
-           const subtraction = end - start;
-
-           let pingembed = new Discord.MessageEmbed()
-               .setColor('#FF0000')
-               .setTitle(`🏓**Pong!**`)
-               .setDescription(`Bot Latency: **${subtraction}** ms. \n WebSocket : **${Math.round(Client.ws.ping)}** ms.`)
-               .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({dyanamic: true}));
-
-           pingMessage.delete()
-           message.channel.send(pingembed)
-
-       })
-
-   }
+    }
 }
-
-

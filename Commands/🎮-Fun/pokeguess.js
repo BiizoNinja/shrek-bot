@@ -6,7 +6,7 @@ module.exports  = {
     description: 'Play a game of `Guess The Pokemon`!',
     usage: 's!pokeguess',
     aliases: ["guessthepokemon"],
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
 
     const pokemon = await Spawn().catch(e => {});
     if (!pokemon) return message.channel.send("Opps! Something went wrong :(");

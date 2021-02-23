@@ -7,7 +7,7 @@ module.exports = {
     description: "appends kannagen on provided text",
     usage: 's!kannagen <text>',
     examples: 's!kannagen Hello',
-    execute(Client, message, args) {
+    run(client, message, args) {
         const text = args.join(" ")
         if(text.length > 50 ) {
             message.channel.send('**You need to provide text fewer than 50 characters.**')

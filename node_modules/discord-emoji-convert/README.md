@@ -1,0 +1,23 @@
+[![NPM](https://nodei.co/npm/discord-emoji-convert.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/discord-emoji-convert/)
+
+[![STYLE](https://img.shields.io/badge/style-standard.js-red.svg)](https://standardjs.com) ![VERSION](https://img.shields.io/badge/version-1.6.0-yellow.svg) [![DISCORD](https://discordapp.com/api/guilds/215370936918999040/embed.png)](http://discord.snarr.io/) ![DOWNLOADS](https://img.shields.io/npm/dt/discord-emoji-convert.svg?maxAge=3600)
+# Installation
+To install Discord Emoji Convert, simply use the following command:
+
+```npm install discord-emoji-convert```
+
+Add this to your code as well:
+
+```const emoji = require('discord-emoji-convert');```
+
+# Using Emoji Convert
+To convert any string to emojis, type ```emoji.convert("insert string here")``` and the function will return your converted Discord Emoji string. 
+
+# Supported Characters
+```abcdefghijklmnopqrstuvwxyz1234567890+-x*/$!? ```
+This includes uppercase characters since all characters are converted to lowercase in order for the Discord Emojis to work. "/" is converted to the Discord Division Emoji and spaces are simply just lengthened to be three spaces.
+
+# Example
+Inserting ```console.log(emoji.convert("SNARR"));``` into your code, this module will output the following string:
+
+```:regional_indicator_s: :regional_indicator_n: :regional_indicator_a: :regional_indicator_r: :regional_indicator_r:```

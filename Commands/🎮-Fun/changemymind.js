@@ -8,7 +8,7 @@ module.exports = {
     usage: 's!changemymind <text>',
     examples: 's!changemymind Hello',
     aliases: ['cmm'],
-    execute(Client, message, args) {
+    run: async(client, message, args) => {
         const text = args.join(" ")
         if(text.length > 50 ) {
             message.channel.send('**You need to provide text fewer than 50 characters.**')

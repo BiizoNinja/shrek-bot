@@ -1,6 +1,5 @@
 const  {MessageEmbed } = require('discord.js');
 const moment = require('moment');
-const { get } = require('request');
 
 const flags = {
     DISCORD_EMPLOYEE: 'Discord Employee',
@@ -21,9 +20,9 @@ const flags = {
 module.exports = {
     name: 'user-info',
     description: "Shows a users info",
-    usage: 's!user-info, >user-info <mention>',
+    usage: 's!user-info || s!user-info [@mention]',
     aliases: ['ui'],
-    execute: async (Client, message, args) => {
+    run: async (client, message, args) => {
         const member = message.mentions.members.last() ||  message.member;
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)

@@ -6,7 +6,7 @@ module.exports = {
     description: 'Chat with the bot',
     usage: 's!chat <some text>',
     examples: 's!chat Hi!',
-    execute: async (Client, message, args) => {
+    run: async (client, message, args) => {
         let content = message.content;
         if(!args[0]) return message.channel.send("Ask me something")
         chatbot.getReply(content).then(r => message.channel.send(r));

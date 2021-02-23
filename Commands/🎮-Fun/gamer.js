@@ -6,11 +6,11 @@ module.exports = {
     usage: 's!gamerrate _ <@USER> ',
     examples: 's!gamerrate @Biomeium **OR** s!gamerrate',
     aliases: ['gamer'],
-    execute:async (Client, message, args) => {
+    execute:async (client, message, args) => {
 
         const bots = message.guild.members.cache.filter(member => member.user.bot)
 
-        let rate = (Math.floor(Math.random() * Math.floor(100)));
+        let rate = (Math.floor(Math.random() * Math.floor(100)));S
 
         let user = message.mentions.users.first() || message.author || message.users.id
     
@@ -23,7 +23,7 @@ module.exports = {
         .setFooter('nice')
 
         message.channel.send(GamerEmbed)
-       
+       S
       }
 
     }

@@ -7,7 +7,7 @@ module.exports = {
     aliases: ["emoji"],
     usage: 's!emojify <message>',
     examples: 's!emojify hello',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const fullMessage = args.join(' ')
 
         if(!fullMessage) return message.channel.send(`You need to specify something to emojify.`)

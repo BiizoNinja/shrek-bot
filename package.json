@@ -1,36 +1,31 @@
 {
-  "name": "shrek-workspace",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@discordjs/opus": "^0.3.3",
-    "alexa-bot-api": "^0.2.1",
-    "ascii-table": "0.0.9",
-    "atob": "^2.1.2",
-    "axios": "^0.21.1",
-    "discord-emoji-convert": "^1.6.0",
-    "discord.js": "^12.5.1",
-    "distube": "^2.8.8",
-    "ffmpeg-static": "^4.2.7",
-    "figlet": "^1.5.0",
-    "moment": "^2.29.1",
-    "mongoose": "^5.11.10",
-    "ms": "^2.1.3",
-    "node-fetch": "^2.6.1",
-    "parse-ms": "^2.1.0",
-    "pokecord": "^1.0.0",
-    "reconlx": "^1.0.462",
-    "request": "^2.88.2",
-    "translate": "^1.2.1",
-    "twemoji-parser": "^13.0.0",
-    "util": "^0.12.3",
-    "yt-search": "^2.7.1",
-    "ytdl-core": "^4.4.5"
-  }
+    "name": "rcnlx-handler",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@discordjs/opus": "^0.4.0",
+        "alexa-bot-api": "^0.2.1",
+        "ascii-table": "0.0.9",
+        "atob": "^2.1.2",
+        "discord-emoji-convert": "^1.6.0",
+        "discord.js": "^12.2.0",
+        "ffmpeg-static": "^4.2.7",
+        "figlet": "^1.5.0",
+        "moment": "^2.29.1",
+        "mongoose": "^5.11.17",
+        "ms": "^2.1.3",
+        "node-fetch": "^2.6.1",
+        "pokecord": "^1.0.0",
+        "reconlx": "^1.1.2",
+        "util": "^0.12.3",
+        "yt-search": "^2.7.3",
+        "ytdl-core": "^4.5.0"
+    }
 }

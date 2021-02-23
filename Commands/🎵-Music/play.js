@@ -9,7 +9,7 @@ module.exports = {
     usage: 's!play <song name | url>',
     examples: 's!play cool song',
     aliases: ["p"],
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const voiceChannel = message.member.voice.channel;
  
         if (!voiceChannel) return message.channel.send('You need to be in a channel to execute this command!');
@@ -77,5 +77,3 @@ module.exports = {
         }
     }
 }
- 
-    

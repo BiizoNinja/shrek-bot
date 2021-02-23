@@ -5,7 +5,7 @@ module.exports = {
     description: 'Gamble some money ;). Be careful before the FBI comes looking-',
     usage: 's!gamble <amount>',
     examples: 's!gamble 500',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const amount = args[0]
 
         if(!amount) {
@@ -13,7 +13,9 @@ module.exports = {
         }
         const gamble = Math.floor(Math.random()* (1001 - amount) + amount)
 
-        if(amount > 1000) return message.channel.send('You can\'t gamble amount more than 1000.')
+        if(amount > 1000) return message.channel.send('You can\'t gamble amount more than 1000...')
+        if(isNaN(args[0])) return message.channel.send('Please Gamble a number...')
+        if(amount < 0) return message.channel.send(`You can't bet a negetive number...`)
 
          else if(gamble > amount) {
 

@@ -4,7 +4,7 @@ module.exports = {
     description: 'ask 8ball ANYTHING!',
     usage: 's!8ball <message>',
     examples: 's!8ball How are you!',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         let replies = ["Yes.", "No.", "I don't know.", "Ask again later", "Don’t count on it.", " It is certain.", " It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Outlook good", "Reply hazy, try again.", "Signs points to yes.", "Very doubtful", "Without a doubt", "Yes - Definitly", "You may rely on it."];
 
         let result = Math.floor((Math.random() * replies.length));

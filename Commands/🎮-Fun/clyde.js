@@ -7,7 +7,7 @@ module.exports = {
     description: "appends clyde on provided text",
     usage: 's!clyde <text>',
     examples: 's!clyde',
-    execute(Client, message, args) {
+    run: async(client, message, args) => {
         const text = args.join(" ")
         if(text.length > 50 ) {
             message.channel.send('**You need to provide text fewer than 50 characters.**')

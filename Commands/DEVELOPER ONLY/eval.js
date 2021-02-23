@@ -1,9 +1,10 @@
+
 const Discord = require("discord.js")
 
 module.exports = {
  name: 'eval',
  description: '**ONLY DEVELOPER**',
- execute: async(Client, message, args) => {
+ async: async(client, message, args) => {
 
   // Number Of Guilds! Client.guilds.cache.map(s => s.name)
   

@@ -5,7 +5,7 @@ module.exports = {
     description: "Plays a game to tictactoe",
     usage: "s!tictactoe <@mention>",
     aliases: ["ttt"],
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const member = message.mentions.members.first() 
             if(!member)  return  message.channel.send('Please specify a member to play with!')
         

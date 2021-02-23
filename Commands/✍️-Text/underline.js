@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["ul"],
     usage: 's!underline <message>',
     examples: 's!underline hello',
-    execute:async (Client, message, args)  => {
+    run:async (client, message, args)  => {
         const fullMessage = args.slice(0).join(" ")
 
         if(!fullMessage) return message.reply('You need to specify something to underline.')

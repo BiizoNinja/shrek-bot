@@ -1,18 +1,17 @@
 const Discord = require('discord.js')
 const { readdirSync } = require('fs');
-const { timeout } = require('../🪙-Economy/beg');
 
 module.exports = {
     name: 'help',
     description: 'list of the commands!',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         if(!args[0]) {
             let categories = [];
-            readdirSync('./Commands').forEach(dir => {
+            readdirSync('./commands').forEach(dir => {
                 if(dir.toLowerCase()=== 'DEVELOPER ONLY') return
-                let commands = readdirSync(`./Commands/${dir}/`).filter(f=>f.endsWith(".js"))
+                let commands = readdirSync(`./commands/${dir}/`).filter(f=>f.endsWith(".js"))
                 let cmds = commands.map((command) => {
-                    let file = require(`../../Commands/${dir}/${command}`)
+                    let file = require(`../../commands/${dir}/${command}`)
                     if(!file.name) return "No Name Provided"
                     let name = file.name.replace(".js", "")
                      return `\`${name}\``
@@ -40,7 +39,7 @@ module.exports = {
              
 
         } else {
-            let command = Client.commands.get(args[0].toLowerCase()) || Client.commands.find((C) => c.aliases.include(args[0].toLowerCase()))
+            let command = client.commands.get(args[0].toLowerCase()) || client.commands.find((C) => c.aliases.include(args[0].toLowerCase()))
             if(!command) return message.channel.send('Command not found!')
 
             let name = command.name;
@@ -66,8 +65,6 @@ module.exports = {
             return message.channel.send(embed2)
         }
        
-        
-
     
     }
 }

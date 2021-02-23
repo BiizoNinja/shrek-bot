@@ -6,7 +6,7 @@ module.exports = {
     description: "appends baguette on provided text",
     usage: 's!baguette <text>',
     examples: 's!baguette Hello',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const avatarURL = message.author.displayAvatarURL({dynamic: true})
         fetch(`https://nekobot.xyz/api/imagegen?type=baguette&url=${avatarURL}`)
             .then((res) => res.json())
@@ -23,3 +23,4 @@ module.exports = {
 
     }
 }
+

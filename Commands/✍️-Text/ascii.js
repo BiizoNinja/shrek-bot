@@ -4,7 +4,7 @@ module.exports = {
     name: 'ascii',
     description: 'Makes a banner!',
     usage: 'f!ascii <your text>',
-    execute: async (Client, message, args) => {
+    run: async (client, message, args) => {
         if (!args[0]) return message.channel.send('please provide a some text')
         dd = args.slice(0).join(' ');
         figlet.text(dd, function (err, data) {

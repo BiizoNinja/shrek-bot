@@ -6,7 +6,7 @@ module.exports = {
     description: "you become trash",
     usage: 's!trash [@user]',
     examples: 's!trash || s!trash @BiizoNinja',
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         const user = message.mentions.users.first()
 
         if(!user) {
@@ -40,6 +40,3 @@ module.exports = {
    }
 
 }
-
-  
-

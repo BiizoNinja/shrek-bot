@@ -4,10 +4,10 @@ module.exports = {
    description: 'Get info about the bot.',
    aliases: ["botinfo", "bi", "support", "invite"],
    usage: 's!aboutme',
-   execute: async(Client, message, args) => {
+   run: async(client, message, args) => {
 
     let uptime = ``;
-    let totalseconds = (Client.uptime / 1000)
+    let totalseconds = (client.uptime / 1000)
     let hours = Math.floor(totalseconds / 3600)
     totalseconds %= 3600
     let minutes = Math.floor(totalseconds / 60)
@@ -29,7 +29,7 @@ module.exports = {
        .setTitle('About ShrekBot!')
        .setDescription('Do \`s!help\` do get a list of commands')
        .addFields(
-           {name: 'Server Count', value: `${Client.guilds.cache.size} Servers`, inline: true},
+           {name: 'Server Count', value: `${client.guilds.cache.size} Servers`, inline: true},
            {name: 'Language', value: `JavaScript ES6, Including Node.js for discord.js`, inline: true},
            {name: 'Bot Version', value: `2.1`, inline: true},
            {name: 'Commands', value: `45 Currently Working Commands`, inline: true},

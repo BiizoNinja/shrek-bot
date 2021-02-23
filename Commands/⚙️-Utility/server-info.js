@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['si'],
     description: "This shows the server info",
     usage: "s!server-info",
-    execute: async (Client, message, args) => {
+    run: async (client, message, args) => {
         const Discord = require('discord.js');
 
         if(message.guild.region === 'brazil') message.guild.region = ':flag_br: **Brazil**'
