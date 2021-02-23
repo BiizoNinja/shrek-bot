@@ -5,7 +5,7 @@ module.exports = {
     usage: 's!flipCoin',
     examples: 's!flipCoin',
     aliases: [`flip`],
-    execute: async(Client, message, args) => {
+    run: async(client, message, args) => {
         let replies = ["Heads", "Tails"];
 
         let result = Math.floor((Math.random() * replies.length));
