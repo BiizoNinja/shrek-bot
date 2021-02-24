@@ -8,10 +8,10 @@ module.exports = {
     run: async (client, message, args) => {
 
         if (!message.member.permissions.has("MANAGE_EMOJIS")) 
-        return message.channel.send('<a:wrong:777910274011299850> Lack of Perms!');
+        return message.channel.send(`you don't have the permission to do this <a:XMARK:801450921112371232> `);
 
         const emoji = args[0];
-        if (!emoji) return message.channel.send(`Please provide an emoji to steal <:LONG_NOSE:810455970038677504>`);
+        if (!emoji) return message.channel.send(`please provide an emoji to steal <:LONG_NOSE:810455970038677504>`);
 
         let customemoji = Discord.Util.parseEmoji(emoji);
         if (customemoji.id) {
