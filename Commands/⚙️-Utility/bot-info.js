@@ -32,7 +32,7 @@ module.exports = {
            {name: 'Server Count', value: `${client.guilds.cache.size} Servers`, inline: true},
            {name: 'Language', value: `JavaScript ES6, Including Node.js for discord.js`, inline: true},
            {name: 'Bot Version', value: `2.1`, inline: true},
-           {name: 'Commands', value: `45 Currently Working Commands`, inline: true},
+           {name: 'Commands', value: `32 Currently Working Commands, more coming soon`, inline: true},
            {name: 'Add ShrekBot to your server', value: `[Click here](https://dsc.gg/shrekbot)`, inline: true},
            {name: 'Vote For ShrekBot', value: `[Click Here](https://top.gg/bot/789129116015525918)`, inline: true},
            {name: 'Support Server', value: `[Click Here](https://discord.gg/CgzBqZjz2v)`, inline: true},

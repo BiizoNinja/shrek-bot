@@ -27,7 +27,7 @@ module.exports = {
             
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(` Do help <command> for more info!`)
+            .setDescription(` Do **s!help [command_name]** for more info!, Written and Developed by BiizoNinja#9999`)
             .addFields( categories,
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
@@ -51,7 +51,7 @@ module.exports = {
 
             let embed2 = new Discord.MessageEmbed()
             .setTitle(`${(args[0])} Command!`) 
-            .setDescription('Some info about the command')
+            .setDescription('Some info about the command, If there is <> brackets then that field is REQUIRED, but if there is [] then that feild is OPTIONAL')
             .addFields(
                 {name: "Description" , value: description, inline: true},
                 {name: "Usage" , value: usage, inline: true },
