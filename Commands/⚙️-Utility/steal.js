@@ -38,9 +38,9 @@ module.exports = {
         } else {
             let CheckEmoji = parse(emoji, { assetType: "png" });
             if (!CheckEmoji[0])
-                return message.channel.send(`**Please Give Me A Valid Emoji!**`);
+                return message.channel.send(`please give me a vlid emoji! Don't try to break me :eyes:`);
             message.channel.send(
-                `**You Can Use Normal Emoji Without Adding In Server!**`
+                `you don't need to steal default emojis <:cringeFace:813970120874524683>`
             );
         }
     }

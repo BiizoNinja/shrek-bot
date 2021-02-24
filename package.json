@@ -24,6 +24,7 @@
         "node-fetch": "^2.6.1",
         "pokecord": "^1.0.0",
         "reconlx": "^1.1.2",
+        "twemoji-parser": "^13.0.0",
         "util": "^0.12.3",
         "yt-search": "^2.7.3",
         "ytdl-core": "^4.5.0"
