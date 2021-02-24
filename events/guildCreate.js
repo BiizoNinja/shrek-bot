@@ -5,7 +5,7 @@ client.on('guildCreate', (guild) => {
 
     if (!channel) return;
     console.log(`I got added to ${guild.name}`)
-    const { MessageEmbed } = require('discord.js');
+    const Discord = require('discord.js');
        const embed = new  Discord.MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
             .setTitle('Thank You!')
