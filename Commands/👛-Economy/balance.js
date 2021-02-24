@@ -5,7 +5,7 @@ module.exports = {
     name: 'balance',
     description: 'Check you\'re balance',
     usage: 's!balance',
-    Timeout: 100000,
+    Timeout: 0,
     aliases: ["bal"],
     run: async(client, message, args) => {
         const userBal = await client.bal(message.member.id)

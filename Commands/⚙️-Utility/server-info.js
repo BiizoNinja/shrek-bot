@@ -37,7 +37,7 @@ module.exports = {
             {name: `Boosts <a:boost_animated:807845397396586526>`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
 
         )
-        .setThumbnail(message.guild.iconURL({ dynamic: true }))
+        .setThumbnail(message.guild.iconURL({ dynamic: true , format: 'png'}))
         .setColor('RANDOM');
 
         message.channel.send(EMBED)
