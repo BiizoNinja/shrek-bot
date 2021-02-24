@@ -14,7 +14,7 @@ module.exports = {
             `**Mr.Beast** donated ${coinsToAdd} coins to <@${message.author.id}>!`,
             `**Luke Skywalker** donated ${coinsToAdd} coins to <@${message.author.id}>!`,
             `A monkey threw ${coinsToAdd} coins on <@${message.author.id}> damn rich monke`,
-            `Skedle donated his organs and gave ${coinsToAdd} coins to <@${message.author.tag}>`,
+            `Skedle donated his organs and gave ${coinsToAdd} coins to <@${message.author.id}>`,
             `you're mom gave ${coinsToAdd} coins to you...`,
             `ShrekBot pitied and gave a measly ${coinsToAdd} coins to <@${message.author.id}>`,
             `**mallusrgreatv2** donated ${coinsToAdd} coins to <@${message.author.id}>!`,
@@ -24,7 +24,7 @@ module.exports = {
             `Flame Bot gave you ${coinsToAdd} coins `
         ]
         const randomDonation = Math.floor(Math.random()* donations.length)
-        client.add(message.member.id, parseInt(coinsToAdd))
+        client.add(message.member.id, coinsToAdd)
 
         message.channel.send(`${donations[randomDonation]}`)
     }
