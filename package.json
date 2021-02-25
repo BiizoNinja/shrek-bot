@@ -18,6 +18,7 @@
         "discord.js": "^12.2.0",
         "ffmpeg-static": "^4.2.7",
         "figlet": "^1.5.0",
+        "images-scraper": "^6.0.1",
         "moment": "^2.29.1",
         "mongoose": "^5.11.17",
         "ms": "^2.1.3",
