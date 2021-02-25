@@ -33,7 +33,7 @@ module.exports = {
             **${message.guild.channels.cache.filter(r => r.type === "voice").size}** Voice Channels`, inline: true },
             {name: `Server region 🌍`, value: `${message.guild.region}`, inline: true },
             {name: `Verification Level 📑`, value: `${message.guild.verificationLevel}`, inline: true },
-            {name: `Created in 📆`, value: `${message.guild.createdAt.toLocaleString()}`, inline: true },
+            {name: `Created at 📆`, value: `${message.guild.createdAt.toLocaleString()}`, inline: true },
             {name: `Boosts <a:boost_animated:807845397396586526>`, value: `${message.guild.premiumSubscriptionCount}`, inline: true },
 
         )
