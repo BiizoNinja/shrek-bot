@@ -26,7 +26,6 @@ module.exports = {
         .addFields( 
             {name: `Server name 🎗️`, value: `${message.guild.name}`, inline: true },
             {name: `Server id 🆔`, value: `${message.guild.id}`, inline: true },
-            {name: `Server owner 👑`, value: `${message.guild.owner}`, inline: true },
             {name: `Members 👥`, value: `${message.guild.memberCount}`, inline: true },
             {name: `Server roles 🔐`, value: `**${message.guild.roles.cache.size}** Roles!`, inline:true},
             {name: `Channels 💬 `, value: `**${message.guild.channels.cache.filter(r => r.type === "text").size}** Text Channels!

@@ -40,7 +40,6 @@ module.exports = {
                 `**❯ Badges:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Time Created:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**❯ Status:** ${member.user.presence.status}`,
                 `**❯ Activity:** *${member.user.presence.activities[0] || '`No Activity`'}*`, 
                 `**❯ Nickname:** ${member.nickname || 'None'}`,
                 `\u200b`
