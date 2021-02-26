@@ -4,7 +4,7 @@ module.exports = {
     description: 'hack others',
     usage: 's!hack <user/userid>',
     examples: 's!hack @BiizoNinja',
-    execute: async(client, message, args) => {
+    run: async(client, message, args) => {
         const user = message.mentions.users.first() 
 
         if(!user) return message.channel.send('provide a user to hack ;/') 
@@ -16,18 +16,26 @@ module.exports = {
         `${user.username}_is_single@gmail.com`,
         "someone@poo.com",
         "Icandostuff@Moonmail.com",
-        `potatoesarepog@gamerlang.co` ]
+        `potatoesarepog@gamerlang.co`,
+        `meisepicgamer@gamermail.co`,
+        `plsbjall@dank.memer` ]
 
          const emailRandomiser = Math.floor((Math.random()* emails.length));
 
          const passwords = [`${user.username}iscool123`, 
          "1234567890", 
-         "P@SSW0RD"]
+         "P@SSW0RD",
+         "plsmaikmebot",
+         "holykekexoo",
+        "10293mdf73tr24t",
+        "plsbeg"]
 
          const passowrdRandomiser = Math.floor((Math.random()* passwords.length));
 
          const ips = ["1.22.333.4444", 
-         "3.23.32.3232.23"]
+         "3.23.32.3232.23",
+         "13.12.321.312.43",
+        "43.14.43.431.14."]
          const ipRandomiser = Math.floor((Math.random()* ips.length));
 
          const msg = await message.channel.send(`Hacking ${user.tag}`);

@@ -6,7 +6,7 @@ module.exports = {
     usage: 's!gamerrate _ <@USER> ',
     examples: 's!gamerrate @Biomeium **OR** s!gamerrate',
     aliases: ['gamer'],
-    execute:async (client, message, args) => {
+    run:async (client, message, args) => {
 
         const bots = message.guild.members.cache.filter(member => member.user.bot)
 
