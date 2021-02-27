@@ -10,7 +10,7 @@ module.exports = {
 
         const bots = message.guild.members.cache.filter(member => member.user.bot)
 
-        let rate = (Math.floor(Math.random() * Math.floor(100)));S
+        let rate = (Math.floor(Math.random() * Math.floor(100)));
 
         let user = message.mentions.users.first() || message.author || message.users.id
     
