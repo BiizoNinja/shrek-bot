@@ -15,7 +15,7 @@ run: async (client, message, args) => {
   const newChannel = message.guild.channels.create({
       name: `${name}`,
       type: 'text',
-      reason: `requested by ${message.autor.tag}`
+      reason: `requested by ${message.author.tag}`
   })
   const embed = new Discord.MessageEmbed()
   .setTitle(`Channel Created!`)
@@ -24,3 +24,4 @@ run: async (client, message, args) => {
   .setFooter(`Please support ShrekBot by inviting the bot!`);
 }
 }
+//so go to file > user snippets
