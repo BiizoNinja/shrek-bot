@@ -15,7 +15,7 @@ run: async (client, message, args) => {
      if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `s!shop`')
      const mappedData = Object.keys(data.inventory)
      .map((key) => {
-        return `> **${key}**/n> ➤ ${data.inventory[key]}`
+        return `> **${key}**\n> ➤ ${data.inventory[key]}`
      })
      .join(`\n`)
 
