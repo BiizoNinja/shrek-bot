@@ -12,7 +12,7 @@ aliases: ['inv'],
 run: async (client, message, args) => {
 
  inventory.findOne({ userId: message.author.id}), async(err, data) => {
-     if(!data) return message.channel.send('You\'re inventoey is empty! to buy thing so `s!shop`')
+     if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `s!shop`')
      const mappedData = Object.keys(data.inventory)
      .map((key) => {
         return `> **${key}**/n> ➤ ${data.inventory[key]}`
@@ -26,7 +26,7 @@ run: async (client, message, args) => {
      .setColor(`RANDOM`)
      
     message.channel.send(embed)
- } 
+ }
 
 }
 }
