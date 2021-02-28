@@ -1,10 +1,8 @@
-const {model, Schema} = require('mongoose')
+const mongoose = require('mongoose')
 
-
- module.exports = model("inventory", 
- new Schema ({
+const invData = new mongoose.Schema({
     userId: String,
     inventory: Object
 })
-);
-   
+
+module.exports = mongoose.model('inventoryData', invData)
