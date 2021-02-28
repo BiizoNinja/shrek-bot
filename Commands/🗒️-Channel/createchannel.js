@@ -19,7 +19,7 @@ run: async (client, message, args) => {
   })
   const embed = new Discord.MessageEmbed()
   .setTitle(`Channel Created!`)
-  .setDescription(`Created <#${newChannel.id}> with the name: ${name}`)
+  .setDescription(`Created a text channel with the name: ${name}`)
   .setColor("GREEN")
   .setFooter(`Please support ShrekBot by inviting the bot!`);
 }
