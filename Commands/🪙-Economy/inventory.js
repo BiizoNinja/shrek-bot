@@ -13,8 +13,7 @@ run: async (client, message, args) => {
 
  invdata.findOne({ userId: message.author.id}), async(err, data) => {
      if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `s!shop`')
-     const mappedData = Object.keys(data.inventory)
-     .map((key) => {
+     const mappedData = Object.keys(data.inventory).map((key) => {
         return `> **${key}**\n> ➤ ${data.inventory[key]}`
      })
      .join(`\n`);
