@@ -4,6 +4,7 @@ const { readdirSync } = require('fs');
 module.exports = {
     name: 'help',
     description: 'list of the commands!',
+    aliases: ['h'],
     run: async(client, message, args) => {
         if(!args[0]) {
             let categories = [];
