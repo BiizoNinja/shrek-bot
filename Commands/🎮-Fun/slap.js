@@ -19,7 +19,7 @@ run: async (client, message, args) => {
     fetch(`https://vacefron.nl/api//batmanslap?[&batman=${authorAvatarUrl}][&robin=${targetURL}]`)
     .then((res) => res.json())
     .then((body) => {
-        let embed = new MessageEmbed()
+        let embed = new Discord.MessageEmbed()
         .setImage(body.message)
         .setColor("RANDOM")
     message.channel.send(embed)
