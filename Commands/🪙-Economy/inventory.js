@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const items = require('../../economy/items')
 const economy = require('../../economy')
-const inventory = require('../../models/inventoryDataSchema')
+const invdata = require('../../models/inventoryDataSchema')
 
 module.exports = {
 name: 'inventory',
@@ -11,13 +11,13 @@ cooldown: 0 ,
 aliases: ['inv'],
 run: async (client, message, args) => {
 
- inventory.findOne({ userId: message.author.id}), async(err, data) => {
+ invdata.findOne({ userId: message.author.id}), async(err, data) => {
      if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `s!shop`')
      const mappedData = Object.keys(data.inventory)
      .map((key) => {
         return `> **${key}**\n> ➤ ${data.inventory[key]}`
      })
-     .join(`\n`)
+     .join(`\n`);
 
      const embed = new Discord.MessageEmbed()
      .setTitle(`${message.author.username}'s inventory`)
