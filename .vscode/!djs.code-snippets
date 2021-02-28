@@ -8,7 +8,7 @@
 				"name: ' ',",
 				"description: ' ',",
 				"usage: ' ',",
-				"cooldown: 1000 ,",
+				"cooldown: 0 ,",
 				"aliases: [' '],",
 				"run: async (client, message, args) => {",
 				"$1",
