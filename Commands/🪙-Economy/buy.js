@@ -24,7 +24,7 @@ const itemName = args[0].toLowerCase()
 if(userBalance < itemPrice ) return message.channel.send(`bro, you can't afford that... you have only ${userBalance} coins in your wallet. `)
 
 const params = {
-    userId = userId
+    userId = message.author.id
 }
 invData.findOne(params, async(err, data) => {
     if(data) {
@@ -37,7 +37,7 @@ invData.findOne(params, async(err, data) => {
         await invData.findOneAndUpdate(params, data)
     } else {
         new invData({
-            userId: userId,
+            userId: message.author.id,
             inventory: {
                 [itemName]: 1
             },
