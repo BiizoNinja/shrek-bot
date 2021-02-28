@@ -23,7 +23,7 @@ run: async (client, message, args) => {
      .setTitle(`${message.author.username}'s inventory`)
      .setDescription(mappedData)
      .setTimestamp()
-     .setColor(`RANOM`)
+     .setColor(`RANDOM`)
      
     message.channels.send(embed)
  } 

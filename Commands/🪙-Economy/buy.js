@@ -12,8 +12,8 @@ aliases: [' '],
 run: async (client, message, args) => {
 
 const userId = message.author.id
-const itemName = args[0].toLowerCase()
-  if(!itemName) return message.channel.send(`oh yeah let's buy air shal we?... please provide an item to buy <:LONG_NOSE:810455970038677504>`)
+const itemName = args.join(' ').toLowerCase()
+  if(!itemName) return message.channel.send(`oh yeah let's buy air shall we?... please provide an item to buy <:LONG_NOSE:810455970038677504>`)
 
  const validItem =  !!items.find((val) => val.item.toLowerCase() === itemName)
  if(!validItem) return message.channel.send(`what are you thinking... there is NO item called "${itemName}" in the shop! Please do \`s!shop\` to take a look at the items`)
