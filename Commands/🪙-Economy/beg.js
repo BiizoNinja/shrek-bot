@@ -5,6 +5,7 @@ module.exports = {
 name: 'beg',
 description: 'Beg for some coins!',
 usage: 's!beg',
+cooldown: 45000,
 run: async(client, message, args)  => {
 
     const userId = message.author.id

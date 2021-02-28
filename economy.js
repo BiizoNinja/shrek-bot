@@ -53,13 +53,11 @@ module.exports.getCoins = async ( userId) => {
         userId,
       })
 
-      console.log('RESULT:', result)
 
       let coins = 0
       if (result) {
         coins = result.coins
       } else {
-        console.log('Inserting a document')
         await new profileSchema({
           userId,
           coins,
