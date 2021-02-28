@@ -13,7 +13,7 @@ run: async (client, message, args) => {
     const target  = message.mentions.users.first()
     if(!target) return message.channel.send('Please specify a user to slap...')
 
-    const authorAvatarUrl = message.member.displayAvatarURL()
+    const authorAvatarUrl = message.author.displayAvatarURL()
     const targetURL = target.displayAvatarURL()
 
     fetch(`https://vacefron.nl/api//batmanslap?[&batman=${authorAvatarUrl}][&robin=${targetURL}]`)
