@@ -12,16 +12,18 @@ run: async (client, message, args) => {
   const name = args[0]
   if(!name) return message.channel.send('You need to keep a name for yer new channel :/')
 
-  const newChannel = message.guild.channels.create({
-      name: `${name}`,
+  const newChannel = message.guild.channels.create( `${name}`, {
       type: 'text',
       reason: `requested by ${message.author.tag}`
-  })
+})
   const embed = new Discord.MessageEmbed()
   .setTitle(`Channel Created!`)
   .setDescription(`Created a text channel with the name: ${name}`)
   .setColor("GREEN")
   .setFooter(`Please support ShrekBot by inviting the bot!`);
+
+  message.channel.send(embed)
 }
+
 }
 //so go to file > user snippets
