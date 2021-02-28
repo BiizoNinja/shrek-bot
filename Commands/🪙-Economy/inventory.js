@@ -8,7 +8,7 @@ name: 'inventory',
 description: 'Check you\'re inventory!',
 usage: 's!inventory',
 cooldown: 0 ,
-aliases: [''],
+aliases: ['inv'],
 run: async (client, message, args) => {
 
  inventory.findOne({ userId: message.author.id}), async(err, data) => {
@@ -25,7 +25,7 @@ run: async (client, message, args) => {
      .setTimestamp()
      .setColor(`RANDOM`)
      
-    message.channels.send(embed)
+    message.channel.send(embed)
  } 
 
 }
