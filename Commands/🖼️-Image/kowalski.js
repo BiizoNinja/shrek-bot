@@ -8,7 +8,7 @@ module.exports = {
         
         let mention;
 
-        if(!args.length) return message.channel.send(' Usage: -kowalski <anything you want to say>');
+        if(!args.length) return message.channel.send('What do ye want kowalski to say? Do s!kowalski <Text>');
 
         try {
             const text = args.join(' ')
