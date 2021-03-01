@@ -17,8 +17,7 @@ client.on('message', async message =>{
     
     if (command) {
         if(command.cooldown) {
-            if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`You are on a cooldown! Please wait: \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}\` until running this command again!`)
-            command.run(client, message, args)
+            if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`Please wait **${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}** before using this command again!`)
             Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
             setTimeout(() => {
                 Timeout.delete(`${command.name}${message.author.id}`)
