@@ -10,8 +10,8 @@ module.exports = {
 
         const userarray = message.mentions.users.array();
             
-        const user = userarray[0] || client.users.cache.get(args[0]);
-        const user2 = userarray[1] || client.users.cache.get(args[1]);
+        const user = message.author
+        const user2 = message.mentions.users.first()
 
         const img = await new DIG.Batslap().getImage(user.displayAvatarURL({ dynamic: false, format: 'png' }), user2.displayAvatarURL({ dynamic: false, format: 'png' }));
         const attach = new MessageAttachment(img, "slap.png");
