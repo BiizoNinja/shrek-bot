@@ -37,7 +37,7 @@ invData.findOne(userId, async(err, data) => {
         new invData({
             userId: message.author.id,
             inventory: {
-                [itemName]: 1
+                [itemName]: +1
             },
         }).save();
     }
