@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const canvas = require('canvacord')
+const {Canvas} = require('canvacord')
 
 module.exports = {
 name: 'affect',
@@ -11,7 +11,7 @@ run: async (client, message, args) => {
  const user = message.author;
  const avatar = user.displayAvatarURL({dynamic: false, format: 'png'})
 
- const image = await canvas.affect(avatar)
+ const image = await Canvas.affect(avatar)
  const imageSend = new Discord.MessageAttachment(image, "affect.png")
  message.channel.send(imageSend)
 
