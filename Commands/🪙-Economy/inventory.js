@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const items = require('../../economy/items')
-const economy = require('../../economy')
+const economy = require('../../money')
 const invdata = require('../../models/inventoryDataSchema')
 
 module.exports = {
