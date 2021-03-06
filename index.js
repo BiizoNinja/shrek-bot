@@ -32,7 +32,7 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
 
 // --------- Distube ---------
 
-const distube = new DisTube(client, { searchSongs: tfalseue, emitNewSongOnly: true });
+
 
 
 // --------- Logging in to the bot ---------
