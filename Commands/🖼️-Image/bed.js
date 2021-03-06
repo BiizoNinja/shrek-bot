@@ -12,6 +12,7 @@ run: async (client, message, args) => {
  const avatar = user.displayAvatarURL({dynamic: false, format: 'png'})
 
  const target = message.mentions.users.first()
+ if(!target) return message.channel.send('You didn\'t mention a user to bed...')
  const avatar2 = target.displayAvatarURL({dynamic: false, format: 'png'})
 
  const image = await Canvas.bed(avatar, avatar2)
