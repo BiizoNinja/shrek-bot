@@ -9,7 +9,7 @@ cooldown: 0 ,
 aliases: [''],
 run: async (client, message, args) => {
  const user = message.author;
- const avatar = user.displayAvatarURL({dynamic: false})
+ const avatar = user.displayAvatarURL({dynamic: false, format: 'png'})
 
  const image = await Canvas.invert(avatar)
  const imageSend = new Discord.MessageAttachment(image, "image.png")
