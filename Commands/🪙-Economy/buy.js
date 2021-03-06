@@ -6,7 +6,7 @@ const economy = require('../../economy')
 module.exports = {
 name: 'buy',
 description: 'buy things from the shop!',
-usage: 's!buy <item-name>',
+usage: '+buy <item-name>',
 cooldown: 0 ,
 aliases: [' '],
 run: async (client, message, args) => {
@@ -16,7 +16,7 @@ const itemName = args.join(' ').toLowerCase()
   if(!itemName) return message.channel.send(`oh yeah let's buy air shall we?... please provide an item to buy <:LONG_NOSE:810455970038677504>`)
 
  const validItem =  !!items.find((val) => val.item.toLowerCase() === itemName)
- if(!validItem) return message.channel.send(`what are you thinking... there is NO item called "${itemName}" in the shop! Please do \`s!shop\` to take a look at the items`)
+ if(!validItem) return message.channel.send(`what are you thinking... there is NO item called "${itemName}" in the shop! Please do \`+shop\` to take a look at the items`)
 
  const itemPrice = items.find((val) => val.item.toLowerCase() === itemName).price
  const userBalance = await economy.getCoins(userId)
@@ -42,7 +42,7 @@ invData.findOne(userId, async(err, data) => {
         }).save();
     }
     economy.rmvCoins(userId, itemPrice)
-    message.channel.send(`<@${userId}> You bought ${itemName} and paid \`${itemPrice}\` coins!`)
+    message.channel.send(`<@${userId}> You bought ${itemName} and paid \`${itemPrice}\` coin+`)
 })
 }
 }

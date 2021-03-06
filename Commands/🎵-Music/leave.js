@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'leave',
     description: 'stop the bot and leave the channel',
-    usage: 's!leave',
-    examples: 's!leave',
+    usage: '+leave',
+    examples: '+leave',
     aliases: ["disconnect"],
     run: async(client, message, args) => {
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You don\'t have the right permissions')

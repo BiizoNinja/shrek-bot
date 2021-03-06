@@ -3,7 +3,7 @@ const { tictactoe } = require('reconlx')
 module.exports = {
     name : 'tictactoe',
     description: "Plays a game to tictactoe",
-    usage: "s!tictactoe <@mention>",
+    usage: "+tictactoe <@mention>",
     aliases: ["ttt"],
     run: async(client, message, args) => {
         const member = message.mentions.members.first() 

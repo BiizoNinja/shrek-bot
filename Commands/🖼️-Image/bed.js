@@ -4,7 +4,7 @@ const {Canvas} = require('canvacord')
 module.exports = {
 name: 'bed',
 description: 'bed',
-usage: 's!bed <@user>',
+usage: '+bed <@user>',
 cooldown: 0 ,
 aliases: [''],
 run: async (client, message, args) => {

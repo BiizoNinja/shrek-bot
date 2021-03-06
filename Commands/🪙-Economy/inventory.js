@@ -6,13 +6,13 @@ const invdata = require('../../models/inventoryDataSchema')
 module.exports = {
 name: 'inventory',
 description: 'Check you\'re inventory!',
-usage: 's!inventory',
+usage: '+inventory',
 cooldown: 0 ,
 aliases: ['inv'],
 run: async (client, message, args) => {
 
  invdata.findOne({ userId: message.author.id}), async(err, data) => {
-     if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `s!shop`')
+     if(!data) return message.channel.send('You\'re inventory is empty! to buy thing so `+shop`')
      const mappedData = Object.keys(data.inventory).map((key) => {
         return `> **${key}**\n> ➤ ${data.inventory[key]}`
      })

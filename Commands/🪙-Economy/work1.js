@@ -3,8 +3,8 @@ const economy = require('../../economy')
 
 module.exports = {
 name: 'work',
-description: 'work for some coins!',
-usage: 's!work',
+description: 'work for some coin+',
+usage: '+work',
 cooldown: 600000,
 run: async(client, message, args)  => {
 

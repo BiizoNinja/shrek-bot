@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'gamerrate',
     description: 'Look how epic gamer you are, NOTE: The _ in the usage says that <USER> may exist or not.',
-    usage: 's!gamerrate _ <@USER> ',
-    examples: 's!gamerrate @Biomeium **OR** s!gamerrate',
+    usage: '+gamerrate _ <@USER> ',
+    examples: '+gamerrate @Biomeium **OR** +gamerrate',
     aliases: ['gamer'],
     run:async (client, message, args) => {
 

@@ -4,7 +4,7 @@ const economy = require('../../economy')
 module.exports = {
     name: 'balance',
     description: 'Check user\'s balance',
-    usage: 's!balance [@user]',
+    usage: '+balance [@user]',
     aliases: ['bal'],
     run: async(client, message, args)  => {
         const target = message.mentions.users.first() || message.author

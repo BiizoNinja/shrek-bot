@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'gamble',
     description: 'Gamble some money ;). Be careful before the FBI comes looking-',
-    usage: 's!gamble <amount>',
-    examples: 's!gamble 500',
+    usage: '+gamble <amount>',
+    examples: '+gamble 500',
     run: async(client, message, args) => {
         const amount = args[0]
 

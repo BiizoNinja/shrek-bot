@@ -2,7 +2,7 @@ module.exports = {
     name: 'server-info',
     aliases: ['si'],
     description: "This shows the server info",
-    usage: "s!server-info",
+    usage: "+server-info",
     run: async (client, message, args) => {
         const Discord = require('discord.js');
 
@@ -27,8 +27,8 @@ module.exports = {
             {name: `Server name 🎗️`, value: `${message.guild.name}`, inline: true },
             {name: `Server id 🆔`, value: `${message.guild.id}`, inline: true },
             {name: `Members 👥`, value: `${message.guild.memberCount}`, inline: true },
-            {name: `Server roles 🔐`, value: `**${message.guild.roles.cache.size}** Roles!`, inline:true},
-            {name: `Channels 💬 `, value: `**${message.guild.channels.cache.filter(r => r.type === "text").size}** Text Channels!
+            {name: `Server roles 🔐`, value: `**${message.guild.roles.cache.size}** Role+`, inline:true},
+            {name: `Channels 💬 `, value: `**${message.guild.channels.cache.filter(r => r.type === "text").size}** Text Channel+
             **${message.guild.channels.cache.filter(r => r.type === "voice").size}** Voice Channels`, inline: true },
             {name: `Server region 🌍`, value: `${message.guild.region}`, inline: true },
             {name: `Verification Level 📑`, value: `${message.guild.verificationLevel}`, inline: true },

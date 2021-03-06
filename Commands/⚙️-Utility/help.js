@@ -3,7 +3,7 @@ const { readdirSync } = require('fs');
 
 module.exports = {
     name: 'help',
-    description: 'list of the commands!',
+    description: 'list of the command+',
     aliases: ['h'],
     run: async(client, message, args) => {
         if(!args[0]) {
@@ -28,7 +28,7 @@ module.exports = {
             
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(` Do **s!help [command_name]** for more info!, Written and Developed by BiizoNinja#9999`)
+            .setDescription(` Do **+help [command_name]** for more info!, Written and Developed by BiizoNinja#9999`)
             .addFields( categories,
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )

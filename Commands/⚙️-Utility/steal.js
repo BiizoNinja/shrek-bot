@@ -3,7 +3,7 @@ const { parse } = require('twemoji-parser')
 module.exports = {
     name: 'steal',
     description: "Steals Emojis",
-    usage: 's!steal <Emoji> [new-emoji-name]',
+    usage: '+steal <Emoji> [new-emoji-name]',
     aliases: ['stealemoji'],
     run: async (client, message, args) => {
 

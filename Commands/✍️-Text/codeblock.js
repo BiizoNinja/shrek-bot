@@ -3,8 +3,8 @@ module.exports = {
     name: 'codeblock',
     description: 'Makes your messages in to ```code-block```',
     aliases: ["cd"],
-    usage: 's!codeblock <message>',
-    examples: 's!codeblock hello',
+    usage: '+codeblock <message>',
+    examples: '+codeblock hello',
     run:async (client, message, args)  => {
         const fullMessage = args.slice(0).join(" ")
 

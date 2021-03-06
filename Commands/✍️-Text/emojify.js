@@ -3,10 +3,10 @@ const emoji = require('discord-emoji-convert')
 
 module.exports = {
     name: 'emojify',
-    description: 'Makes your text into emojies!',
+    description: 'Makes your text into emojie+',
     aliases: ["emoji"],
-    usage: 's!emojify <message>',
-    examples: 's!emojify hello',
+    usage: '+emojify <message>',
+    examples: '+emojify hello',
     run: async(client, message, args) => {
         const fullMessage = args.join(' ')
 

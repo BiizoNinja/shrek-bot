@@ -3,8 +3,8 @@ module.exports = {
     name: 'bold',
     description: 'Makes your messages in to **bold**',
     aliases: ["bold"],
-    usage: 's!boldify <message>',
-    examples: 's!boldify hello',
+    usage: '+boldify <message>',
+    examples: '+boldify hello',
     run: async (client, message, args) => {
         const fullMessage = args.slice(0).join(" ")
 

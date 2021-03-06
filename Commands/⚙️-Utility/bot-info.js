@@ -3,7 +3,7 @@ module.exports = {
    name: 'bot-info',
    description: 'Get info about the bot.',
    aliases: ["botinfo", "bi", "support", "invite"],
-   usage: 's!aboutme',
+   usage: '+aboutme',
    run: async(client, message, args) => {
 
     let uptime = ``;
@@ -27,12 +27,12 @@ module.exports = {
 
        let embed = new Discord.MessageEmbed()
        .setTitle('About ShrekBot!')
-       .setDescription('Do \`s!help\` do get a list of commands')
+       .setDescription('Do \`+help\` do get a list of commands')
        .addFields(
            {name: 'Server Count', value: `${client.guilds.cache.size} Servers`, inline: true},
            {name: 'Language', value: `JavaScript ES6, Including Node.js for discord.js`, inline: true},
            {name: 'Bot Version', value: `2.1`, inline: true},
-           {name: 'Commands', value: `${client.commands.size} Commands!`, inline: true},
+           {name: 'Commands', value: `${client.commands.size} Command+`, inline: true},
            {name: 'Add ShrekBot to your server', value: `[Click here](https://dsc.gg/shrekbot)`, inline: true},
            {name: 'Vote For ShrekBot', value: `[Click Here](https://top.gg/bot/789129116015525918)`, inline: true},
            {name: 'Support Server', value: `[Click Here](https://discord.gg/CgzBqZjz2v)`, inline: true},

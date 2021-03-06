@@ -3,7 +3,7 @@ module.exports = {
     name: 'stats',
     description: 'Look at how many guilds the bot is in',
     aliases: ["stats"],
-    usage: 's!usage',
+    usage: '+usage',
     run: async(client, message, args) => {
 
         let usageEmbed = new Discord.MessageEmbed()

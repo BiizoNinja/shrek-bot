@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
 name: 'createcategory',
 description: 'Create a  category!',
-usage: 's!createcategory <name>',
+usage: '+createcategory <name>',
 cooldown: 0 ,
 aliases: ['ccategory'],
 run: async (client, message, args) => {

@@ -4,7 +4,7 @@ const items = require('../../economy/items')
 module.exports = {
 name: 'shop',
 description: 'take a look at the shop!',
-usage: 's!shop',
+usage: '+shop',
 cooldown: 1000 ,
 aliases: ['sh'],
 

@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'hack',
     description: 'hack others',
-    usage: 's!hack <user/userid>',
-    examples: 's!hack @BiizoNinja',
+    usage: '+hack <user/userid>',
+    examples: '+hack @BiizoNinja',
     run: async(client, message, args) => {
         const user = message.mentions.users.first() 
 

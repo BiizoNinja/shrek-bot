@@ -20,7 +20,7 @@ const flags = {
 module.exports = {
     name: 'user-info',
     description: "Shows a users info",
-    usage: 's!user-info || s!user-info [@mention]',
+    usage: '+user-info || +user-info [@mention]',
     aliases: ['ui'],
     run: async (client, message, args) => {
         const member = message.mentions.members.last() ||  message.member;

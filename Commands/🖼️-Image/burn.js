@@ -4,7 +4,7 @@ const {Canvas} = require('canvacord')
 module.exports = {
 name: 'burn',
 description: 'burn ur pfp',
-usage: 's!burn',
+usage: '+burn',
 cooldown: 0 ,
 aliases: [''],
 run: async (client, message, args) => {

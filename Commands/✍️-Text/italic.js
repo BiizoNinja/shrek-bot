@@ -4,8 +4,8 @@ module.exports = {
     name: 'italic',
     description: 'Makes your messages in to *italic*',
     aliases: ["italify"],
-    usage: 's!italic <message>',
-    examples: 's!italic hello',
+    usage: '+italic <message>',
+    examples: '+italic hello',
     run:async (client, message, args)  => {
         const fullMessage = args.slice(0).join(" ")
 

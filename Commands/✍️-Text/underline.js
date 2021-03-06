@@ -3,8 +3,8 @@ module.exports = {
     name: 'underline',
     description: 'Makes your messages in to __underline__',
     aliases: ["ul"],
-    usage: 's!underline <message>',
-    examples: 's!underline hello',
+    usage: '+underline <message>',
+    examples: '+underline hello',
     run:async (client, message, args)  => {
         const fullMessage = args.slice(0).join(" ")
 

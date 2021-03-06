@@ -5,7 +5,7 @@ const { greyscale } = require('canvacord/src/Canvacord');
 module.exports = {
 name: 'jail',
 description: 'jail',
-usage: 's!jail',
+usage: '+jail',
 cooldown: 0 ,
 aliases: [''],
 run: async (client, message, args) => {

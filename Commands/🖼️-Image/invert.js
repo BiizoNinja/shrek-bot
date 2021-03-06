@@ -4,7 +4,7 @@ const {Canvas} = require('canvacord');
 module.exports = {
 name: 'invert',
 description: 'invert ur pfp',
-usage: 's!invert',
+usage: '+invert',
 cooldown: 0 ,
 aliases: [''],
 run: async (client, message, args) => {

@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "ship",
   description: "ship someone!",
-  usage: "s!ship",
+  usage: "+ship",
   run: async (client, message, args) => {
     let ship = Math.floor(Math.random() * 100) + 1;
 
