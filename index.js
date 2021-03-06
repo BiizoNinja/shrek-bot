@@ -7,7 +7,7 @@ const client = new Client({
 const path = require('path')
 const fs = require('fs')
 const config = require('./config.json');
-
+const Distube = require('distube')
 
 // --------- Mongoose Connected ---------
 
@@ -30,10 +30,15 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
     require(path.resolve(`handlers/${handler}`))(client);
 }); 
 
+// --------- Distube ---------
+
+const distube = new DisTube(client, { searchSongs: tfalseue, emitNewSongOnly: true });
+
 
 // --------- Logging in to the bot ---------
-//client.login(process.env.TOKEN)
 
-client.login(config.token);
+client.login(process.env.TOKEN)
+
+//client.login(config.token)
 
 
