@@ -28,7 +28,7 @@ run: async(client, message, args)  => {
     ]  
     const begRamdomzier = Math.floor(Math.random()* beg.length)
     
-     await economy.addCoins(userId, coins)
     message.channel.send(`${beg[begRamdomzier]}`)
+    economy.addCoins(userId, coins)
  }
 } 
