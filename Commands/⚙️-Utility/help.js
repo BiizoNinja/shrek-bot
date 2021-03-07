@@ -28,11 +28,11 @@ module.exports = {
             
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(` Do **+help [command_name]** for more info!, Written and Developed by BiizoNinja#9999`)
-            .addFields( categories,
+            .setDescription(categories)
+            .addFields( 
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
-            .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
+            .setFooter(`Do +help <command-name> for more info!`)
             .setThumbnail('https://media.discordapp.net/attachments/753832377054396448/799276629599584256/shrek1.jpg?width=461&height=461')
             .setColor(' #7dff02 ');
 
@@ -54,11 +54,11 @@ module.exports = {
             .setTitle(`${(args[0])} Command!`) 
             .setDescription('Some info about the command, If there is <> brackets then that field is REQUIRED, but if there is [] then that feild is OPTIONAL')
             .addFields(
-                {name: "Description" , value: description, inline: true},
-                {name: "Usage" , value: usage, inline: true },
-                {name: "Examples" , value: examples, inline: true },
-                {name: "Aliases" , value: aliases, inline: true },
-                {name: 'Cooldown', value: cooldown, inline: true }
+                {name: "Description" , value: description},
+                {name: "Usage" , value: usage},
+                {name: "Examples" , value: examples},
+                {name: "Aliases" , value: aliases},
+                {name: 'Cooldown', value: cooldown}
             )
             .setFooter(`Requested By: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
             .setColor(' #7dff02')
