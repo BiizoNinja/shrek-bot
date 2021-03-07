@@ -28,8 +28,8 @@ module.exports = {
             
             let embed = new Discord.MessageEmbed()
             .setTitle('Help Command!')
-            .setDescription(categories)
-            .addFields( 
+            .setDescription()
+            .addFields(categories,
                 { name: "\u200c", value: ("<a:Arrow_pointing_right:769978144760791082> [Invite](https://dsc.gg/shrekbot) `|` <a:wumpus_coding:801002702552170506> [Support Server](https://discord.gg/CgzBqZjz2v) `|` <a:topgg:804957699506831391> [Vote Here!](https://top.gg/bot/789129116015525918)" ), inline: true },
             )
             .setFooter(`Do +help <command-name> for more info!`)
