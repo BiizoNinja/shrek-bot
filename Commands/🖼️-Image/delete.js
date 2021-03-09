@@ -13,7 +13,7 @@ run: async (client, message, args) => {
     const image = new DIG.Delete().getImage(avatar);
     const imageSend = new Discord.MessageAttachment(avatar, 'image.png')
 
-    message.channel.send(image)
+   await message.channel.send(image)
 
 }
 }
