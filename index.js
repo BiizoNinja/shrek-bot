@@ -12,7 +12,7 @@ const Distube = require('distube')
 // --------- Mongoose Connected ---------
 
 const mongoose = require('mongoose') 
-mongoose.connect('mongodb+srv://BiizoNinja:qQ2YJLXxfFN9MgoE@shrekbot.th9eb.mongodb.net/Data',{
+mongoose.connect('MONGO URL',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
