@@ -34,5 +34,6 @@ module.exports = {
        .addField(`Error`,`${error}`)
        message.channel.send(embed1)
    }
+   
  }
 }

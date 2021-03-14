@@ -34,7 +34,8 @@ module.exports  = {
         message.channel.send(`❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`);
     });
  
-    }
+  
+}
     
 
 } 

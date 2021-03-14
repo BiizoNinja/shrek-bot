@@ -4,7 +4,7 @@ module.exports = {
   name: "emojis",
   description: "View all emojis in the guild",
   category: "utility",
-  run: async (bot, message, args) => {
+  run: async (client, message, args) => {
     let Emojis = "";
     let EmojisAnimated = "";
     let EmojiCount = 0;
@@ -30,5 +30,6 @@ module.exports = {
       )
       .setColor(`RANDOM`);
     message.channel.send(Embed);
+    
   },
 };

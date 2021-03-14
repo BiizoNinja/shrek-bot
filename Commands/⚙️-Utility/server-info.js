@@ -40,6 +40,7 @@ module.exports = {
         .setColor('RANDOM');
 
         message.channel.send(EMBED)
+        
       }
     
     }

@@ -18,6 +18,7 @@ module.exports = {
             .setColor("RED")
             await message.channel.send(embed)
             msg.delete()
+            
 
     }
 }

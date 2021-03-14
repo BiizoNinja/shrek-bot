@@ -37,7 +37,7 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
 
 // --------- Logging in to the bot ---------
 
-client.login(process.env.TOKEN)
+client.login('your token')
 
 //client.login(config.token)
 

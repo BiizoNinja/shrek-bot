@@ -24,4 +24,5 @@ client.on('message', async message =>{
             }, command.cooldown)
         } else command.run(client, message, args);
     }
+    
 });

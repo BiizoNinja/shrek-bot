@@ -67,6 +67,7 @@ module.exports.getCoins = async (userId) => {
   })
 }
 
+
 module.exports.removeCoins = async ( userId, coins) => {
   return await mongo().then(async (mongoose) => {
     try {

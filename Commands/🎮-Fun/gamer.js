@@ -23,7 +23,7 @@ module.exports = {
         .setFooter('nice')
 
         message.channel.send(GamerEmbed)
-       S
+       
       }
 
     }

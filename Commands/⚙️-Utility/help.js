@@ -64,6 +64,7 @@ module.exports = {
             .setColor(' #7dff02')
 
             return message.channel.send(embed2)
+            
         }
        
     

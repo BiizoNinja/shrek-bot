@@ -11,4 +11,5 @@ module.exports = {
         if(!args[0]) return message.channel.send("Ask me something")
         chatbot.getReply(content).then(r => message.channel.send(r));
     }
+    
 }

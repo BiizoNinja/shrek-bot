@@ -16,7 +16,6 @@ module.exports = {
         )
         .setColor(" #36393f ")
         message.channel.send(usageEmbed)
-
     
   }
 }

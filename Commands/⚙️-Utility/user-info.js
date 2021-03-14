@@ -53,6 +53,7 @@ module.exports = {
             ])
             .setFooter(`Requested by ${message.author.username}` , `${message.author.displayAvatarURL( {dynamic : true} )}`);
         return message.channel.send(embed);
+        
     }
 }
  

@@ -13,4 +13,5 @@ client.on('guildCreate', (guild) => {
             .setColor("GREEN")
             .setTimestamp()
         channel.send(embed)
+        
 })
