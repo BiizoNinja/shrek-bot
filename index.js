@@ -7,22 +7,13 @@ const client = new Client({
 const path = require('path')
 const fs = require('fs')
 const config = require('./config.json');
-const Distube = require('distube')
 
-// --------- Mongoose Connected ---------
-
-const mongoose = require('mongoose') 
-mongoose.connect('MONGO URL',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-
-}),
 
 // --------- Collections ---------
 
 module.exports = client;
 client.commands = new Collection();
-client.prefix = config.prefix;
+client.prefix = process.env.PREFIX;
 client.aliases = new Collection();
 client.categories = fs.readdirSync(path.resolve('Commands'));
 
@@ -30,14 +21,10 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
     require(path.resolve(`handlers/${handler}`))(client);
 }); 
 
-// --------- Distube ---------
-
-
-
 
 // --------- Logging in to the bot ---------
 
-client.login('your token')
+client.login(process.env.BOT_TOKEN)
 
 //client.login(config.token)
 
