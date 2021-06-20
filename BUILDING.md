@@ -1,3 +1,5 @@
+> These commands havn't been tested ___yet___, so you might have some errors.
+
 # Building ShrekBot
 
 ## Installing prerequisites
@@ -61,7 +63,7 @@ brew install node git
 ## Getting the files / Cloning shrekbot
 
 1. Open a Terminal (Command Prompt, Terminal.app, etc.)
-2. Change the current working directory to the location where you want ShrekBots files to be
+2. Change the current working directory to the location where you want ShrekBots folder to be (git will auto create a folder called `shrek-bot`)
 ```bash
 # This command below will change the current directory to the Desktop!
 cd Desktop/
@@ -72,7 +74,7 @@ cd Desktop/
 git clone https://github.com/BiizoNinja/shrek-bot.git
 ```
 
-4. Press the __Enter__ Key to execute the command
+4. Press the __Enter__ Key to execute the command (Don't close the terminal yet!)
 ```bash
 $ git clone https://github.com/BiizoNinja/shrek-bot.git
 > Cloning into `shrek-bot`...
@@ -82,3 +84,17 @@ $ git clone https://github.com/BiizoNinja/shrek-bot.git
 > Unpacking objects: 100% (10/10), done.
 ```
 
+## Setting up ShrekBot
+
+1. Run the command below
+```bash
+# This will change your directory to "shrek-bot" then will install the packages required to run ShrekBot!
+cd shrek-bot && npm install
+```
+
+2. Replace TOKEN with the bot token you obtained from the [Discord Developer Portal](https://discord.com/developers/applications)
+```bash
+echo "BOT_TOKEN = 'TOKEN'" > .env
+```
+
+3. Run `node .` to run shrekbot! After this the bot should be online. If you have any problems feel free to ask in our [discord server](https://discord.gg/V9DHGNtuUe).
