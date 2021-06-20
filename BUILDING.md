@@ -2,6 +2,11 @@
 
 ## Installing prerequisites
 
+The instructions below installs:
+
+- [git](https://git-scm.com/)
+- [NodeJS](https://nodejs.org/)
+
 ### Microsoft Windows
 
 _Microsoft Windows 7 or later is required_
@@ -53,3 +58,6 @@ brew install node git
 | Gentoo               | `emerge net-libs/nodejs dev-vcs/git`           | [`portage`](https://wiki.gentoo.org/wiki/Portage)             |
 
 
+## Building ShrekBot
+
+1. 
