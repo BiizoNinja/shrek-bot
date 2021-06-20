@@ -83,8 +83,3 @@ $ git clone https://github.com/BiizoNinja/shrek-bot.git
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
 ```
-
-### Using GitHub Desktop
-
-1. Click [here](x-github-client://openRepo/https://github.com/BiizoNinja/shrek-bot) to clone and open the repository with GitHub Desktop.
-2. Follow the prompts in GitHub Desktop to complete the clone.
