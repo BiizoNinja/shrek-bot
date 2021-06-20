@@ -58,6 +58,28 @@ brew install node git
 | Gentoo               | `emerge net-libs/nodejs dev-vcs/git`           | [`portage`](https://wiki.gentoo.org/wiki/Portage)             |
 
 
-## Building ShrekBot
+## Getting the files
 
-1. 
+### Using the command line
+
+1. Open a Terminal (Command Prompt, Terminal.app, etc.)
+2. Change the current working directory to the location where you want ShrekBots files to be
+```bash
+# This command below will change the current directory to the Desktop!
+cd Desktop/
+```
+
+3. Type the command below
+```bash
+git clone https://github.com/BiizoNinja/shrek-bot.git
+```
+
+4. Press the __Enter__ Key to execute the command
+```bash
+$ git clone https://github.com/BiizoNinja/shrek-bot.git
+> Cloning into `shrek-bot`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
