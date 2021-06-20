@@ -97,4 +97,9 @@ cd shrek-bot && npm install
 echo "BOT_TOKEN = 'TOKEN'" > .env
 ```
 
-3. Run `node .` to run shrekbot! After this the bot should be online. If you have any problems feel free to ask in our [discord server](https://discord.gg/V9DHGNtuUe).
+3. Run the command below to run shrekbot!
+```bash
+node .
+```
+
+After this the bot should be online. If you have any problems feel free to ask in our [discord server](https://discord.gg/V9DHGNtuUe).
