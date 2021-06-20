@@ -60,8 +60,6 @@ brew install node git
 
 ## Getting the files / Cloning shrekbot
 
-### Using the command line
-
 1. Open a Terminal (Command Prompt, Terminal.app, etc.)
 2. Change the current working directory to the location where you want ShrekBots files to be
 ```bash
@@ -83,3 +81,4 @@ $ git clone https://github.com/BiizoNinja/shrek-bot.git
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
 ```
+
