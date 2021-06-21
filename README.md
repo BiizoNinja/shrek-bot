@@ -42,5 +42,5 @@ Feel free to create a pull request! And if you want you're code/command to be ad
 
 Using the entire project/parts of the code is completely fine. But giving credit is appreciated >:) 
 **All Contributors**
-1. [@TechPlayz](https://github.com/TechPlayz)
+1.[@TechPlayz](https://github.com/TechPlayz)
 
