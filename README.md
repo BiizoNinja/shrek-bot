@@ -41,5 +41,6 @@ After you've done this the bot should be on. If you have anny problems feel free
 Feel free to create a pull request! And if you want you're code/command to be added make sure to **fork** the repository! Also give a ⭐ if you like it ;) 
 
 Using the entire project/parts of the code is completely fine. But giving credit is appreciated >:) 
-
+**All Contributors**
+1. [@TechPlayz](https://github.com/TechPlayz)
 
