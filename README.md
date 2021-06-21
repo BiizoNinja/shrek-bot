@@ -29,7 +29,8 @@ Instructions can be found in [BUILDING.md](https://github.com/BiizoNinja/shrek-b
 
 ## Contributing
 Feel free to create a pull request! And if you want you're code/command to be added make sure to **fork** the repository! Also give a ⭐ if you like it ;) 
+Using the entire project/parts of the code is completely fine. But giving credit is appreciated >:)
 
-Using the entire project/parts of the code is completely fine. But giving credit is appreciated >:) 
-
+Contributors
+- [@TechPlayz](https://github.com/TechPlayz)
 
