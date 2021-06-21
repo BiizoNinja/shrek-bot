@@ -33,4 +33,5 @@ Using the entire project/parts of the code is completely fine. But giving credit
 
 Contributors
 - [@TechPlayz](https://github.com/TechPlayz)
+- [@arche-dev](https://github.com/arche-dev)
 
