@@ -32,10 +32,10 @@ You can compile the bot by:
 - Then "`cd`" to your downloaded folder 
 - After you've done that, run the command `npm install` in the terminal. 
 - Create a ` .env ` file.
-- In the .env file type the following `BOT_TOKEN = 'TOKEN'` in the "TOKEN" part add your bot token from [Discord Developer Portal](https://discord.com/developers/applications).
+- In the .env file type the following `botToken = 'TOKEN'` in the "TOKEN" part add yout bot token from [Discord Developer Portal](https://discord.com/developers/applications).
 - Finally, run `node .` in the terminal 
 
-After you've done this the bot should be on. If you have any problems feel free to ask in [our discord server](https://discord.gg/V9DHGNtuUe). 
+After you've done this the bot should be on. If you have anny problems feel free to ask in [our discord server](https://discord.gg/V9DHGNtuUe). 
 
 ## Contributing
 Feel free to create a pull request! And if you want you're code/command to be added make sure to **fork** the repository! Also give a ⭐ if you like it ;) 
