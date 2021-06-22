@@ -8,7 +8,7 @@
 
 - [About](#about)
 - [Features](#features)
-- [Compiling](#compiling)
+- [Building](#building)
 - [Contributing](#contributing)
 
     
