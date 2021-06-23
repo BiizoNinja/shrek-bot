@@ -1,5 +1,4 @@
 const discord = require('discord.js')
-const { MessageButton } = require('discord-buttons')
 const fetch = require('node-fetch')
 
 module.exports = {
