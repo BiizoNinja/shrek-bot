@@ -23,7 +23,7 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
 
 
 // --------- Logging in to the bot ---------
-
+require('dotenv').config()
 client.login(process.env.BOT_TOKEN)
 
 //client.login(config.token)

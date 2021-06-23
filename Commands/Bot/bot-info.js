@@ -3,7 +3,7 @@ module.exports = {
    name: 'bot-info',
    description: 'Get info about the bot.',
    aliases: ["botinfo", "bi", "support", "invite"],
-   usage: '+bot-info',
+   usage: 'bot-info',
    run: async(client, message, args) => {
 
     let uptime = ``;
@@ -29,6 +29,7 @@ module.exports = {
        .setAuthor('Info - ShrekBot', client.user.displayAvatarURL({dynamic: false}))
        .setDescription('Do \`.help\` do get a list of commands')
        .addFields(
+           
            {name: 'Server Count', value: `${client.guilds.cache.size} Servers`, inline: true},
            {name: 'Language', value: `JavaScript ES6`, inline: true},
            {name: 'Language', value: `JavaScript ES6`, inline: true},
@@ -38,8 +39,8 @@ module.exports = {
            {name: 'Time Until Last Restarted', value: uptime, inline: true}
            
        )
-       .setFooter(`pretty cool ain't it?`)
-       .setColor('RANDOM')
+       .setFooter(`PREFIX - '.'`)
+       .setColor(message.guild.me.displayHexColor)
 
 
        await message.channel.send(embed)

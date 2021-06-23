@@ -38,7 +38,7 @@ module.exports = {
             })
             
             let embed = new Discord.MessageEmbed()
-            .setAuthor(`${client.user.username}'s Commands`, client.user.displayAvatarURL({dynamic: true}))
+            .setAuthor(`Help - ${client.user.username}`, client.user.displayAvatarURL({dynamic: true}))
             .setTitle('Help Command!')
             .addFields(categories)
             .setFooter(`Do .help <command-name> for more info!`)
@@ -59,7 +59,7 @@ module.exports = {
 
             let embed2 = new Discord.MessageEmbed()
             .setAuthor(`Requested from ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
-            .setTitle(`${(name.toLocaleString())} Command!`) 
+            .setTitle(`Help - ShrekBot, ${(name.toLocaleString())} Command!`) 
             .setDescription(`> **Here is some info about the command!**\n> Note: If the field has \`< >\` then it is a **required** field. But if the field has \`[ ]\` then it is an **optional** field.\n`)
             .addFields(
                 {name: "📋 Description" , value: `\`${description}\``},
