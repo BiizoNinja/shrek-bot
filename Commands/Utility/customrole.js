@@ -161,7 +161,7 @@ const crUser = require('../../models/cr-userSchema')
   const AllowedRole = message.guild.roles.cache.get(`${crData.AllowedRole}`)  
   if(!message.member.roles.cache.has(AllowedRole.id)) return message.channel.send(`<:wrong:856162786319925270> You must have the \`@${AllowedRole.name}\` role to edit custom roles!`) 
 
-  if(!crUserData) return message.channel.send('wrong:856162786319925270> You don\'t have a custom role! Run `.customrole create <Color> <name>` to create one!')
+  if(!crUserData) return message.channel.send('<wrong:856162786319925270> You don\'t have a custom role! Run `.customrole create <Color> <name>` to create one!')
 
   message.guild.roles.cache.get(crUserData.CustomRole).delete()
   await crUserData.delete()
