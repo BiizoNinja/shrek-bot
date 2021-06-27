@@ -31,7 +31,7 @@ module.exports = {
                 let data = new Object()
                 data = {
                     name: editedName,
-                    value:cmds.length === 0 ? "In Progress..." : cmds.join(' ')
+                    value:cmds.length === 0 ? "In Progress..." : cmds.join(' | ')
                 }
                 categories.push(data)
 

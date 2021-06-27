@@ -9,10 +9,13 @@ module.exports = {
         const member = message.mentions.members.first() 
             if(!member)  return  message.channel.send('Please specify a member to play with!')
         
-        new tictactoe({
+        const ttt = new tictactoe({
             player_two: member, 
             message: message
-        })
+        }); 
+
+        const embed = new Discord.MessageEmbed()
+        .setDescription(ttt)
     }
     
 }

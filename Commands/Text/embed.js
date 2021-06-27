@@ -6,7 +6,7 @@ description:'Creates a custom embed',
 usage: 'embed',
 run: async (client, message, args) => {
  
-  if(!message.member.roles.cache.has('853150986457972777')) return message.channel.send('You don\'t have proper perms!')
+  if(!message.member.hasPermission) return message.channel.send('You don\'t have proper perms!')
       message.delete()
       message.channel.send(
         new Discord.MessageEmbed()
@@ -28,15 +28,15 @@ run: async (client, message, args) => {
           }
           if (!channel) {
             channel = msg.channel
+          if(!channel.permissionsFor(message.member).has("SEND_MESSAGES")) return message.channel.send('yo you cant use that channel mate')
             return;
           } else {
             msg.channel.send(
               new Discord.MessageEmbed()
               .setAuthor(`Embed Creator | 2/7`, message.author.displayAvatarURL({dynamic: true}))
               .setDescription(`The embed will be in ${channel.toString()}. What title do you want for the embed?`)
-                      .setColor("#GREEN")
+              .setColor("#GREEN")
             )
-            channelCollector.stop();
           }
           let titleFilter = m => m.author.id === message.author.id;
           let titleCollector = new Discord.MessageCollector(message.channel, titleFilter, { max: 999 });

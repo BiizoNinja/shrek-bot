@@ -31,8 +31,7 @@ module.exports = {
        .addFields(
            
            {name: 'Server Count', value: `${client.guilds.cache.size} Servers`, inline: true},
-           {name: 'Language', value: `JavaScript ES6`, inline: true},
-           {name: 'Language', value: `JavaScript ES6`, inline: true},
+           {name: 'Language', value: `JavaScript ES5`, inline: true},
            {name: 'Library', value:`discord.js`,inline: true},
            {name: 'Bot Version', value: `0.01`, inline: true},
            {name: 'Commands', value: `${client.commands.size} Commands!`, inline: true},

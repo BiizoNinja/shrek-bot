@@ -11,7 +11,7 @@ module.exports = {
 
         let question = args.join(" ");
 
-        if(!question) return message.channel.send('You need to ask a question... <a:feelsweirdman:773879148854640669> ')
+        if(!question) return message.channel.send('You need to ask a question...  ')
 
         if(question) {
         const embed = new Discord.MessageEmbed()

@@ -20,7 +20,14 @@ client.categories = fs.readdirSync(path.resolve('Commands'));
 ["command"].forEach(handler => {
     require(path.resolve(`handlers/${handler}`))(client);
 }); 
+// -------- MongoDB ----------
+require('dotenv').config()
 
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 // --------- Logging in to the bot ---------
 require('dotenv').config()

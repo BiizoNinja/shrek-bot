@@ -1,4 +1,4 @@
-
+const { EmbedPages } = require('reconlx')
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "emojis",
@@ -23,7 +23,7 @@ module.exports = {
         Emojis += Emoji(emoji.id);
       }
     });
-    let Embed = new MessageEmbed()
+    let Embed1 = new MessageEmbed()
       .setTitle(`Emojis in ${message.guild.name}.`)
       .setDescription(
         `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n\n**Over all emojis [${OverallEmojis}]**`
