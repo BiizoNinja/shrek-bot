@@ -18,7 +18,8 @@ const crUser = require('../../models/cr-userSchema')
   });
 
   const crUserData = await crUser.findOne({
-      UserID: message.author.id
+      UserID: message.author.id,
+      GuildID: message.guild.id,
   });
 
   if(settings.toLowerCase() == 'cache') {
@@ -142,6 +143,7 @@ const crUser = require('../../models/cr-userSchema')
 
         await new crUser({
             UserID: message.author.id,
+            GuildID: message.guild.id,
             CustomRole: role.id
          }).save();
       
