@@ -4,13 +4,13 @@ client.on('guildCreate', (guild) => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
 
     if (!channel) return;
-    console.log(`I got added to ${guild.name}`)
     const Discord = require('discord.js');
        const embed = new  Discord.MessageEmbed()
             .setAuthor(guild.name, guild.iconURL({ dynamic: true }))
             .setTitle('Thank You!')
-            .setDescription(`Thank you for inviting me! My prefix is \`+\`\n You can do \`+help\` for a list of commad+ \n I'll do my best to help! \n If you need help check the [Support Server](https://discord.gg/CgzBqZjz2v) `)
-            .setColor("GREEN")
+            .setDescription(`Thank you! **${guild.name}**! For inviting me!! I am ShrekBot and __open source__ discord bot, I am developed by \`BiizoNinja#6969\` and all the amazing people who fork my github repo :)\nAnd they updates me all the time! I will do my very best to help out in the server.\n**Important Links**:\nSupport Server: [Click me!](https://discord.gg/V9DHGNtuUe)\nMy invite link: [Click me](https://dsc.gg/shrekbot)\nGitHub: [Click me](https://github.com/BiizoNinja/shrek-bot)`)
+            .setColor("RANDOM")
+            .setFooter('For support join the support server!')
             .setTimestamp()
         channel.send(embed)
         

@@ -1,4 +1,5 @@
 const { tictactoe } = require('reconlx')
+const Discord = require('discord.js')
 
 module.exports = {
     name : 'tictactoe',
