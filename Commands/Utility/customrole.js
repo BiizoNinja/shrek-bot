@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const schema = require('../../models/cr-schema');
-const crUserSchema = require('../../models/cr-userSchema');
-const crUser = require('../../models/cr-userSchema')
+const crUserSchema = require('../../models/crUserSchema')
 
   module.exports = {
   name: 'customrole',
@@ -17,7 +16,7 @@ const crUser = require('../../models/cr-userSchema')
       GuildID: message.guild.id
   });
 
-  const crUserData = await crUser.findOne({
+  const crUserData = await crUserSchema.findOne({
       UserID: message.author.id,
       GuildID: message.guild.id,
   });
@@ -141,7 +140,7 @@ const crUser = require('../../models/cr-userSchema')
         message.member.roles.add(role)
         message.channel.send('<:greenTick:854228019312066571> I have made your custom role and have added it to you!')
 
-        await new crUser({
+        await new crUserSchema({
             UserID: message.author.id,
             GuildID: message.guild.id,
             CustomRole: role.id
