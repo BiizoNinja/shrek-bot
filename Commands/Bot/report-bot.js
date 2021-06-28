@@ -20,6 +20,8 @@ module.exports = {
             .addField('Owner Info', `${message.author.tag} • \`${message.author.id}\``)
             .setThumbnail(guild.iconURL({ dynamic: true }))
             .setTimestamp()
+        suggestchannel.send(suggestembed)
+        
         wc.send({
             username: message.author.tag,
             avatarURL: message.author.displayAvatarURL({ dynamic: true }),

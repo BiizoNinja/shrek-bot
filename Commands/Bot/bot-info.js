@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 module.exports = {
    name: 'bot-info',
    description: 'Get info about the bot.',
-   aliases: ["botinfo", "bi", "support", "invite"],
+   aliases: ["botinfo", "bi"],
    usage: 'bot-info',
    run: async(client, message, args) => {
 
