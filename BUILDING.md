@@ -103,3 +103,4 @@ node .
 ```
 
 After this the bot should be online. If you have any problems feel free to ask in our [discord server](https://discord.gg/V9DHGNtuUe).
+Or if you do not want to do all this, we recommend inviting the [public version](https://dsc.gg/shrekbot). 
