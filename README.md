@@ -14,7 +14,7 @@
     
 ## About 
 ShrekBot used to be a **verified** discord bot! But the idiot owner (me) decided to delete for some reason??? (prolly cause he smoked crack) So I've been thinking to bring it back and I don't what better way other than this!
-The new ShrekBot is designed to be **made by the community!** so forks are always welcomed! I'll be checking forks frequently and updating the bot frequently! Also make sure to post working code! You can see if your features got added in the [BiizoDev Discord Server](https://discord.gg/V9DHGNtuUe). 
+The new ShrekBot is designed to be **made by the community!** so forks are always welcomed! I'll be checking forks frequently and updating the bot frequently! Also make sure to post working code! You can invite the [public version](https://dsc.gg/shrekbot) to see all the features of the bot without compiling yourself.
 
 ## Features 
 - Community Made
