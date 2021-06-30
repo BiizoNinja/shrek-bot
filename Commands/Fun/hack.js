@@ -42,6 +42,7 @@ module.exports = {
         .then(msg => {
             for (let i = 0, c = Math.floor((Math.random() * 100) + 45), b = 0, bc; i < c; i++) {
                 if (Number(i/c*100) > b * 10) {
+                    bc = ""
                     for (let fl = 0; fl < b; fl++) { bc += "■"};
                     for (let bl = 0; bl < 10-b; bl++) { bc += "□"};
                     b++
