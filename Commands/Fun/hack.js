@@ -37,58 +37,20 @@ module.exports = {
         .setFooter('totally real!1!!1!')
 
         message.channel.send(`Hacking  **${taggedUser.tag}***...`);
-        message.channel.send('Status: ■□□□□□□□□□□ 0%')
+        
+        message.channel.send('Status: □□□□□□□□□ 0%')
         .then(msg => {
-            wait(93);
-            msg.edit('Status: ■■□□□□□□□□ 7%');
-            wait(100);
-            msg.edit('Status: ■□□□□□□□□□ 8%');
-            wait(20)
-            msg.edit('Status: ■□□□□□□□□□ 9%');
-            wait(90);
-            msg.edit('Status: ■□□□□□□□ 12%');
-            wait(60);
-            msg.edit('Status: ■□□□□□□ 14%');
-            wait(60);
-            msg.edit('Status: ■□□□□□□□□□ 17%');
-            wait(40);
-            msg.edit('Status: ■□□□□□□□□□ 20%');
-            wait(10);
-            msg.edit('Status: ■■□□□□ 21%');
-            wait(12);
-            msg.edit('Status: ■■□□□□□□□□□ 22%');
-            wait(13);
-            msg.edit('Status: ■■□□□□□□□□□ 24%');
-            wait(80);
-            msg.edit('Status: ■■□□□□□□□□ 29%');
-            wait(80);
-            msg.edit('Status: ■■■□□□□□□□ 31%');
-            wait(80);
-            msg.edit('Status: ■■■■□□□□□□ 36%');
-            wait(40);
-            msg.edit('Status: ■■■■■□□□□□□ 41%');
-            wait(60);
-            msg.edit('Status: ■■■■■■□□□□ 47%');
-            wait(50);
-            msg.edit('Status: ■■■■■■□□□□□ 53%');
-            wait(35);
-            msg.edit('Status: ■■■■■■■□□□□ 58%');
-            wait(80);
-            msg.edit('Status: ■■■■■■■□□□ 66%');
-            wait(60);
-            msg.edit('Status: ■■■■■■■□□□ 74%');
-            wait(20);
-            msg.edit('Status: ■■■■■■■□□□ 79%');
-            wait(83);
-            msg.edit('Status: ■■■■■■■□□□ 80%');
-            wait(50);
-            msg.edit('Status: ■■■■■■■□□□ 85%');
-            wait(14);
-            msg.edit('Status: ■■■■■■■■■□□ 93%');
-            wait(70);
-            msg.edit('Status: ■■■■■■■■■■□ 97%');
-            wait(90);
-            msg.edit('Status: ■■■■■■■■■■■ 100%').then(async() => {
+            for (let i = 0, c = Math.floor((Math.random() * 100) + 45), b = 0, bc; i < c; i++) {
+                if (Number(i/c*100) > b * 10) {
+                    for (let fl = 0; fl < b; fl++) { bc += "■"};
+                    for (let bl = 0; bl < 10-b; bl++) { bc += "□"};
+                    b++
+                }
+                wait((Math.random() * 100) + 12);
+                msg.edit(`Status: ${bc} ${(i/c*100).toFixed(2)}%`);
+            }
+            
+            msg.edit('Status: ■■■■■■■■■■ 100%').then(async() => {
             const fMsg = await message.channel.send(`Successfully hacked **${taggedUser.tag}**! Fetching Information... <a:blueLoading:856159438024605709>`)  
             setTimeout(() => {
                 fMsg.edit('Information Found', embed)
