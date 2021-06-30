@@ -16,18 +16,7 @@ module.exports = {
     ]
     const emailRandom = Math.floor(Math.random()* eMails.length)
 
-    const passwords = [
-        'dospesselvinhefutty',
-        'naisaarrimneynozongo',
-        'sponforgelvigmewrory',
-        'cruisreatuenroyonkebt',
-        'cronvorshinketrenjoxy',
-        'symbowleynoggerginwalgae',
-        'flyiceclaingilliovense',
-        'fudannuatinjushegg',
-        'clomorchilterfeciangy'
-    ]
-    const passRandom = Math.floor(Math.random()* passwords.length)
+    const password = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
 
         function wait(ms){
             let start = new Date().getTime();
@@ -43,7 +32,7 @@ module.exports = {
         }
         const embed = new Discord.MessageEmbed()
         .setAuthor(`${taggedUser.tag} got hacked!`, taggedUser.displayAvatarURL({dynamic: true}))
-        .setDescription(`**__Found Info!__**\n> Emails: ${eMails[emailRandom]}\n> Password: ${passwords[passRandom]}\n`)
+        .setDescription(`**__Found Info!__**\n> Emails: ${eMails[emailRandom]}\n> Password: ${password}\n`)
         .setColor(message.guild.me.displayHexColor)
         .setFooter('totally real!1!!1!')
 
