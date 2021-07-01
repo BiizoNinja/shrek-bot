@@ -1,7 +1,8 @@
 module.exports = {
     name: 'trivia',
     description: 'Answer trivia questions',
-    usage: '+trivia',
+    usage: 'trivia',
+    cooldown: 0,
     run: async (client, message, args) => {
         const discord = require('discord.js')
         const fetch = require("node-fetch");
@@ -139,29 +140,29 @@ module.exports = {
                         if (this.reaction == '🇨') this.input_answer = 3
                         if (this.reaction == '🇩') this.input_answer = 4
                         if (this.input_answer == this.correct_answer) {
-                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + '  <a:TICK:801450801200758795>'
+                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + '✅'
                             this.question_embed = new discord.MessageEmbed()
                                 .setColor('#0099ff')
                                 .setTitle(atob(this.question.results[0].question))
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit('You got it correct! <a:COOL_BLOB:802181718395584583>')
+                            this.question_message.edit('You got it correct! 😎')
                             this.end_game()
                         }
                         else {
-                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' <a:XMARK:801450921112371232>'
+                            this.answer_array[this.input_answer - 1] = this.answer_array[this.input_answer - 1] + ' ❌'
                             this.question_embed = new discord.MessageEmbed()
                                 .setColor('#0099ff')
                                 .setTitle(atob(this.question.results[0].question))
                                 .setDescription(this.answer_array)
                                 .setFooter('Category - ' + atob(this.question.results[0].category) + ', Difficulty - ' + atob(this.question.results[0].difficulty))
                             this.question_message.edit(this.question_embed)
-                            this.question_message.edit(' <a:XMARK:801450921112371232> | You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
+                            this.question_message.edit(' ❌ | You got it wrong. The correct answer was ' + this.reactions[this.correct_answer - 1])
                             this.end_game()
                         }
                     }).catch(() => {
-                        this.question_message.edit('<a:XMARK:801450921112371232> | You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
+                        this.question_message.edit('❌ | You took to long to answer! Game has timed out. The answer was ' + this.reactions[this.correct_answer - 1])
                         this.end_game()
                     })
             }

@@ -5,9 +5,10 @@ name: 'ban',
 description: 'Bans Users!',
 usage: 'ban <user> <reason>',
 cooldown: 0 ,
+cooldown: 0,
 run: async (client, message, args) => {
 
-    const target = message.mentions.users.first()
+    const target = message.mentions.members.first()
     
     if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(' <:wrong:856162786319925270> You don\'t have the permission to do this! ')
     if(!target) return message.channel.send(`<:wrong:856162786319925270> Please specify a member to ban.`)
@@ -17,7 +18,7 @@ run: async (client, message, args) => {
     const reason = args.slice(1).join(' ')
     if(!reason) return message.channel.send(' <:wrong:856162786319925270> Please provide a reason to ban!')
 
-    target.member.ban({
+    target.ban({
         days: 0,
         reason: `Ban Requested from ${message.author.tag}, Reason: ${reason}`
     }).then(() => {

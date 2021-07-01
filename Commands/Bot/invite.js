@@ -3,7 +3,8 @@ const Discord = require('discord.js');
 module.exports = {
 name: 'invite',
 description: 'Get the invite links of the bot',
-usage: '.invite',
+usage: 'invite',
+cooldown: 0,
 run: async (client, message, args) => {
 
 const embed = new Discord.MessageEmbed()

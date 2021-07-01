@@ -20,8 +20,9 @@ const flags = {
 module.exports = {
     name: 'user-info',
     description: "Shows a users info",
-    usage: '+user-info || +user-info [@mention]',
+    usage: 'user-info [@mention]',
     aliases: ['ui'],
+    cooldown: 0,
     run: async (client, message, args) => {
         const member = message.mentions.members.last() ||  message.member;
         const roles = member.roles.cache

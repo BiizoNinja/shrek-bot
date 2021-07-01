@@ -4,6 +4,7 @@ module.exports={
 name: 'embed',
 description:'Creates a custom embed',
 usage: 'embed',
+cooldown: 0,
 run: async (client, message, args) => {
  
   if(!message.member.hasPermission) return message.channel.send('You don\'t have proper perms!')

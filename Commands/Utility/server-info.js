@@ -2,7 +2,8 @@ module.exports = {
     name: 'server-info',
     aliases: ['si'],
     description: "This shows the server info",
-    usage: "+server-info",
+    usage: "server-info",
+    cooldown: 0,
     run: async (client, message, args) => {
         const Discord = require('discord.js');
 

@@ -4,8 +4,8 @@ module.exports = {
 name: 'owofy',
 description: 'Makes your messages in to owo',
 aliases: ["owo"],
-usage: '+owofy <message>',
-examples: '+owofy hello',
+usage: 'owofy <message>',
+cooldown: 0,
 run:async (client, message, args)  => {
     const fullMessage = args.slice(0).join(" ")
 

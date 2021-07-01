@@ -3,8 +3,9 @@ const { parse } = require('twemoji-parser')
 module.exports = {
     name: 'steal',
     description: "Steals Emojis",
-    usage: '+steal <Emoji> [new-emoji-name]',
+    usage: 'steal <Emoji> [new-emoji-name]',
     aliases: ['stealemoji'],
+    cooldown: 0,
     run: async (client, message, args) => {
 
         if (!message.member.permissions.has("MANAGE_EMOJIS")) 

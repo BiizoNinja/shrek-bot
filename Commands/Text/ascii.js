@@ -3,7 +3,8 @@ const figlet = require('figlet')
 module.exports = {
     name: 'ascii',
     description: 'Makes a banner!',
-    usage: 'f!ascii <your text>',
+    usage: 'ascii <your text>',
+    cooldown: 0,
     run: async (client, message, args) => {
         if (!args[0]) return message.channel.send('please provide a some text')
         dd = args.slice(0).join(' ');

@@ -3,9 +3,9 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'gamerrate',
     description: 'Look how epic gamer you are',
-    usage: '+gamerrate [@user] ',
-    examples: '+gamerrate @Biomeium **OR** +gamerrate',
+    usage: 'gamerrate [@user] ',
     aliases: ['gamer'],
+    cooldown: 0,
     run:async (client, message, args) => {
 
         const bots = message.guild.members.cache.filter(member => member.user.bot)

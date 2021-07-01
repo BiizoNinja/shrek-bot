@@ -4,19 +4,19 @@ const Discord = require('discord.js')
 module.exports = {
     name : 'tictactoe',
     description: "Plays a game to tictactoe",
-    usage: "+tictactoe <@mention>",
+    usage: "tictactoe <@mention>",
     aliases: ["ttt"],
+    cooldown: 0,
     run: async(client, message, args) => {
-        const member = message.mentions.members.first() 
-            if(!member)  return  message.channel.send('Please specify a member to play with!')
+        const member = message.mentions.users.first() 
+        if(!member) return message.channel.send('Please specify a member to play with!')
+        
+        if(member.id == message.author.id) return message.channel.send('You can\'t play with yourself!?!')
         
         const ttt = new tictactoe({
             player_two: member, 
             message: message
         }); 
-
-        const embed = new Discord.MessageEmbed()
-        .setDescription(ttt)
     }
     
 }

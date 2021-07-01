@@ -4,6 +4,7 @@ module.exports = {
 name: 'about',
 description: 'about shrebot!',
 usage: 'about',
+cooldown: 0,
 run: async (client, message, args) => {
 
 const embed = new Discord.MessageEmbed()

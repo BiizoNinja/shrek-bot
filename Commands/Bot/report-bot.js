@@ -5,6 +5,7 @@ module.exports = {
     name: 'report-bug',
     description: 'Make a bug report',
     usage: 'report-bug <bug>',
+    cooldown: 0,
     run: async (client, message, args) => {
         const suggestchannel = client.channels.cache.find(channel => channel.id === "858711068167897100")
         if (!args[0]) return message.channel.send("Error! Please do: `.report-bug <Bug>` ")

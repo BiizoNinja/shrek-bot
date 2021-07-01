@@ -1,9 +1,11 @@
 const { EmbedPages } = require('reconlx')
 const { MessageEmbed } = require("discord.js");
+
 module.exports = {
   name: "emojis",
   description: "View all emojis in the guild",
   category: "utility",
+  cooldown: 0,
   run: async (client, message, args) => {
     let Emojis = "";
     let EmojisAnimated = "";

@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
 name: 'createchannel',
 description: 'Create a text channel!',
-usage: '+create voice channel <name>',
+usage: 'create voice channel <name>',
 cooldown: 0 ,
 aliases: ['cchannel'],
 run: async (client, message, args) => {

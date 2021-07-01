@@ -4,6 +4,7 @@ module.exports = {
    description: 'Get info about the bot.',
    aliases: ["botinfo", "bi"],
    usage: 'bot-info',
+   cooldown: 0,
    run: async(client, message, args) => {
 
     let uptime = ``;

@@ -2,11 +2,13 @@ const Discord = require("discord.js");
 module.exports = {
   name: "ship",
   description: "ship someone!",
-  usage: "+ship",
+  usage: "ship",
+  cooldown: 0,
   run: async (client, message, args) => {
     let ship = Math.floor(Math.random() * 100) + 1;
 
     let user = message.mentions.users.first();
+    if(user.id == message.author.id) return message.channel.send('ayo you cant yourself')
     let robber = message.author;
 
     if (!user) {

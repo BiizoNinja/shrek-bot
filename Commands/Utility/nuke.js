@@ -4,6 +4,7 @@ module.exports = {
     name: 'nuke',
     description: "Nukes a channel",
     usage: "nuke",
+    cooldown: 0,
     run: async (client, message, args) => {
         if (!message.member.permissions.has('ADMINISTRATOR'))
             return message.reply('<a:wrong:777910274011299850>You do not have the permission to do this!');

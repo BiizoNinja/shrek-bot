@@ -6,6 +6,7 @@ name: 'youtube-together',
 description: "watch youtube on discord",
 usage: 'youtube-together',
 aliases: ['yt', 'yt-together'],
+cooldown: 0,
 run: async (client, message, args) => {
     const activitiesChannel = message.guild.channels.cache.get('856740741375852554')
     let channel = message.member.voice.channel;

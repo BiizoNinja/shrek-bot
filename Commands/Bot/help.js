@@ -46,7 +46,7 @@ module.exports = {
 
              return message.channel.send(embed)
              
-
+        
         } else {
             let command = client.commands.get(args[0].toLowerCase()) || client.commands.find((c) => c.aliases.includes(args[0].toLowerCase()))
             if(!command) return message.channel.send('Command not found!')
@@ -68,9 +68,23 @@ module.exports = {
                 {name: '⏱️ Cooldown', value: `\`${ms(cooldown)}\``}
             )
             .setColor(message.guild.me.displayHexColor)
-            return message.channel.send(embed2)
-            
-        }
+            message.channel.send(embed2)
+
+            if(cooldown == 0) {
+                let embed3 = new Discord.MessageEmbed()
+                .setAuthor(`Requested from ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
+                .setTitle(`Help - ShrekBot, ${(name.toLocaleString())} Command!`) 
+                .setDescription(`> **Here is some info about the command!**\n> Note: If the field has \`< >\` then it is a **required** field. But if the field has \`[ ]\` then it is an **optional** field.\n`)
+                .addFields(
+                    {name: "📋 Description" , value: `\`${description}\``},
+                    {name: "⌨️ Usage", value: `\`${usage}\``},
+                    {name: "📎 Aliases" , value: `\`${aliases}\``},
+                    {name: '⏱️ Cooldown', value: `\`None\``}
+                )
+                .setColor(message.guild.me.displayHexColor)
+                message.channel.send(embed3)
+            }
+        } 
        
     
     }

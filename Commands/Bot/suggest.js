@@ -4,6 +4,7 @@ module.exports = {
     name: 'bot-suggest',
     description: 'Make a suggestion for the bot!',
     usage: 'bot-suggest <your suggestion>',
+    cooldown: 0,
     run: async (client, message, args) => {
         const suggestchannel = client.channels.cache.find(channel => channel.id === "858710996436254730")
         if (!args[0]) return message.channel.send("Error! Please do: `.suggest <Your suggestion!>`")

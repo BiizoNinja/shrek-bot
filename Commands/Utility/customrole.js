@@ -7,6 +7,7 @@ const crUserSchema = require('../../models/crUserSchema')
   description: 'A complete Customrole system! with settings and caching! ',
   usage: 'customrole [create | settings | cache | help | delete]',
   aliases: ['cr'],
+  cooldown: 0,
   run: async (client, message, args) => {
 
   const settings = args[0]

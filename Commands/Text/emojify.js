@@ -5,8 +5,8 @@ module.exports = {
     name: 'emojify',
     description: 'Makes your text into emojie+',
     aliases: ["emoji"],
-    usage: '+emojify <message>',
-    examples: '+emojify hello',
+    usage: 'emojify <message>',
+    cooldown: 0,
     run: async(client, message, args) => {
         const fullMessage = args.join(' ')
 

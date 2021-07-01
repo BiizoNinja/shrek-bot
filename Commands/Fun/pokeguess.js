@@ -4,8 +4,9 @@ const { Spawn } = require("pokecord");
 module.exports  = {
     name: 'pokeguess',
     description: 'Play a game of `Guess The Pokemon`!',
-    usage: '+pokeguess',
+    usage: 'pokeguess',
     aliases: ["guessthepokemon"],
+    cooldown: 0,
     run: async(client, message, args) => {
 
     const pokemon = await Spawn().catch(e => {});
@@ -13,7 +14,7 @@ module.exports  = {
     const filter = m => m.author.id === message.author.id;
  
     const embed = new MessageEmbed()
-        .setTitle("Guess the pokemon <a:charmander_vibe:801454612154023937>")
+        .setTitle("Guess the pokemon")
         .setColor("RANDOM")
         .setImage(pokemon.imageURL)
         .setFooter(`Requested by: ${message.author.tag}`,message.author.displayAvatarURL({ dynamic: true }))
@@ -27,8 +28,8 @@ module.exports  = {
     })
     .then(collected => {
         const m = collected.first();
-        if (!m.content || m.content.toLowerCase() !== pokemon.name.toLowerCase()) return message.channel.send(`<a:XMARK:801450921112371232> | Incorrect gues+ The answer was **${pokemon.name}**.`);
-        return message.channel.send(`<a:TICK:801450801200758795> | Correct gues+`);
+        if (!m.content || m.content.toLowerCase() !== pokemon.name.toLowerCase()) return message.channel.send(`❌ | Incorrect guess The answer was **${pokemon.name}**.`);
+        return message.channel.send(`✅ | Correct guess`);
     })
     .catch(() => {
         message.channel.send(`❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`);

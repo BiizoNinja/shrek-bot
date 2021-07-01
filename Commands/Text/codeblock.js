@@ -10,7 +10,7 @@ module.exports = {
 
         if(!fullMessage) return message.reply('You need to specify something to cobeblock.')
 
-        message.channel.send(`\`\`\`${fullMessage}\`\`\``)
+        message.channel.send(`\`\`\`${fullMessage}\`\`\`\n\nRequested by: ${message.author.tag}`)
     }
 
 }
