@@ -13,7 +13,7 @@ module.exports = {
     let Animated = 0;
     let OverallEmojis = 0;
     function Emoji(id) {
-      return bot.emojis.cache.get(id).toString();
+      return client.emojis.cache.get(id).toString();
     }
     message.guild.emojis.cache.forEach((emoji) => {
       OverallEmojis++;
