@@ -60,7 +60,7 @@ const crUserSchema = require('../../models/crUserSchema')
                 .setTimestamp()
                 .setColor(message.guild.me.displayHexColor)
           
-            message.channel.send({embeds: [settingsEmbed]});
+            message.channel.send(settingsEmbed);
           } else {
               const settingsEmbed1 = new Discord.MessageEmbed()
               .setAuthor(`${message.guild.name} - Settings - Custom Role`, message.guild.iconURL({dynamic: true}))
@@ -72,7 +72,7 @@ const crUserSchema = require('../../models/crUserSchema')
               .setFooter('beep boop bap')
               .setTimestamp()
               .setColor(message.guild.me.displayHexColor)
-              message.channel.send({embeds: [settingsEmbed1]});
+              message.channel.send(settingsEmbed1);
           }; 
       }; 
 
