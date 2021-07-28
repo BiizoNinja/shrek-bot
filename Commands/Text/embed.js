@@ -91,7 +91,7 @@ run: async (client, message, args) => {
           colorCollector.on("collect", async (msg) => {
             let duration = msg.content;
             let reg = new RegExp(/\#....?.?.?/g);
-            if (!reg.match(message.content.toLowerCase())) {
+            if (!msg.content.match(reg)) {
               msg.channel.send("That is an invalid color...");
               colorCollector.stop();
               return;
