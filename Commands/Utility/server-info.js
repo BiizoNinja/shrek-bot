@@ -21,7 +21,7 @@ module.exports = {
         if(message.guild.region === 'us-west') message.guild.region = ':flag_us: **US West**'
         if(message.guild.region === 'us-south') message.guild.region = ':flag_us: **US South**'
 
-        var EMBED = new Discord.MessageEmbed()
+        const EMBED = new Discord.MessageEmbed()
         .setTitle("Server-Info!")
         .setDescription('Some simple server info!')
         .addFields( 

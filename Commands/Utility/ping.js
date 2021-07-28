@@ -17,7 +17,7 @@ module.exports = {
             .setTitle('Pong!')
             .setDescription(`**WebSocket** ping is\n> ${client.ws.ping}ms\n**Message edit** ping is\n> ${Math.floor(msg.createdAt - message.createdAt)}ms`)
             .setColor("RED")
-            await message.channel.send(embed)
+            await message.reply(embed)
             msg.delete()
             
 

@@ -8,11 +8,9 @@ usage: 'youtube-together',
 aliases: ['yt', 'yt-together'],
 cooldown: 0,
 run: async (client, message, args) => {
-    const activitiesChannel = message.guild.channels.cache.get('856740741375852554')
     let channel = message.member.voice.channel;
     if(!channel) return message.channel.send("You have to be in a vc")
-    if(channel.id !== activitiesChannel.id) return message.channel.send('You need to be in the "Activities" Voice Channel')
-
+    
     fetch(`https://discord.com/api/v8/channels/${channel.id}/invites`, {
         method: "POST",
         body: JSON.stringify({

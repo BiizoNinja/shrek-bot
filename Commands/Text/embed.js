@@ -7,7 +7,7 @@ usage: 'embed',
 cooldown: 0,
 run: async (client, message, args) => {
  
-  if(!message.member.hasPermission) return message.channel.send('You don\'t have proper perms!')
+  if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('You don\'t have proper perms!')
       message.delete()
       message.channel.send(
         new Discord.MessageEmbed()

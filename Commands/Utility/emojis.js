@@ -32,6 +32,6 @@ module.exports = {
       )
       .setColor(`RANDOM`);
     message.channel.send(Embed1);
-    
+        
   },
 };

@@ -23,13 +23,13 @@ const crUserSchema = require('../../models/crUserSchema')
   });
 
   if(settings.toLowerCase() == 'cache') {
-    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! ')
+    if(!message.member.permissions.has('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! ')
     if(crData) return message.channel.send('Hey! Looks like this server is already cached in the database!')
     
     if(!crData) {
-        message.channel.send('**Caching this server (adding this server to the database!)** <a:blueLoading:856159438024605709>')
+       const msg = await  message.channel.send('**Caching this server (adding this server to the database!)** <a:blueLoading:856159438024605709>')
         setTimeout(() => {
-            message.channel.send('<:greenTick:854228019312066571> Added this server! You can change the settings by running \`.customrole settings\`')
+            msg.edit('<:greenTick:854228019312066571> Added this server! You can change the settings by running \`.customrole settings\`')
         }, 3000);
       
       await new schema({
@@ -42,7 +42,7 @@ const crUserSchema = require('../../models/crUserSchema')
   }; 
 
   if(settings.toLowerCase() == 'settings') {
-      if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! ')
+      if(!message.member.permissions.has('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! ')
       if(!crData) return message.channel.send('<:wrong:856162786319925270> This server is not cached in the database! Please run `.customrole cache` to cache it!')
       
       const setting = args[1]
@@ -50,7 +50,7 @@ const crUserSchema = require('../../models/crUserSchema')
       if(!setting) {
           if(crData.AllowedRole == '@everyone') {
               const settingsEmbed = new Discord.MessageEmbed()
-                .setAuthor(`Custom Role Settings for ${message.guild.name}`, message.guild.iconURL({dynamic: true}))
+                .setAuthor(`${message.guild.name} - Settings - Custom Role`, message.guild.iconURL({dynamic: true}))
                 .setDescription(`You can do \`.customrole settings <Setting> <value>\` to change!`)
                 .addFields(
                     {name: 'Role Position', value: `» Role Position: ${crData.MaxPos}`},
@@ -60,10 +60,10 @@ const crUserSchema = require('../../models/crUserSchema')
                 .setTimestamp()
                 .setColor(message.guild.me.displayHexColor)
           
-            message.channel.send(settingsEmbed);
+            message.channel.send({embeds: [settingsEmbed]});
           } else {
               const settingsEmbed1 = new Discord.MessageEmbed()
-              .setAuthor(`Custom Role Settings for ${message.guild.name}`, message.guild.iconURL({dynamic: true}))
+              .setAuthor(`${message.guild.name} - Settings - Custom Role`, message.guild.iconURL({dynamic: true}))
               .setDescription(`You can do \`.customrole settings <Setting> <value>\` to change!`)
               .addFields(
                   {name: 'Role Position', value: `» Maximum Role Position: ${crData.MaxPos}`},
@@ -72,7 +72,7 @@ const crUserSchema = require('../../models/crUserSchema')
               .setFooter('beep boop bap')
               .setTimestamp()
               .setColor(message.guild.me.displayHexColor)
-              message.channel.send(settingsEmbed1);
+              message.channel.send({embeds: [settingsEmbed1]});
           }; 
       }; 
 

@@ -33,7 +33,7 @@ module.exports = {
        
             const fMsg = await message.channel.send(`Successfully hacked **${taggedUser.tag}**! Fetching Information... <a:blueLoading:856159438024605709>`)  
             setTimeout(() => {
-                fMsg.edit('Information Found', embed)
+                fMsg.edit('Information found', embed)
             }, 5000);
             
 

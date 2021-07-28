@@ -8,7 +8,7 @@ cooldown: 0 ,
 aliases: ['cvoice'],
 run: async (client, message, args) => {
  
-    if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channels.send('You need the **MANAGE_CHANNELS** permission to use this command')
+    if(!message.member.permissions.has('MANAGE_CHANNELS')) return message.channels.send('You need the **MANAGE_CHANNELS** permission to use this command')
   const name = args[0]
   if(!name) return message.channel.send('You need to keep a name for yer new channel :/')
 

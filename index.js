@@ -1,21 +1,24 @@
 // --------- Basic Variables ---------
 
-const { Collection, Client, Discord, RichPresenceAssets } = require('discord.js');
+const { Collection, Client, Discord, RichPresenceAssets} = require('discord.js');
 const client = new Client({
-    disableMention: 'everyone'
-});
+  disableMention: '@everyone'
+ });
 const path = require('path')
 const fs = require('fs')
 const config = require('./config.json');
-
+require('discord-reply')
 
 // --------- Collections ---------
 
 module.exports = client;
 client.commands = new Collection();
-client.prefix = process.env.PREFIX;
 client.aliases = new Collection();
 client.categories = fs.readdirSync(path.resolve('Commands'));
+client.reply = async(message, text, mention = false) => {
+    if(mention) return await message.lineReplyNoMention(text);
+   return await message.lineReply(text);
+ }
 
 ["command"].forEach(handler => {
     require(path.resolve(`handlers/${handler}`))(client);

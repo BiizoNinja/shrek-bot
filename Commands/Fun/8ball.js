@@ -15,7 +15,7 @@ module.exports = {
 
         if(question) {
         const embed = new Discord.MessageEmbed()
-            .setTitle(`8ball has answered! `)
+        .setTitle(`8ball has answered! `)
         if (question.endsWith("?")) embed.addField(`Question: `, `${question}`, true)
         else if (!question.endsWith("?")) embed.addField(`Question: `, `${question}?`, true)
         embed.addField(`Answer: `, `${replies[result]}`)

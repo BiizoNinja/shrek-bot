@@ -12,8 +12,9 @@ module.exports = {
         if(!member) return message.channel.send('Please specify a member to play with!')
         
         if(member.id == message.author.id) return message.channel.send('You can\'t play with yourself!?!')
+        if(member.bot) return message.channel.send('you can\'t play with bots')
         
-        const ttt = new tictactoe({
+         new tictactoe({
             player_two: member, 
             message: message
         }); 

@@ -39,9 +39,9 @@ module.exports = {
         } else {
             let CheckEmoji = parse(emoji, { assetType: "png" });
             if (!CheckEmoji[0])
-                return message.channel.send(`please give me a vlid emoji! Don't try to break me :eyes:`);
+                return message.channel.send(`please give me a valid emoji! Don't try to break me :eyes:`);
             message.channel.send(
-                `you don't need to steal default emojis <:cringeFace:813970120874524683>`
+                `you don't need to steal default emojis `
             );
         }
         
