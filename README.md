@@ -37,5 +37,5 @@ Contributors
 - [mallusrgreat](https://github.com/mallusrgreat)
 
 Helpers
-- [Collaxum](https://github.com/collaxum)
+- [Collauxm](https://github.com/Collauxm)
 
