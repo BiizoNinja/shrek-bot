@@ -14,7 +14,7 @@ module.exports = {
                 //CURRENCY: "",
                 Utility: "⚙",
                 Moderation: "🔨",
-                Economy: "💸",
+                Config: "⚙",
                 Fun: "🎲",
                 Text: "✍",
                 Bot: "🤖"

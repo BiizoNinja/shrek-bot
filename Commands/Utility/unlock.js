@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const schema = require('../../models/memberRole')
 
 module.exports = {
-name: 'lock',
-description: 'locks the channel',
-usage: 'lock',
+name: 'unlock',
+description: 'unlocks the channel',
+usage: 'unlock',
 cooldown: 0 ,
 run: async (client, message, args) => {
 
@@ -25,13 +25,13 @@ if(!data) {
     const reason = args.join(' ') || 'None'
     
     channel.updateOverwrite(everyoneRole, {
-        SEND_MESSAGES: false
+        SEND_MESSAGES: true
     })
-    const msg = await channel.send(`<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`)
+    const msg = await channel.send(`<:greenTick:854228019312066571> Successfully unlocked <#${channel.id}>! for the reason: **${reason}**`)
     
     const embed = new Discord.MessageEmbed()
-    .setAuthor(`${message.author.tag} Locked Channel!`, `https://cdn.discordapp.com/emojis/798779224470585404.gif?v=1`)
-    .setDescription(`Channel Locked!\nFor the reason: **${reason}**`)
+    .setAuthor(`${message.author.tag} unlocked Channel!`, `https://cdn.discordapp.com/emojis/798779186801803264.gif?v=1`)
+    .setDescription(`Channel unlocked!\nFor the reason: **${reason}**`)
     .setColor('RANDOM')
     message.channel.send(embed)
     
@@ -51,13 +51,13 @@ if(data) {
     const reason = args.join(' ') || 'None'
     
     channel.updateOverwrite(role, {
-        SEND_MESSAGES: false
+        SEND_MESSAGES: true
     })
-    const msg = await channel.send(`<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`)
+    const msg = await channel.send(`<:greenTick:854228019312066571> Successfully unlocked <#${channel.id}>! for the reason: **${reason}**`)
     
     const embed = new Discord.MessageEmbed()
-    .setAuthor(`${message.author.tag} Locked Channel!`, `https://cdn.discordapp.com/emojis/798779224470585404.gif?v=1`)
-    .setDescription(`Channel Locked!\nFor the reason: **${reason}**`)
+    .setAuthor(`${message.author.tag} unlocked Channel!`, `https://cdn.discordapp.com/emojis/798779186801803264.gif?v=1`)
+    .setDescription(`Channel unlocked!\nFor the reason: **${reason}**`)
     .setColor('RANDOM')
     message.channel.send(embed)
     

@@ -18,8 +18,7 @@ run: async (client, message, args) => {
     const reason = args.slice(1).join(' ')
     if(!reason) return message.channel.send(' <:wrong:856162786319925270> Please provide a reason to ban!')
 
-    const targetMember = message.guild.members.cache.get(target.id) 
-
+    const targetMember = message.guild.members.cache.get(target.id)
     targetMember.ban({
         days: 0,
         reason: `Ban Requested from ${message.author.tag}, Reason: ${reason}`
