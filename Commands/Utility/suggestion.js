@@ -2,12 +2,14 @@ const Discord = require('discord.js');
 const suggestionSchema = require('../../models/sugSettings-schema')
 
 module.exports = {
-name: ' ',
+name: 'suggestion',
 description: 'View the server\'s suggestion settings',
 usage: 'suggestion [Setting] [Value]',
 aliases: ['sug-set', 'sug-s'],
 run: async (client, message, args) => {
+  message.channel.send('This command is not ready yet!')
 
+/*
 if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the \`ADMINISTRATOR\` permission to use this!')
 
 const setting = args[0] 
@@ -110,5 +112,6 @@ if(setting == 'Channel' || setting == 'SuggestionChannel') {
 
 
 }
+*/
 }
 }
