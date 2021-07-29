@@ -8,7 +8,8 @@ module.exports = {
     let ship = Math.floor(Math.random() * 100) + 1;
 
     let user = message.mentions.users.first();
-    if(user.id == message.author.id) return message.channel.send('ayo you cant yourself')
+    if (user.id == message.author.id)
+      return message.channel.send("ayo you cant yourself");
     let robber = message.author;
 
     if (!user) {
@@ -29,5 +30,4 @@ module.exports = {
       m.react("💙");
     });
   },
-  
 };

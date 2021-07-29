@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-    GuildID: String,
-    MemberRole: String
+  GuildID: String,
+  MemberRole: String,
 });
 
-module.exports = new mongoose.model('memberRole', schema)
+module.exports = new mongoose.model("memberRole", schema);

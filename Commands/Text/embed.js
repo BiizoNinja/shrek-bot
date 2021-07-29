@@ -1,25 +1,31 @@
 const Discord = require("discord.js");
 
-module.exports={
-name: 'embed',
-description:'Creates a custom embed',
-usage: 'embed',
-cooldown: 0,
-run: async (client, message, args) => {
- 
-  if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('You don\'t have proper perms!')
-      message.delete()
-      message.channel.send(
-        new Discord.MessageEmbed()
-        .setAuthor(`Embed Creator | 1/7`, message.author.displayAvatarURL({dynamic: true}))
-        .setDescription('What channel do you want your embed to be in?\nYou can cancel the setup at any time by saying \`cancel\`.')
+module.exports = {
+  name: "embed",
+  description: "Creates a custom embed",
+  usage: "embed",
+  cooldown: 0,
+  run: async (client, message, args) => {
+    if (!message.member.permissions.has("ADMINISTRATOR"))
+      return message.channel.send("You don't have proper perms!");
+    message.delete();
+    message.channel.send(
+      new Discord.MessageEmbed()
+        .setAuthor(
+          `Embed Creator | 1/7`,
+          message.author.displayAvatarURL({ dynamic: true })
+        )
+        .setDescription(
+          "What channel do you want your embed to be in?\nYou can cancel the setup at any time by saying `cancel`."
+        )
         .setColor("GREEN")
     );
     await startMessageCollectors(
       client,
       message,
       args,
-      (m) => m.author.id == message.author.id && m.channel.id == message.channel.id
+      (m) =>
+        m.author.id == message.author.id && m.channel.id == message.channel.id
     );
 
     function startMessageCollectors(client, message, args, filter) {
@@ -217,7 +223,10 @@ run: async (client, message, args) => {
                         )
                     );
                     const embed = new Discord.MessageEmbed()
-                      .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                      .setAuthor(
+                        message.author.tag,
+                        message.author.displayAvatarURL({ dynamic: true })
+                      )
                       .setTitle(title)
                       .setColor(duration)
                       .setDescription(trueWinners)
