@@ -13,15 +13,15 @@ client.on('guildMemberUpdate', async (oldMember, newMember) => {
     });
     if(!boostData) return;
 
-    if(boostData.BoostChannel == 'None') return; 
-    if(boostData.BoostMessage == 'None') return; 
+
+if(!oldStatus && newStatus) {
+  if(boostData.BoostChannel == 'None') return; 
+  if(boostData.BoostMessage == 'None') return; 
 
 const boostChannel = guild.channels.cache.get(boostData.BoostChannel)
 const boostMessage = boostData.BoostMessage; 
 
-if(!oldStatus && newStatus) {
-
- const finalMessage = boostMessage
+const finalMessage = boostMessage
  .replace(/{server}/g, guild.name)
  .replace(/{user}/g, newMember.user.tag)
  .replace(/{user.mention}/g, `<@${newMember.user.id}>`)

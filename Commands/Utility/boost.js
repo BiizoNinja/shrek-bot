@@ -52,7 +52,7 @@ if(mode.toLowerCase() == 'settings') {
             value: `${boostData.BoostChannel}`
          }
      )
-     .setTitle(`Requested by: ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
+     .setFooter(`Requested by: ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
      .setColor(message.guild.me.displayHexColor)
     message.channel.send(settingEmbed)
  }; 
