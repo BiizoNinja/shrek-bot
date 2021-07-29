@@ -40,10 +40,9 @@ module.exports = {
       .setDescription(`**Suggestion:** ${args.slice(0).join(" ")}\n`)
       .addField("**Status:**", "PENDING")
       .setTimestamp();
-    suggestchannel.send({ embeds: [suggestembed] }).then((message) => {
-      message.react("<:upvote:858715588263280651>");
-      message.react("<a:downvote:858715482656210954>");
-    });
+    let message = await suggestchannel.send({ embeds: [suggestembed] });
+    await message.react("<:upvote:858715588263280651>");
+    await message.react("<a:downvote:858715482656210954>");
 
     const suggestionadded = new Discord.MessageEmbed()
       .setColor("#FF0000")

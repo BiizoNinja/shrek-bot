@@ -23,27 +23,22 @@ module.exports = {
 
     await message.channel.send(embed);
 
-    message.channel
-      .awaitMessages(filter, {
+    try {
+      let collected = await message.channel.awaitMessages(filter, {
         max: 1,
         error: ["time"],
         time: 15000,
-      })
-      .then((collected) => {
-        const m = collected.first();
-        if (
-          !m.content ||
-          m.content.toLowerCase() !== pokemon.name.toLowerCase()
-        )
-          return message.channel.send(
-            `❌ | Incorrect guess The answer was **${pokemon.name}**.`
-          );
-        return message.channel.send(`✅ | Correct guess`);
-      })
-      .catch(() => {
-        message.channel.send(
-          `❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`
-        );
       });
+      const m = collected.first();
+      if (!m.content || m.content.toLowerCase() !== pokemon.name.toLowerCase())
+        return message.channel.send(
+          `❌ | Incorrect guess The answer was **${pokemon.name}**.`
+        );
+      return message.channel.send(`✅ | Correct guess`);
+    } catch (err) {
+      message.channel.send(
+        `❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`
+      );
+    }
   },
 };

@@ -33,22 +33,17 @@ module.exports = {
       );
 
     const targetMember = message.guild.members.cache.get(target.id);
-    targetMember
-      .KICK({
-        days: 0,
-        reason: `KICK Requested from ${message.author.tag}, Reason: ${reason}`,
-      })
-      .then(() => {
-        const embed = new Discord.MessageEmbed()
-          .setDescription(
-            `Kicked **${target.tag}**, For the reason **${reason}**`
-          )
-          .setTimestamp()
-          .setColor(`GREEN`);
-        message.channel.send({ embeds: [embed] });
-        target.send(
-          `You have been Kicked from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
-        );
-      });
+    await targetMember.kick({
+      days: 0,
+      reason: `KICK Requested from ${message.author.tag}, Reason: ${reason}`,
+    });
+    const embed = new Discord.MessageEmbed()
+      .setDescription(`Kicked **${target.tag}**, For the reason **${reason}**`)
+      .setTimestamp()
+      .setColor(`GREEN`);
+    message.channel.send({ embeds: [embed] });
+    target.send(
+      `You have been Kicked from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
+    );
   },
 };

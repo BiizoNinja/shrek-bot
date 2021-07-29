@@ -6,33 +6,32 @@ const coinsCache = {}; // { 'guildId-userId': coins }
 module.exports = (client) => {};
 
 module.exports.addCoins = async (guildId, userId, coins) => {
-  return await mongo().then(async (mongoose) => {
-    try {
-      const result = await profileSchema.findOneAndUpdate(
-        {
-          guildId,
-          userId,
+  let mongoose = await mongo();
+  try {
+    const result = await profileSchema.findOneAndUpdate(
+      {
+        guildId,
+        userId,
+      },
+      {
+        guildId,
+        userId,
+        $inc: {
+          coins,
         },
-        {
-          guildId,
-          userId,
-          $inc: {
-            coins,
-          },
-        },
-        {
-          upsert: true,
-          new: true,
-        }
-      );
+      },
+      {
+        upsert: true,
+        new: true,
+      }
+    );
 
-      coinsCache[`${guildId}-${userId}`] = result.coins;
+    coinsCache[`${guildId}-${userId}`] = result.coins;
 
-      return result.coins;
-    } finally {
-      mongoose.connection.close();
-    }
-  });
+    return result.coins;
+  } finally {
+    mongoose.connection.close();
+  }
 };
 
 module.exports.getCoins = async (guildId, userId) => {
@@ -41,59 +40,57 @@ module.exports.getCoins = async (guildId, userId) => {
     return cachedValue;
   }
 
-  return await mongo().then(async (mongoose) => {
-    try {
-      const result = await profileSchema.findOne({
+  let mongoose = await mongo();
+  try {
+    const result = await profileSchema.findOne({
+      guildId,
+      userId,
+    });
+
+    let coins = 0;
+    if (result) {
+      coins = result.coins;
+    } else {
+      await new profileSchema({
         guildId,
         userId,
-      });
-
-      let coins = 0;
-      if (result) {
-        coins = result.coins;
-      } else {
-        await new profileSchema({
-          guildId,
-          userId,
-          coins,
-        }).save();
-      }
-
-      coinsCache[`${guildId}-${userId}`] = coins;
-
-      return coins;
-    } finally {
-      mongoose.connection.close();
+        coins,
+      }).save();
     }
-  });
+
+    coinsCache[`${guildId}-${userId}`] = coins;
+
+    return coins;
+  } finally {
+    mongoose.connection.close();
+  }
 };
 
 module.exports.remove = async (guildId, userId, coins) => {
-  return await mongo().then(async (mongoose) => {
-    try {
-      const result = await profileSchema.findOneAndUpdate(
-        {
-          guildId,
-          userId,
+  let mongoose = await mongo();
+  try {
+    const result = await profileSchema.findOneAndUpdate(
+      {
+        guildId,
+        userId,
+      },
+      {
+        guildId,
+        userId,
+        $inc: {
+          coins: -coins,
         },
-        {
-          guildId,
-          userId,
-          $inc: {
-            coins: -coins,
-          },
-        },
-        {
-          upsert: true,
-          new: true,
-        }
-      );
+      },
+      {
+        upsert: true,
+        new: true,
+      }
+    );
 
-      coinsCache[`${guildId}-${userId}`] = result.coins;
+    coinsCache[`${guildId}-${userId}`] = result.coins;
 
-      return result.coins;
-    } finally {
-      mongoose.connection.close();
-    }
-  });
+    return result.coins;
+  } finally {
+    mongoose.connection.close();
+  }
 };

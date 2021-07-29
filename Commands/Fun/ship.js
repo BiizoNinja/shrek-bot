@@ -25,9 +25,8 @@ module.exports = {
         `**${robber.username}** & **${user.username}** your match is... ${ship}%`
       )
       .setColor(`RANDOM`);
-    message.channel.send(embed).then((m) => {
-      m.react("❤");
-      m.react("💙");
-    });
+    let m = await message.channel.send(embed);
+    m.react("❤");
+    m.react("💙");
   },
 };

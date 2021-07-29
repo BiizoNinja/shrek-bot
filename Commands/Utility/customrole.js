@@ -196,27 +196,24 @@ module.exports = {
             "<:wrong:856162786319925270> Please provide a valid hex code! Make sure to use `#` at the beginning"
           );
 
-        message.guild.roles
-          .create({
-            data: {
-              name: name,
-              color: color,
-              hoist: false,
-              position: crData.MaxPos - 1,
-            },
-          })
-          .then(async (role) => {
-            message.member.roles.add(role);
-            message.channel.send(
-              "<:greenTick:854228019312066571> I have made your custom role and have added it to you!"
-            );
+        let role = await message.guild.roles.create({
+          data: {
+            name: name,
+            color: color,
+            hoist: false,
+            position: crData.MaxPos - 1,
+          },
+        });
+        message.member.roles.add(role);
+        message.channel.send(
+          "<:greenTick:854228019312066571> I have made your custom role and have added it to you!"
+        );
 
-            await new crUserSchema({
-              UserID: message.author.id,
-              GuildID: message.guild.id,
-              CustomRole: role.id,
-            }).save();
-          });
+        await new crUserSchema({
+          UserID: message.author.id,
+          GuildID: message.guild.id,
+          CustomRole: role.id,
+        }).save();
       }
 
       if (crUserData) {

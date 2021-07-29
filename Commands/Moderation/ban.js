@@ -33,22 +33,17 @@ module.exports = {
       );
 
     const targetMember = message.guild.members.cache.get(target.id);
-    targetMember
-      .ban({
-        days: 0,
-        reason: `Ban Requested from ${message.author.tag}, Reason: ${reason}`,
-      })
-      .then(() => {
-        const embed = new Discord.MessageEmbed()
-          .setDescription(
-            `Banned **${target.tag}**, For the reason **${reason}**`
-          )
-          .setTimestamp()
-          .setColor(`GREEN`);
-        message.channel.send({ embeds: [embed] });
-        target.send(
-          `You have been banned from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
-        );
-      });
+    await targetMember.ban({
+      days: 0,
+      reason: `Ban Requested from ${message.author.tag}, Reason: ${reason}`,
+    });
+    const embed = new Discord.MessageEmbed()
+      .setDescription(`Banned **${target.tag}**, For the reason **${reason}**`)
+      .setTimestamp()
+      .setColor(`GREEN`);
+    message.channel.send({ embeds: [embed] });
+    target.send(
+      `You have been banned from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
+    );
   },
 };

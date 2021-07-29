@@ -26,9 +26,10 @@ module.exports = {
       async get_data(dif, cat) {
         if (!dif && !cat) {
           let question;
-          await fetch("https://opentdb.com/api.php?amount=1&encode=base64")
-            .then((response) => response.json())
-            .then((data) => (question = data));
+          let response = await (
+            await fetch("https://opentdb.com/api.php?amount=1&encode=base64")
+          ).json();
+          question = response;
           this.question = question;
           return this.show_question();
         }
@@ -43,13 +44,15 @@ module.exports = {
             return this.message.channel.send(
               "Please enter a valid Difficulty\nUse .trivia categories to view a list of categories and difficulties"
             );
-          await fetch(
-            "https://opentdb.com/api.php?amount=1&difficulty=" +
-              dif.toLowerCase() +
-              "&encode=base64"
-          )
-            .then((response) => response.json())
-            .then((data) => (question = data));
+          let response = await (
+            await fetch(
+              "https://opentdb.com/api.php?amount=1&difficulty=" +
+                dif.toLowerCase() +
+                "&encode=base64"
+            )
+          ).json();
+
+          question = data;
           this.question = question;
           return this.show_question();
         }
@@ -81,25 +84,27 @@ module.exports = {
               "Please enter a valid Category\nUse .trivia categories to view a list of categories and difficulties"
             );
           if (dif.toLowerCase() == "any") {
-            await fetch(
-              "https://opentdb.com/api.php?amount=1&category=" +
-                this.question_id +
-                "&encode=base64"
-            )
-              .then((response) => response.json())
-              .then((data) => (question = data));
+            let response = await (
+              await fetch(
+                "https://opentdb.com/api.php?amount=1&category=" +
+                  this.question_id +
+                  "&encode=base64"
+              )
+            ).json();
+            question = data;
             this.question = question;
             return this.show_question();
           }
-          await fetch(
-            "https://opentdb.com/api.php?amount=1&category=" +
-              this.question_id +
-              "&difficulty=" +
-              dif.toLowerCase() +
-              "&encode=base64"
-          )
-            .then((response) => response.json())
-            .then((data) => (question = data));
+          let response = await (
+            await fetch(
+              "https://opentdb.com/api.php?amount=1&category=" +
+                this.question_id +
+                "&difficulty=" +
+                dif.toLowerCase() +
+                "&encode=base64"
+            )
+          ).json();
+          question = data;
           this.question = question;
           return this.show_question();
         }
@@ -181,8 +186,8 @@ module.exports = {
         return this.await_reactions();
       }
       async await_reactions() {
-        this.question_message
-          .awaitReactions(
+        try {
+          let collected = await this.question_message.awaitReactions(
             (reaction, user) =>
               user.id == message.author.id &&
               (reaction.emoji.name == "🇦" ||
@@ -190,57 +195,55 @@ module.exports = {
                 reaction.emoji.name == "🇨" ||
                 reaction.emoji.name == "🇩"),
             { max: 1, time: 30000 }
-          )
-          .then((collected) => {
-            this.reaction = collected.first().emoji.name;
-            if (this.reaction == "🇦") this.input_answer = 1;
-            if (this.reaction == "🇧") this.input_answer = 2;
-            if (this.reaction == "🇨") this.input_answer = 3;
-            if (this.reaction == "🇩") this.input_answer = 4;
-            if (this.input_answer == this.correct_answer) {
-              this.answer_array[this.input_answer - 1] =
-                this.answer_array[this.input_answer - 1] + "✅";
-              this.question_embed = new discord.MessageEmbed()
-                .setColor("#0099ff")
-                .setTitle(atob(this.question.results[0].question))
-                .setDescription(this.answer_array)
-                .setFooter(
-                  "Category - " +
-                    atob(this.question.results[0].category) +
-                    ", Difficulty - " +
-                    atob(this.question.results[0].difficulty)
-                );
-              this.question_message.edit(this.question_embed);
-              this.question_message.edit("You got it correct! 😎");
-              this.end_game();
-            } else {
-              this.answer_array[this.input_answer - 1] =
-                this.answer_array[this.input_answer - 1] + " ❌";
-              this.question_embed = new discord.MessageEmbed()
-                .setColor("#0099ff")
-                .setTitle(atob(this.question.results[0].question))
-                .setDescription(this.answer_array)
-                .setFooter(
-                  "Category - " +
-                    atob(this.question.results[0].category) +
-                    ", Difficulty - " +
-                    atob(this.question.results[0].difficulty)
-                );
-              this.question_message.edit(this.question_embed);
-              this.question_message.edit(
-                " ❌ | You got it wrong. The correct answer was " +
-                  this.reactions[this.correct_answer - 1]
+          );
+          this.reaction = collected.first().emoji.name;
+          if (this.reaction == "🇦") this.input_answer = 1;
+          if (this.reaction == "🇧") this.input_answer = 2;
+          if (this.reaction == "🇨") this.input_answer = 3;
+          if (this.reaction == "🇩") this.input_answer = 4;
+          if (this.input_answer == this.correct_answer) {
+            this.answer_array[this.input_answer - 1] =
+              this.answer_array[this.input_answer - 1] + "✅";
+            this.question_embed = new discord.MessageEmbed()
+              .setColor("#0099ff")
+              .setTitle(atob(this.question.results[0].question))
+              .setDescription(this.answer_array)
+              .setFooter(
+                "Category - " +
+                  atob(this.question.results[0].category) +
+                  ", Difficulty - " +
+                  atob(this.question.results[0].difficulty)
               );
-              this.end_game();
-            }
-          })
-          .catch(() => {
+            this.question_message.edit(this.question_embed);
+            this.question_message.edit("You got it correct! 😎");
+            this.end_game();
+          } else {
+            this.answer_array[this.input_answer - 1] =
+              this.answer_array[this.input_answer - 1] + " ❌";
+            this.question_embed = new discord.MessageEmbed()
+              .setColor("#0099ff")
+              .setTitle(atob(this.question.results[0].question))
+              .setDescription(this.answer_array)
+              .setFooter(
+                "Category - " +
+                  atob(this.question.results[0].category) +
+                  ", Difficulty - " +
+                  atob(this.question.results[0].difficulty)
+              );
+            this.question_message.edit(this.question_embed);
             this.question_message.edit(
-              "❌ | You took to long to answer! Game has timed out. The answer was " +
+              " ❌ | You got it wrong. The correct answer was " +
                 this.reactions[this.correct_answer - 1]
             );
             this.end_game();
-          });
+          }
+        } catch (err) {
+          this.question_message.edit(
+            "❌ | You took to long to answer! Game has timed out. The answer was " +
+              this.reactions[this.correct_answer - 1]
+          );
+          this.end_game();
+        }
       }
       async end_game() {
         this.question_message.reactions.removeAll();
