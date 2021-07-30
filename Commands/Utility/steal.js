@@ -9,10 +9,10 @@ module.exports = {
     run: async (client, message, args) => {
 
         if (!message.member.permissions.has("MANAGE_EMOJIS")) 
-        return message.channel.send(`you don't have the permission to do this <a:XMARK:801450921112371232> `);
+        return message.channel.send(`<:wrong:856162786319925270> you don't have the permission to do this]> `);
 
         const emoji = args[0];
-        if (!emoji) return message.channel.send(`please provide an emoji to steal <:LONG_NOSE:810455970038677504>`);
+        if (!emoji) return message.channel.send(`<:wrong:856162786319925270> please provide an emoji to steal `);
 
         let customemoji = Discord.Util.parseEmoji(emoji);
         if (customemoji.id) {
@@ -39,9 +39,9 @@ module.exports = {
         } else {
             let CheckEmoji = parse(emoji, { assetType: "png" });
             if (!CheckEmoji[0])
-                return message.channel.send(`please give me a valid emoji! Don't try to break me :eyes:`);
+                return message.channel.send(`<:wrong:856162786319925270> Please give me a valid emoji! Don't try to break me :eyes:`);
             message.channel.send(
-                `you don't need to steal default emojis `
+                `<:wrong:856162786319925270> you don't need to steal default emojis `
             );
         }
         
