@@ -16,6 +16,13 @@ module.exports = {
       const suggestedEmbed = await suggestionChannel.messages.fetch(messageID);
 
       const data = suggestedEmbed.embeds[0];
+      const acceptEmbed = new Discord.MessageEmbed()
+
+        .setTitle("Suggestion!")
+        .setAuthor(data.author.name, data.author.iconURL)
+        .setDescription(data.description)
+        .setColor("GREEN")
+        .addField("**Status:** ACCEPTED", acceptQuery);
       const acceptEmbed = data.addField("**Status:** ACCEPTED", acceptQuery);
 
       suggestedEmbed.edit(acceptEmbed);

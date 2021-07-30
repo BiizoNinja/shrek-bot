@@ -1,4 +1,4 @@
-const { EmbedPages } = require('reconlx')
+const { EmbedPages } = require("reconlx");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
@@ -32,6 +32,5 @@ module.exports = {
       )
       .setColor(`RANDOM`);
     message.channel.send(Embed1);
-        
   },
 };

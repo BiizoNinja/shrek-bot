@@ -1,17 +1,17 @@
-const owo = require('owofy')
+const owo = require("owofy");
 
 module.exports = {
-name: 'owofy',
-description: 'Makes your messages in to owo',
-aliases: ["owo"],
-usage: 'owofy <message>',
-cooldown: 0,
-run:async (client, message, args)  => {
-    const fullMessage = args.slice(0).join(" ")
+  name: "owofy",
+  description: "Makes your messages in to owo",
+  aliases: ["owo"],
+  usage: "owofy <message>",
+  cooldown: 0,
+  run: async (client, message, args) => {
+    const fullMessage = args.slice(0).join(" ");
 
-    if(!fullMessage) return message.reply('You need to specify something to make owo')
+    if (!fullMessage)
+      return message.reply("You need to specify something to make owo");
 
-    message.channel.send(owo(`${fullMessage}`))
-}
-
-}
+    message.channel.send(owo(`${fullMessage}`));
+  },
+};
