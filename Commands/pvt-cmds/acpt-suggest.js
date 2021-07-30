@@ -23,6 +23,7 @@ module.exports = {
         .setDescription(data.description)
         .setColor("GREEN")
         .addField("**Status:** ACCEPTED", acceptQuery);
+      const acceptEmbed = data.addField("**Status:** ACCEPTED", acceptQuery);
 
       suggestedEmbed.edit(acceptEmbed);
       message.channel.send("Suggestion Accepted!");
