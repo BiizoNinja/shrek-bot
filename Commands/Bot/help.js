@@ -38,7 +38,7 @@ module.exports = {
 					{ name: "\u200c", value: ("<:addSymbol:870284681218768906> [Invite](https://dsc.gg/shrekbot) `|` <a:arrowGreenRight:854009847140843541> [Support Server](https://discord.gg/V9DHGNtuUe) `|` <:topggVote:870285376252674098> [Vote](https://top.gg/bot/855803758645870613)"), inline: true },
 				)
 			return message.channel.send(embed);
-		} else if (args[0].toLowerCase() === 'moderation') {
+		} else if (args[0].toLowerCase() == 'moderation') {
 			const commandList = [];
 			readdirSync(`./Commands/Moderation`).forEach((file) => {
 				const pull = require(`../../Commands/Moderation/${file}`);
@@ -46,7 +46,7 @@ module.exports = {
 				commandList.push(name);
 			})
 			return message.channel.send(new MessageEmbed().setDescription('To get more Info on a Command, Do `.help <command name>`\n\n' + commandList.map((data) => `${data}`).join(", ")).setTimestamp().setColor('#A6FE00').setTitle(":hammer: - **Moderation Commands**"))
-		} else if (args[0].toLowerCase() === 'utility') {
+		} else if (args[0].toLowerCase() == 'utility') {
 			const commandList = [];
 			readdirSync(`./Commands/Utility`).forEach((file) => {
 				const pull = require(`../../Commands/Utility/${file}`);
@@ -54,7 +54,7 @@ module.exports = {
 				commandList.push(name);
 			})
 			return message.channel.send(new MessageEmbed().setDescription('To get more Info on a Command, Do `.help <command name>`\n\n' + commandList.map((data) => `${data}`).join(", ")).setTimestamp().setColor('#A6FE00').setTitle("⛏️ - **Utility Commands**"))
-		} else if (args[0].toLowerCase() === 'bot') {
+		} else if (args[0].toLowerCase() == 'bot') {
 			const commandList = [];
 			readdirSync(`./Commands/Bot`).forEach((file) => {
 				const pull = require(`../../Commands/Bot/${file}`);
@@ -62,7 +62,7 @@ module.exports = {
 				commandList.push(name);
 			})
 			return message.channel.send(new MessageEmbed().setDescription('To get more Info on a Command, Do `.help <command name>`\n\n' + commandList.map((data) => `${data}`).join(", ")).setTimestamp().setColor('#A6FE00').setTitle(":robot: - **Bot Related Commands**"))
-		} else if (args[0].toLowerCase() === 'Config') {
+		} else if (args[0].toLowerCase() == 'config') {
 			const commandList = [];
 			readdirSync(`./Commands/Config`).forEach((file) => {
 				const pull = require(`../../Commands/Config/${file}`);
@@ -70,7 +70,7 @@ module.exports = {
 				commandList.push(name);
 			})
 			return message.channel.send(new MessageEmbed().setDescription('To get more Info on a Command, Do `.help <command name>`\n\n' + commandList.map((data) => `${data}`).join(", ")).setTimestamp().setColor('#A6FE00').setTitle(":gear: - **Config Commands**"))
-		} else if (args[0].toLowerCase() === 'fun') {
+		} else if (args[0].toLowerCase() == 'fun') {
 			const commandList = [];
 			readdirSync(`./Commands/Fun`).forEach((file) => {
 				const pull = require(`../../Commands/Fun/${file}`);
@@ -78,7 +78,7 @@ module.exports = {
 				commandList.push(name);
 			})
 			return message.channel.send(new MessageEmbed().setDescription('To get more Info on a Command, Do `.help <command name>`\n\n' + commandList.map((data) => `${data}`).join(", ")).setTimestamp().setColor('#A6FE00').setTitle(":game_die: - **Fun Commands**"))
-		} else if(args[0].toLowerCase() === 'text') {
+		} else if(args[0].toLowerCase() == 'text') {
 			const commandList = [];
 			readdirSync(`./Commands/Text`).forEach((file) => {
 				const pull = require(`../../Commands/Text/${file}`);
