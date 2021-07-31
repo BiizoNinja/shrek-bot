@@ -20,6 +20,7 @@
     "alexa-bot-api": "^0.2.1",
     "ascii-table": "0.0.9",
     "atob": "^2.1.2",
+    "axios": "^0.21.1",
     "canvacord": "^5.1.0",
     "discord-buttons": "^3.2.1",
     "discord-emoji-convert": "^1.6.0",
