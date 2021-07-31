@@ -1,44 +1,44 @@
 {
-    "name": "shrek-bot",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node ."
-    },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/BiizoNinja/shrek-bot/issues"
-    },
-    "homepage": "https://github.com/BiizoNinja/shrek-bot#readme",
-    "dependencies": {
-        "alexa-bot-api": "^0.2.1",
-        "ascii-table": "0.0.9",
-        "atob": "^2.1.2",
-        "canvacord": "^5.1.0",
-        "discord-buttons": "^3.2.1",
-        "discord-emoji-convert": "^1.6.0",
-        "discord-image-generation": "^1.4.7",
-        "discord-reply": "^0.1.2",
-        "discord.js": "^12.5.3",
-        "dotenv": "^10.0.0",
-        "ffmpeg-static": "^4.2.7",
-        "figlet": "^1.5.0",
-        "images-scraper": "^6.0.1",
-        "moment": "^2.29.1",
-        "mongoose": "^5.11.17",
-        "ms": "^2.1.3",
-        "node-fetch": "^2.6.1",
-        "owofy": "^1.0.2",
-        "pokecord": "^1.0.0",
-        "reconlx": "^1.1.2",
-        "translate-google": "^1.4.3",
-        "twemoji-parser": "^13.0.0",
-        "util": "^0.12.3",
-        "weky": "^2.0.9",
-        "yt-search": "^2.7.3",
-        "ytdl-core": "^4.5.0"
-    }
+  "name": "shrek-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BiizoNinja/shrek-bot/issues"
+  },
+  "homepage": "https://github.com/BiizoNinja/shrek-bot#readme",
+  "dependencies": {
+    "alexa-bot-api": "^0.2.1",
+    "ascii-table": "0.0.9",
+    "atob": "^2.1.2",
+    "canvacord": "^5.1.0",
+    "discord-buttons": "^3.2.1",
+    "discord-emoji-convert": "^1.6.0",
+    "discord-image-generation": "^1.4.7",
+    "discord-reply": "^0.1.2",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^4.2.7",
+    "figlet": "^1.5.0",
+    "images-scraper": "^6.0.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.17",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.1",
+    "owofy": "^1.0.2",
+    "pokecord": "^1.0.0",
+    "reconlx": "^1.1.2",
+    "translate-google": "^1.4.3",
+    "twemoji-parser": "^13.0.0",
+    "util": "^0.12.3",
+    "weky": "^2.0.9",
+    "yt-search": "^2.7.3",
+    "ytdl-core": "^4.5.0"
+  }
 }

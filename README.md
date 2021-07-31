@@ -4,19 +4,20 @@
   </p>
 </div>
 
-# Index 
+# Index
 
 - [About](#about): About ShrekBot
 - [Features](#features): Features of ShrekBot
 - [Building](#building): Create your own bot with the same features
 - [Contributing](#contributing): Add something that you would like in the bot
 
-    
-## About 
+## About
+
 ShrekBot used to be a **verified** discord bot! But the idiot owner (me) decided to delete for some reason??? So I've been thinking to bring it back and I don't what better way other than this!
 The new ShrekBot is designed to be **made by the community!** so forks are always welcome! I'll be checking forks frequently and updating the bot frequently! Also make sure to post working code! You can invite the [public version](https://dsc.gg/shrekbot) to see all the features of the bot without compiling yourself.
 
-## Features 
+## Features
+
 - Community Made
 - Open Source
 - All categories you can ever think of!
@@ -28,14 +29,16 @@ The new ShrekBot is designed to be **made by the community!** so forks are alway
 Instructions can be found in [BUILDING.md](https://github.com/BiizoNinja/shrek-bot/blob/master/BUILDING.md)
 
 ## Contributing
-Feel free to create a pull request! And if you want your code/command to be added make sure to **fork** the repository! Also give a ⭐ if you like it ;) 
+
+Feel free to create a pull request! And if you want your code/command to be added make sure to **fork** the repository! Also give a ⭐ if you like it ;)
 Using the entire project/parts of the code is completely fine. But giving credit is appreciated >:)
 
 Contributors
+
 - [@TechPlayz](https://github.com/TechPlayz)
 - [@arche-dev](https://github.com/arche-dev)
 - [@mallusrgreat](https://github.com/mallusrgreat)
 
 Helpers
-- [@Collauxm](https://github.com/Collauxm)
 
+- [@Collauxm](https://github.com/Collauxm)

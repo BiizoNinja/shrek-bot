@@ -24,8 +24,8 @@ module.exports = {
             .addField("**Status:**", "PENDING")
             .setTimestamp()
         suggestchannel.send(suggestembed).then(msg => {
-            message.react("<:upvote:858715588263280651>")
-            message.react("<a:downvote:858715482656210954>")
+            msg.react("<:upvote:858715588263280651>")
+            msg.react("<a:downvote:858715482656210954>")
         })
 
 
@@ -42,4 +42,5 @@ module.exports = {
         }
 
     }
-}
+  }
+
