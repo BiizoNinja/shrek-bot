@@ -15,7 +15,9 @@ run: async (client, message, args) => {
       Bot: "🤖",
       Utility: "⛏️",
       Text: "✍",
-      Config: "⚙"
+      Config: "⚙",
+      Tickets: "🎫",
+      Image: "🖼"
     }
     readdirSync("./Commands/").forEach((dir) => {
       const editedname = `${diremojis[dir]} - ${dir}`
