@@ -23,7 +23,7 @@ module.exports = {
             .setDescription(`**Suggestion:** ${args.slice(0).join(' ')}\n`)
             .addField("**Status:**", "PENDING")
             .setTimestamp()
-        suggestchannel.send({embeds: [suggestembed]}).then(message => {
+        suggestchannel.send(suggestembed).then(msg => {
             message.react("<:upvote:858715588263280651>")
             message.react("<a:downvote:858715482656210954>")
         })
