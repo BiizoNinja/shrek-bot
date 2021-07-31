@@ -23,9 +23,9 @@ module.exports = {
         .setDescription(data.description)
         .setColor("GREEN")
         .addField("**Status:** ACCEPTED", acceptQuery);
-      const acceptEmbed = data.addField("**Status:** ACCEPTED", acceptQuery);
+      const acceptEmbededit = data.addField("**Status:** ACCEPTED", acceptQuery);
 
-      suggestedEmbed.edit(acceptEmbed);
+      suggestedEmbed.edit(acceptEmbededit);
       message.channel.send("Suggestion Accepted!");
 
       const user = await client.users.cache.find(
