@@ -21,9 +21,9 @@ module.exports = {
       channel = message.channel;
     }
 
-    channel.bulkDelete(amount);
+    let messages = await channel.bulkDelete(amount);
     const msg = await message.channel.send(
-      `<:greenTick:854228019312066571> Deleted ${amount} number of messages in <#${channel.id}>`
+      `<:greenTick:854228019312066571> Deleted ${messages.size}/${amount} number of messages in <#${channel.id}>`
     );
 
     setTimeout(() => {
