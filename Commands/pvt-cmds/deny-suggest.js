@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "deny",
+  name: "unaccept",
   run: async (client, message, args) => {
     if (message.author.id !== "546631496673394688") return;
 

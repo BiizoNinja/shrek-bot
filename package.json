@@ -37,6 +37,7 @@
     "node-fetch": "^2.6.1",
     "owofy": "^1.0.2",
     "pokecord": "^1.0.0",
+    "random-code-gen": "^1.1.2",
     "reconlx": "^1.1.2",
     "translate-google": "^1.4.3",
     "twemoji-parser": "^13.0.0",
