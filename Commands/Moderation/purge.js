@@ -6,6 +6,8 @@ module.exports = {
   usage: "purge <amount> [channel]",
   aliases: ["clear"],
   run: async (client, message, args) => {
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("<:wrong:856162786319925270> You need the `MANAGE_MESSAGES` permission to use this command.")
+
     const amount = parseInt(args[0]);
     if (!amount)
       return message.channel.send(
