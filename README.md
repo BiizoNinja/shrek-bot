@@ -42,3 +42,5 @@ Contributors
 Helpers
 
 - [@Collauxm](https://github.com/Collauxm)
+
+## Made with ❤ and JavaScript
