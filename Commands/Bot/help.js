@@ -15,8 +15,8 @@ const create_mh = require(`../../functions/menu.js`); // this one gets the dropd
 module.exports = {
     name: "help",
     aliases: [`h`],
-    emoji: `🚑`, // emoji next to the command name i will show you in a min
-    description: "Shows all available bot commands",
+    emoji: `🚑`, // emoji next to the Command name i will show you in a min
+    description: "Shows all available bot Commands",
     /**
      * 
      * @param {Client} client 
@@ -53,7 +53,7 @@ module.exports = {
             //gets all the folders and commands
             readdirSync("./Commands/").forEach((dir) => {
                 if (ignored.includes(dir.toLowerCase())) return;
-                const commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
+                const Commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
                     file.endsWith(".js")
                 );
 
@@ -79,7 +79,7 @@ module.exports = {
             //embed
             const embed = new MessageEmbed()
                 .setTitle(`Bot Commands`)
-                .setDescription(`>>> My prefix is \`${prefix}\`\nUse the menu, or use \`${prefix}help [category]\` to view commands base on their category!`)
+                .setDescription(`>>> My prefix is \`${prefix}\`\nUse the menu, or use \`${prefix}help [category]\` to view Commands base on their category!`)
                 .addFields(categories)
                 .setFooter(
                     `Requested by ${message.author.tag}`,
@@ -113,23 +113,23 @@ module.exports = {
 
                     readdirSync("./Commands/").forEach((dir) => {
                         if (dir.toLowerCase() !== value.toLowerCase()) return;
-                        const commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
+                        const Commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
                             file.endsWith(".js")
                         );
 
 
-                        const cmds = commands.map((command) => {
-                            let file = require(`../../Commands/${dir}/${command}`); //getting the commands again
+                        const cmds = Commands.map((Command) => {
+                            let file = require(`../../Commands/${dir}/${Command}`); //getting the Commands again
 
-                            if (!file.name) return "No command name.";
+                            if (!file.name) return "No Command name.";
 
                             let name = file.name.replace(".js", "");
 
-                            if (client.commands.get(name).hidden) return;
+                            if (client.Commands.get(name).hidden) return;
 
 
-                            let des = client.commands.get(name).description;
-                            let emo = client.commands.get(name).emoji;
+                            let des = client.Commands.get(name).description;
+                            let emo = client.Commands.get(name).emoji;
                             let emoe = emo ? `${emo} - ` : ``;
 
                             let obj = {
@@ -159,7 +159,7 @@ module.exports = {
                     if (cots.includes(value.toLowerCase())) {
                         const combed = new MessageEmbed()
                             .setTitle(`__${value.charAt(0).toUpperCase() + value.slice(1)} Commands!__`)
-                            .setDescription(`Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`.\n\n`)
+                            .setDescription(`Use \`${prefix}help\` followed by a Command name to get more information on a Command.\nFor example: \`${prefix}help ping\`.\n\n`)
                             .addFields(catts)
                             .setColor(color)
 
@@ -191,23 +191,23 @@ module.exports = {
 
             readdirSync("./Commands/").forEach((dir) => {
                 if (dir.toLowerCase() !== args[0].toLowerCase()) return;
-                const commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
+                const Commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
                     file.endsWith(".js")
                 );
 
 
-                const cmds = commands.map((command) => {
-                    let file = require(`../../Commands/${dir}/${command}`);
+                const cmds = Commands.map((Command) => {
+                    let file = require(`../../Commands/${dir}/${Command}`);
 
-                    if (!file.name) return "No command name.";
+                    if (!file.name) return "No Command name.";
 
                     let name = file.name.replace(".js", "");
 
-                    if (client.commands.get(name).hidden) return;
+                    if (client.Commands.get(name).hidden) return;
 
 
-                    let des = client.commands.get(name).description;
-                    let emo = client.commands.get(name).emoji;
+                    let des = client.Commands.get(name).description;
+                    let emo = client.Commands.get(name).emoji;
                     let emoe = emo ? `${emo} - ` : ``;
 
                     let obj = {
@@ -234,16 +234,16 @@ module.exports = {
                 cots.push(dir.toLowerCase());
             });
 
-            const command =
-                client.commands.get(args[0].toLowerCase()) ||
-                client.commands.find(
+            const Command =
+                client.Commands.get(args[0].toLowerCase()) ||
+                client.Commands.find(
                     (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
                 );
 
             if (cots.includes(args[0].toLowerCase())) {
                 const combed = new MessageEmbed()
                     .setTitle(`__${args[0].charAt(0).toUpperCase() + args[0].slice(1)} Commands!__`)
-                    .setDescription(`Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`.\n\n`)
+                    .setDescription(`Use \`${prefix}help\` followed by a Command name to get more information on a Command.\nFor example: \`${prefix}help ping\`.\n\n`)
                     .addFields(catts)
                     .setColor(color)
 
@@ -252,9 +252,9 @@ module.exports = {
                 })
             };
 
-            if (!command) {
+            if (!Command) {
                 const embed = new MessageEmbed()
-                    .setTitle(`Invalid command! Use \`${prefix}help\` for all of my commands!`)
+                    .setTitle(`Invalid Command! Use \`${prefix}help\` for all of my Commands!`)
                     .setColor("RED");
                 return await message.reply({
                     embeds: [embed],
@@ -268,25 +268,25 @@ module.exports = {
                 .setTitle("Command Details:")
                 .addField(
                     "Command:",
-                    command.name ? `\`${command.name}\`` : "No name for this command."
+                    Command.name ? `\`${Command.name}\`` : "No name for this Command."
                 )
                 .addField(
                     "Aliases:",
-                    command.aliases ?
-                    `\`${command.aliases.join("` `")}\`` :
-                    "No aliases for this command."
+                    Command.aliases ?
+                    `\`${Command.aliases.join("` `")}\`` :
+                    "No aliases for this Command."
                 )
                 .addField(
                     "Usage:",
-                    command.usage ?
-                    `\`${prefix}${command.name} ${command.usage}\`` :
-                    `\`${prefix}${command.name}\``
+                    Command.usage ?
+                    `\`${prefix}${Command.name} ${Command.usage}\`` :
+                    `\`${prefix}${Command.name}\``
                 )
                 .addField(
                     "Command Description:",
-                    command.description ?
-                    command.description :
-                    "No description for this command."
+                    Command.description ?
+                    Command.description :
+                    "No description for this Command."
                 )
                 .setFooter(
                     `Requested by ${message.author.tag}`,
