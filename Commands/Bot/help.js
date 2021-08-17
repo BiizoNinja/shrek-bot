@@ -189,15 +189,15 @@ module.exports = {
         } else {
             let catts = [];
 
-            readdirSync("./commands/").forEach((dir) => {
+            readdirSync("./Commands/").forEach((dir) => {
                 if (dir.toLowerCase() !== args[0].toLowerCase()) return;
-                const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
+                const commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
                     file.endsWith(".js")
                 );
 
 
                 const cmds = commands.map((command) => {
-                    let file = require(`../../commands/${dir}/${command}`);
+                    let file = require(`../../Commands/${dir}/${command}`);
 
                     if (!file.name) return "No command name.";
 
