@@ -23,8 +23,7 @@ module.exports = {
         .setDescription(data.description)
         .setColor("RED")
         .addField("**Status:** DENIED", acceptQuery)
-        .setAuthor("FLAME BOT");
-      suggestedEmbed.edit(denyEmbed);
+      suggestedEmbed.edit({embeds: [denyEmbed]});
 
       const user = await client.users.cache.find(
         (u) => u.tag === data.author.name
@@ -34,12 +33,11 @@ module.exports = {
         .setDescription(data.description)
         .setColor("RED")
         .addField("**Status:** DENIED", acceptQuery)
-        .setAuthor("FLAME BOT");
       user.send(denyedEmbed);
-      message.channel.send("Suggestion Denied!");
+      message.channel.send({ content: "Suggestion Denied!" });
     } catch (err) {
       console.log(err);
-      message.channel.send("That suggestion does not exist!");
+      message.channel.send({ content: "That suggestion does not exist!" });
     }
   },
 };

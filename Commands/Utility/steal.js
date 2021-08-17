@@ -3,91 +3,63 @@ const { parse } = require("twemoji-parser");
 module.exports = {
   name: "steal",
   description: "Steals Emojis",
-  usage: "steal <Emoji> [new-emoji-name]",
+  usage: "steal <Emoji> [name]",
   aliases: ["stealemoji"],
   cooldown: 0,
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("MANAGE_EMOJIS"))
-      return message.channel.send(
-        `you don't have the permission to do this <a:XMARK:801450921112371232> `
-      );
+    if(!message.member.permission.has("MANAGE_EMOJIS")) return message.channel.send({content: "<:wrong:856162786319925270> You need the `MANAGE_EMOJIS` permission to use this command!"})
 
     const emoji = args[0];
-    if (!emoji)
-      return message.channel.send(
-        `please provide an emoji to steal <:LONG_NOSE:810455970038677504>`
-      );
+    const name = args.slice(1).join(" ");
+    if (!emoji) return message.channel.send({content: `<:wrong:856162786319925270> Please mention an emoji!`})
 
-    let customemoji = Discord.Util.parseEmoji(emoji);
-    if (customemoji.id) {
-      const Link = `https://cdn.discordapp.com/emojis/${customemoji.id}.${
-        customemoji.animated ? "gif" : "png"
-      }`;
-      const name = args.slice(1).join(" ");
-      try {
-        const Added = new Discord.MessageEmbed()
-          .setColor(message.member.displayHexColor)
-          .setTitle(` Emoji Added`)
+    try {
+      if (emoji.startsWith("https://cdn.discordapp.com")) {
+        await message.guild.emojis.create(emoji, name || "give_name");
+
+        const embed = new MessageEmbed()
+          .setAuthor(`New Emoji Added!`, 'https://cdn.discordapp.com/emojis/798779186801803264.gif?v=1')
+          .setThumbnail(`${emoji}`)
+          .setColor('#A6FE00')
           .setDescription(
-            `Emoji Has Been Added! \nName : ${
-              name || `${customemoji.name}`
-            } \nPreview : [Click Me](${Link})`
+            `Emoji Has Been Added! | Name: ${
+              name || "give_name"
+            } `
           );
-        await message.guild.emojis.create(
-          `${Link}`,
-          `${name || `${customemoji.name}`}`
-        );
-        return message.channel.send(Added);
-      } catch (err) {
-        console.log(err);
-        return message.channel.send(
-          `An error has occured!\n\n**Possible Reasons:**\n\`\`\`- This server has reached the emojis limit\n- The bot doesn't have permissions.\n- The emojis size is too big.\`\`\``
-        );
+        return message.channel.send({embeds: [embed]});
       }
-    } else {
-      let CheckEmoji = parse(emoji, { assetType: "png" });
-      if (!CheckEmoji[0])
-        return message.channel.send(
-          `please give me a valid emoji! Don't try to break me :eyes:`
+
+      const customEmoji = Util.parseEmoji(emoji);
+
+      if (customEmoji.id) {
+        const link = `https://cdn.discordapp.com/emojis/${customEmoji.id}.${customEmoji.animated ? "gif" : "png"
+          }`;
+
+        await message.guild.emojis.create(
+          `${link}`,
+          `${name || `${customEmoji.name}`}`
         );
-      message.channel.send(`you don't need to steal default emojis `);
-        if (!message.member.permissions.has("MANAGE_EMOJIS")) 
-        return message.channel.send(`<:wrong:856162786319925270> you don't have the permission to do this]> `);
-
-        const emoji = args[0];
-        if (!emoji) return message.channel.send(`<:wrong:856162786319925270> please provide an emoji to steal `);
-
-        let customemoji = Discord.Util.parseEmoji(emoji);
-        if (customemoji.id) {
-            const Link = `https://cdn.discordapp.com/emojis/${customemoji.id}.${customemoji.animated ? "gif" : "png"
-                }`;
-            const name = args.slice(1).join(" ");
-            try {
-                const Added = new Discord.MessageEmbed()
-                    .setColor(message.member.displayHexColor)
-                    .setTitle(` Emoji Added`)
-                    .setDescription(
-                        `Emoji Has Been Added! \nName : ${name || `${customemoji.name}`} \nPreview : [Click Me](${Link})`
-                    );
-                await message.guild.emojis.create(
-                    `${Link}`,
-                    `${name || `${customemoji.name}`}`
-                )
-                return message.channel.send(Added)
-            } catch (err) {
-                console.log(err)
-                return message.channel.send(`An error has occured!\n\n**Possible Reasons:**\n\`\`\`- This server has reached the emojis limit\n- The bot doesn't have permissions.\n- The emojis size is too big.\`\`\``)
-
-            }
-        } else {
-            let CheckEmoji = parse(emoji, { assetType: "png" });
-            if (!CheckEmoji[0])
-                return message.channel.send(`<:wrong:856162786319925270> Please give me a valid emoji! Don't try to break me :eyes:`);
-            message.channel.send(
-                `<:wrong:856162786319925270> you don't need to steal default emojis `
-            );
-        }
-        
+       
+        const embed = new MessageEmbed()
+          .setTitle(`Emoji Added <:${customEmoji.name}:${customEmoji.id}>`)
+          .setColor('#A6FE00')
+          .setThumbnail(`${link}`)
+          .setDescription(
+            `Emoji Has Been Added! | Name: ${name || `${customEmoji.name}`
+            } | Preview: [Click me](${link})`
+          );
+        return message.channel.send({ embeds: [embed] });
+      } else {
+        const foundEmoji = parse(emoji, { assetType: "png" });
+        if (!foundEmoji[0]) return message.channel.send({ content: `<:wrong:856162786319925270> The emoji you provided isn't valid!` })
+        message.channel.send({content: `<:wrong:856162786319925270> This is a default emoji!`})
+      }
+    } catch (e) {
+      if (
+        String(e).includes(
+          "DiscordAPIError: Maximum number of emojis reached (50)"
+        )
+      ) return message.channel.send({content: `<:wrong:856162786319925270> This server has maximum emoji limit!`})
     }
   },
 };

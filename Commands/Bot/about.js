@@ -25,6 +25,6 @@ The new ShrekBot is designed to be **made by the community!** so forks are alway
       )
       .setColor(message.guild.me.displayHexColor);
 
-    message.channel.send(embed);
+    message.channel.send({embeds: [embed]});
   },
 };

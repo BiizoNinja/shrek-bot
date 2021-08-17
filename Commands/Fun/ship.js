@@ -9,13 +9,14 @@ module.exports = {
 
     let user = message.mentions.users.first();
     if (user.id == message.author.id)
-      return message.channel.send("ayo you cant yourself");
+      return message.channel.send({ content: `<:wrong:856162786319925270> You love yourself more than enough.` });
     let robber = message.author;
 
     if (!user) {
-      return message.channel.send(
-        "Make sure you pick a person who you want to ship!"
-      );
+      return message.channel.send({
+        content:
+          "<:wrong:856162786319925270> Make sure you pick a person who you want to ship!"
+      });
     }
 
     let embed = new Discord.MessageEmbed()
@@ -25,8 +26,6 @@ module.exports = {
         `**${robber.username}** & **${user.username}** your match is... ${ship}%`
       )
       .setColor(`RANDOM`);
-    let m = await message.channel.send(embed);
-    m.react("❤");
-    m.react("💙");
+    let m = await message.channel.send({embeds: [embed]});
   },
 };

@@ -23,6 +23,6 @@ module.exports = {
       .setTimestamp()
       .setFooter("nice");
 
-    message.channel.send(GamerEmbed);
+    message.channel.send({embeds: [GamerEmbed]});
   },
 };

@@ -9,9 +9,9 @@ module.exports = {
   aliases: ["setmain"],
   run: async (client, message, args) => {
     if (!message.member.permissions.has("ADMINISTRATOR"))
-      return message.channel.send(
-        "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this!"
-      );
+      return message.channel.send({
+          content: "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this!"
+        });
     const data = await schema.findOne({
       GuildID: message.guild.id,
     });
@@ -19,9 +19,7 @@ module.exports = {
     const role =
       message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
     if (!role)
-      return message.channel.send(
-        "<:wrong:856162786319925270> You need to specify a role!"
-      );
+      return message.channel.send({content:  "<:wrong:856162786319925270> You need to specify a role!"});
 
     if (data) {
       schema.findOneAndUpdate(
@@ -32,9 +30,7 @@ module.exports = {
           MemberRole: role.id,
         }
       );
-      message.channel.send(
-        `<:greenTick:854228019312066571> Successfully set the Member role to **${role.name}**`
-      );
+      message.channel.send({content: `<:greenTick:854228019312066571> Successfully set the Member role to **${role.name}**`});
     }
 
     if (!data) {
@@ -42,9 +38,7 @@ module.exports = {
         GuildID: message.guild.id,
         MemberRole: role.id,
       }).save();
-      message.channel.send(
-        `<:greenTick:854228019312066571> Successfully set the Member role to **${role.name}**`
-      );
+      message.channel.send({content: `<:greenTick:854228019312066571> Successfully set the Member role to **${role.name}**`});
     }
   },
 };

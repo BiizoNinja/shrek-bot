@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "hack",
-  description: "hack a user",
+  description: "hack a user (fake)",
   cooldown: 0,
   run: async (client, message, args) => {
     const eMails = [
@@ -34,13 +34,14 @@ module.exports = {
       .setColor(message.guild.me.displayHexColor)
       .setFooter("totally real!1!!1!");
 
-    message.channel.send(`Hacking  **${taggedUser.tag}***...`);
+    message.channel.send({content: `Hacking  **${taggedUser.tag}**...`});
 
-    const fMsg = await message.channel.send(
-      `Successfully hacked **${taggedUser.tag}**! Fetching Information... <a:blueLoading:856159438024605709>`
-    );
+    const fMsg = await message.channel.send({
+      content:
+        `Successfully hacked **${taggedUser.tag}**! Fetching Information... <a:blueLoading:856159438024605709>`
+    });
     setTimeout(() => {
-      fMsg.edit("Information found", embed);
+      fMsg.edit({ content: "Information found" , embeds: [embed]});
     }, 5000);
   },
 };

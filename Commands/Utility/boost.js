@@ -14,45 +14,51 @@ module.exports = {
     });
 
     if (!mode)
-      return message.channel.send(
-        "<:wrong:856162786319925270> Please mention a mode `.boost <settings | cache | help>`"
-      );
+      return message.channel.send({
+        content:
+          "<:wrong:856162786319925270> Please mention a mode `.boost <settings | cache | help>`"
+      });
 
     if (mode.toLowerCase() == `cache`) {
-      if (!message.member.hasPermission("ADMINISTRATOR"))
-        return message.channel.send(
-          `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
-        );
+      if (!message.member.permissions.has("ADMINISTRATOR"))
+        return message.channel.send({
+          content:
+            `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
+        });
       if (boostData)
-        return message.channel.send(
-          "<:wrong:856162786319925270> This server is already cached! Run `.boost settings` to view settings"
-        );
+        return message.channel.send({
+          conteht:
+            "<:wrong:856162786319925270> This server is already cached! Run `.boost settings` to view settings"
+        });
       if (!boostData) {
-        const msg = await message.channel.send(
-          "<a:blueLoading:856159438024605709> Adding server to the database (this should take a moment)"
-        );
+        const msg = await message.channel.send({
+          content:
+            "<a:blueLoading:856159438024605709> Adding server to the database (this should take a moment)"
+        });
         await new schema({
           GuildID: message.guild.id,
           BoostChannel: "None",
           BoostMessage: "None",
         }).save();
         setTimeout(() => {
-          msg.edit(
+          msg.edit({
+            content:
             "<:greenTick:854228019312066571> Successfully added this server to the database!\n> You can change add a boost channel by doing `.boost settings Channel <#Channel>` "
-          );
+          });
         }, 5000);
       }
     }
 
     if (mode.toLowerCase() == "settings") {
-      if (!message.member.hasPermission("ADMINISTRATOR"))
-        return message.channel.send(
-          `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
-        );
+      if (!message.member.permissions.has("ADMINISTRATOR"))
+        return message.channel.send({
+          content:
+            `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
+        });
       if (!boostData)
-        return message.channel.send(
+        return message.channel.send({content: 
           "<:wrong:856162786319925270> This server isn't added to the database! Please run `.boost cache` to add it!"
-        );
+        });
 
       const settings = args[1];
 
@@ -68,7 +74,7 @@ module.exports = {
           .addFields(
             {
               name: "» Boost Message",
-              value: `${boostData.BoostMessage}`,
+              value: `\`\`\`\n${boostData.BoostMessage}\n\`\`\``,
             },
             {
               name: "» Boost Channel",
@@ -80,15 +86,16 @@ module.exports = {
             message.author.displayAvatarURL({ dynamic: true })
           )
           .setColor(message.guild.me.displayHexColor);
-        message.channel.send(settingEmbed);
+        message.channel.send({embeds: [settingEmbed]});
       }
 
-      if (settings == "Message") {
+      if (settings == "message") {
         const message = args.slice(2).join(" ");
         if (!message)
-          return message.channel.send(
-            "<:wrong:856162786319925270> Provide a message!"
-          );
+          return message.channel.send({
+            content:
+              "<:wrong:856162786319925270> Provide a message!"
+          });
         await schema.findOneAndUpdate(
           {
             GuildID: guildID,
@@ -97,17 +104,19 @@ module.exports = {
             BoostMessage: message,
           }
         );
-        messageChannel.send(
-          `<:greenTick:854228019312066571> Successfully added the boost message as\n\`\`\`md\n${message}\`\`\``
-        );
+        messageChannel.send({
+          content:
+            `<:greenTick:854228019312066571> Successfully added the boost message as\n\`\`\`md\n${message}\`\`\``
+        });
       }
 
       if (settings == "Channel") {
         const channel = message.mentions.channels.last();
         if (!channel)
-          return message.channel.send(
+          return message.channel.send({
+            content:
             "<:wrong:856162786319925270> Provide a channel!"
-          );
+          });
         await schema.findOneAndUpdate(
           {
             GuildID: message.guild.id,
@@ -116,14 +125,15 @@ module.exports = {
             BoostChannel: channel,
           }
         );
-        message.channel.send(
-          `<:greenTick:854228019312066571> Successfully added the boost channel to ${channel}`
-        );
+        message.channel.send({
+          content:
+            `<:greenTick:854228019312066571> Successfully added the boost channel to ${channel}`
+        });
       }
     }
 
     if (mode.toLowerCase() == "help") {
-      const { ReactionPages } = require("reconlx");
+      const { pagination } = require("reconlx");
 
       const helpEmbed1 = new Discord.MessageEmbed()
         .setAuthor(
@@ -178,11 +188,12 @@ module.exports = {
         .setColor("#A6FE00");
 
       const pages = [helpEmbed1, helpEmbed2, helpEmbed3, helpEmbed4];
-      const textPageChange = true;
-      const emojis = ["⏪", "⏩"];
-      const time = 30000;
 
-      ReactionPages(message, pages, textPageChange, emojis, time);
+      pagination({
+        embeds: pages,
+        message: message,
+        time: 1000 * 60 * 2,
+      }); 
     }
   },
 };

@@ -32,6 +32,7 @@ module.exports = {
     const userFlags = member.user.flags.toArray();
     if (!member.user.activities) member.user.activities = { name: "none" };
     const embed = new MessageEmbed()
+      
       .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
       .setColor("RANDOM")
       .addField("User", [
@@ -76,6 +77,6 @@ module.exports = {
         `Requested by ${message.author.username}`,
         `${message.author.displayAvatarURL({ dynamic: true })}`
       );
-    return message.channel.send(embed);
+    return message.channel.send({embeds: [embed]});
   },
 };

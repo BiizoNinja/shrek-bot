@@ -1,6 +1,10 @@
 <div align="center">
   <p>
     <h1>ShrekBot! 🐸</h1>
+
+[![ShrekBot](https://top.gg/api/widget/855803758645870613.svg)](https://top.gg/bot/855803758645870613)
+
+  </a>
   </p>
 </div>
 
@@ -13,8 +17,7 @@
 
 ## About
 
-ShrekBot used to be a **verified** discord bot! But the idiot owner (me) decided to delete for some reason??? So I've been thinking to bring it back and I don't what better way other than this!
-The new ShrekBot is designed to be **made by the community!** so forks are always welcome! I'll be checking forks frequently and updating the bot frequently! Also make sure to post working code! You can invite the [public version](https://dsc.gg/shrekbot) to see all the features of the bot without compiling yourself.
+Shrekbot is an epic discord bot with moderation, utility, fun, tools, tickets etc! It is also an **open Source** bot. Code can be found in this repository.
 
 ## Features
 
@@ -42,3 +45,5 @@ Contributors
 Helpers
 
 - [@Collauxm](https://github.com/Collauxm)
+
+## Made with ❤ and JavaScript

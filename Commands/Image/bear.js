@@ -18,6 +18,6 @@ run: async (client, message, args) => {
  .setImage(data.image)
  .setColor('#A6FE00')
 
-message.channel.send(embed)
+message.channel.send({embeds: [embed]})
 }
 }

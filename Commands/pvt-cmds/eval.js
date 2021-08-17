@@ -27,13 +27,13 @@ module.exports = {
         .addField(`Evalved`, `\`\`\`js\n${inspect(evaled, { depth: 0 })}\`\`\``)
         .addField(`TypeOf`, `\`\`\`${typeof evaled}\`\`\``);
 
-      message.channel.send(evalembed);
+      message.channel.send({embeds: [evalembed]});
     } catch (error) {
       let embed1 = new Discord.MessageEmbed()
         .setColor("#f03824")
         .setTitle("Error")
         .addField(`Error`, `${error}`);
-      message.channel.send(embed1);
+      message.channel.send({embeds: [embed1]});
     }
   },
 };

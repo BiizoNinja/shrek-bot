@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "14.x"
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
   },
   "scripts": {
     "start": "node ."
@@ -22,11 +23,10 @@
     "atob": "^2.1.2",
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
-    "discord-buttons": "^3.2.1",
+    "canvas": "^2.8.0",
     "discord-emoji-convert": "^1.6.0",
     "discord-image-generation": "^1.4.7",
-    "discord-reply": "^0.1.2",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.1",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.2.7",
     "figlet": "^1.5.0",
@@ -38,7 +38,7 @@
     "owofy": "^1.0.2",
     "pokecord": "^1.0.0",
     "random-code-gen": "^1.1.2",
-    "reconlx": "^1.1.2",
+    "reconlx": "^2.1.2",
     "translate-google": "^1.4.3",
     "twemoji-parser": "^13.0.0",
     "util": "^0.12.3",

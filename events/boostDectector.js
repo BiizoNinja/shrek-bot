@@ -25,7 +25,7 @@ client.on("guildMemberUpdate", async (oldMember, newMember) => {
       .replace(/{user.mention}/g, `<@${newMember.user.id}>`)
       .replace(/{boost.count}/g, guild.premiumSubscriptionCount);
 
-    boostChannel.send(finalMessage);
+    boostChannel.send({content: finalMessage});
   }
 
   if (oldStatus && !newStatus) return;

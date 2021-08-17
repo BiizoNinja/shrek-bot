@@ -23,7 +23,7 @@ module.exports = {
             .setDescription(`**Suggestion:** ${args.slice(0).join(' ')}\n`)
             .addField("**Status:**", "PENDING")
             .setTimestamp()
-        suggestchannel.send(suggestembed).then(msg => {
+        suggestchannel.send({embeds: [suggestembed]}).then(msg => {
             msg.react("<:upvote:858715588263280651>")
             msg.react("<a:downvote:858715482656210954>")
         })
@@ -33,7 +33,7 @@ module.exports = {
             .setColor("#FF0000")
             .setTitle('Suggested!')
             .setDescription("Your suggestion got added in the [Support Server](https://discord.gg/V9DHGNtuUe)")
-        message.channel.send(suggestionadded)
+        message.channel.send({embeds: [suggestionadded]})
 
         async function reactEmojies(message, emojies) {
             for (const emoji of emojies) {

@@ -26,7 +26,7 @@ module.exports = {
       )
       .setThumbnail(guild.iconURL({ dynamic: true }))
       .setTimestamp();
-    suggestchannel.send(suggestembed);
+    suggestchannel.send({embeds: [suggestembed]});
 
     wc.send({
       username: message.author.tag,
@@ -38,6 +38,6 @@ module.exports = {
       .setColor("#FF0000")
       .setTitle("Reported!")
       .setDescription("Your bug report got added!");
-    message.channel.send(suggestionadded);
+    message.channel.send({embeds: [suggestionadded]});
   },
 };

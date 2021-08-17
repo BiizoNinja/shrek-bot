@@ -30,7 +30,7 @@ module.exports = {
       .setTitle(`Page - ${page}/${Math.ceil(client.guilds.cache.size / 10)}`)
       .setDescription(description);
 
-    let msg = await message.channel.send(embed);
+    let msg = await message.channel.send({embeds: [embed]});
 
     await msg.react("⬅");
     await msg.react("➡");

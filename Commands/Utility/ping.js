@@ -23,7 +23,7 @@ module.exports = {
         )}ms`
       )
       .setColor("RED");
-    await message.reply(embed);
+    await message.reply({embeds: [embed]});
     msg.delete();
   },
 };

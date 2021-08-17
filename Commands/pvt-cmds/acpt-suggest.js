@@ -36,10 +36,10 @@ module.exports = {
         .setDescription(data.description)
         .setColor("GREEN")
         .addField("**Status:** ACCEPTED", acceptQuery);
-      user.send(approveEmbed);
+      user.send({embeds: [approveEmbed]});
     } catch (err) {
       console.log(err);
-      message.channel.send("That suggestion does not exist!");
+      message.channel.send({ content: "That suggestion does not exist!" });
     }
   },
 };

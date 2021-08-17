@@ -11,12 +11,12 @@ module.exports = {
     const fullMessage = args.join(" ");
 
     if (!fullMessage)
-      return message.channel.send(`You need to specify something to emojify.`);
-        if(fullMessage.includes('@everyone') || fullMessage.includes('@here')) return message.channel.send('<:wrong:856162786319925270> You aren\'t allowed to use this to ping everyone!')
-        if(fullMessage.includes('<@&')) return message.channel.send('<:wrong:856162786319925270> You aren\'t allowed to use this to ping everyone!')
+      return message.channel.send({content: `You need to specify something to emojify.`});
+    if (fullMessage.includes('@everyone') || fullMessage.includes('@here')) return message.channel.send({ content: '<:wrong:856162786319925270> You aren\'t allowed to use this to ping everyone!' })
+    if (fullMessage.includes('<@&')) return message.channel.send({ content: '<:wrong:856162786319925270> You aren\'t allowed to use this to ping everyone!' })
         
 
     const result = emoji.convert(fullMessage);
-    message.channel.send(result);
+    message.channel.send({content: result});
   },
 };

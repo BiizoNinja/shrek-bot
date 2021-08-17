@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 0,
   run: async (client, message, args) => {
     const pokemon = await Spawn().catch((e) => {});
-    if (!pokemon) return message.channel.send("Opp+ Something went wrong :(");
+    if (!pokemon) return message.channel.send({content: `<:wrong:856162786319925270> Something went wrong while fetching the pokemon!`});
     const filter = (m) => m.author.id === message.author.id;
 
     const embed = new MessageEmbed()

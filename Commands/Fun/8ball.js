@@ -41,7 +41,7 @@ module.exports = {
         embed.addField(`Question: `, `${question}?`, true);
       embed.addField(`Answer: `, `${replies[result]}`);
       embed.setColor("#00ffff");
-      message.channel.send(embed);
+      message.channel.send({embeds: [embed]});
     }
   },
 };

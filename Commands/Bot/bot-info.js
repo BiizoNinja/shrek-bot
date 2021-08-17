@@ -49,6 +49,6 @@ module.exports = {
       .setFooter(`PREFIX - '.'`)
       .setColor(message.guild.me.displayHexColor);
 
-    await message.channel.send(embed);
+    await message.channel.send({embeds: [embed]});
   },
 };

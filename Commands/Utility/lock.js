@@ -7,10 +7,10 @@ module.exports = {
   usage: "lock",
   cooldown: 0,
   run: async (client, message, args) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES"))
-      return message.channel.send(
+    if (!message.member.permissions.has("MANAGE_MESSAGES"))
+      return message.channel.send({content:
         "<:wrong:856162786319925270> You need to be staff to use this! "
-      );
+      });
 
     const data = await schema.findOne({
       GuildID: message.guild.id,
@@ -29,9 +29,9 @@ module.exports = {
       channel.updateOverwrite(everyoneRole, {
         SEND_MESSAGES: false,
       });
-      const msg = await channel.send(
+      const msg = await channel.send({ content:
         `<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`
-      );
+      });
 
       const embed = new Discord.MessageEmbed()
         .setAuthor(
@@ -40,7 +40,7 @@ module.exports = {
         )
         .setDescription(`Channel Locked!\nFor the reason: **${reason}**`)
         .setColor("RANDOM");
-      message.channel.send(embed);
+      message.channel.send({embeds: [embed]});
 
       setTimeout(() => {
         msg.delete();
@@ -60,9 +60,9 @@ module.exports = {
       channel.updateOverwrite(role, {
         SEND_MESSAGES: false,
       });
-      const msg = await channel.send(
+      const msg = await channel.send({content:
         `<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`
-      );
+    });
 
       const embed = new Discord.MessageEmbed()
         .setAuthor(
@@ -71,7 +71,7 @@ module.exports = {
         )
         .setDescription(`Channel Locked!\nFor the reason: **${reason}**`)
         .setColor("RANDOM");
-      message.channel.send(embed);
+      message.channel.send({embeds: [embed]});
 
       setTimeout(() => {
         msg.delete();

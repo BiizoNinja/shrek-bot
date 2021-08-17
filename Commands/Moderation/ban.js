@@ -10,27 +10,32 @@ module.exports = {
     const target = message.mentions.members.first();
 
     if (!message.member.permissions.has("BAN_MEMBERS"))
-      return message.channel.send(
-        " <:wrong:856162786319925270> You don't have the permission to do this! "
-      );
+      return message.channel.send({
+        content:
+          " <:wrong:856162786319925270> You don't have the permission to do this! "
+      });
     if (!target)
-      return message.channel.send(
-        `<:wrong:856162786319925270> Please specify a member to ban.`
-      );
+      return message.channel.send({
+        content:
+          `<:wrong:856162786319925270> Please specify a member to ban.`
+      });
     if (target == message.author)
-      return message.channel.send(
-        "<:wrong:856162786319925270> You can't ban yourself! "
-      );
+      return message.channel.send({
+        content:
+          "<:wrong:856162786319925270> You can't ban yourself! "
+      });
     if (target == message.guild.owner)
-      return message.channel.send(
-        "<:wrong:856162786319925270> You can't ban the owner! "
-      );
+      return message.channel.send({
+        content:
+          "<:wrong:856162786319925270> You can't ban the owner! "
+      });
 
     const reason = args.slice(1).join(" ");
     if (!reason)
-      return message.channel.send(
-        " <:wrong:856162786319925270> Please provide a reason to ban!"
-      );
+      return message.channel.send({
+        content:
+          " <:wrong:856162786319925270> Please provide a reason to ban!"
+      });
 
     const targetMember = message.guild.members.cache.get(target.id);
     await targetMember.ban({
@@ -42,8 +47,9 @@ module.exports = {
       .setTimestamp()
       .setColor(`GREEN`);
     message.channel.send({ embeds: [embed] });
-    target.send(
-      `You have been banned from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
-    );
+    target.send({
+      content:
+        `You have been banned from **${message.guild.name}**, From the moderator ${message.author.tag}(\`${message.author.tag}\`)`
+    });
   },
 };

@@ -16,6 +16,6 @@ module.exports = {
       )
       .setColor(message.guild.me.displayHexColor);
 
-    message.channel.send(embed);
+    message.channel.send({embeds: [embed]});
   },
 };

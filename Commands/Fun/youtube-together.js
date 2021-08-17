@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const fetch = require("node-fetch");
+require('dotenv').config()
 
 module.exports = {
   name: "youtube-together",
@@ -23,13 +24,13 @@ module.exports = {
           validate: null,
         }),
         headers: {
-          Authorization: `Bot ${client.token}`,
+          Authorization: `Bot ${process.env.BOT_TOKEN}`,
           "Content-Type": "application/json",
         },
       })
     ).json();
     if (!invite.code)
-      return message.channel.send("Sadly i cant start a yt together");
+      return message.channel.send({content: `<:wrong:856162786319925270> There was a error!`});
     const e = new discord.MessageEmbed()
       .setAuthor(
         "YouTube but on discord?!!",
@@ -41,6 +42,6 @@ module.exports = {
       )
       .setTimestamp();
 
-    message.channel.send(e, {});
+    message.channel.send({embeds: [e]});
   },
 };

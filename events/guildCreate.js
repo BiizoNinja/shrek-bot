@@ -22,5 +22,5 @@ client.on("guildCreate", (guild) => {
     .setColor("RANDOM")
     .setFooter("For support join the support server!")
     .setTimestamp();
-  channel.send(embed);
+  channel.send({embeds: [embed]});
 });
