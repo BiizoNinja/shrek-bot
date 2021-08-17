@@ -119,7 +119,7 @@ module.exports = {
 
 
                         const cmds = commands.map((command) => {
-                            let file = require(`../../commands/${dir}/${command}`); //getting the commands again
+                            let file = require(`../../Commands/${dir}/${command}`); //getting the commands again
 
                             if (!file.name) return "No command name.";
 
@@ -298,7 +298,7 @@ module.exports = {
                 .setColor(color);
             return await message.reply({
                 embeds: [embed]
-                
+
             });
         }
     },
