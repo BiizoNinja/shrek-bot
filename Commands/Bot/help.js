@@ -125,11 +125,11 @@ module.exports = {
 
                             let name = file.name.replace(".js", "");
 
-                            if (client.Commands.get(name).hidden) return;
+                            if (client.commands.get(name).hidden) return;
 
 
-                            let des = client.Commands.get(name).description;
-                            let emo = client.Commands.get(name).emoji;
+                            let des = client.commands.get(name).description;
+                            let emo = client.commands.get(name).emoji;
                             let emoe = emo ? `${emo} - ` : ``;
 
                             let obj = {
