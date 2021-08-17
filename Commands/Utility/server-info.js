@@ -57,7 +57,7 @@ module.exports = {
         }
       )
       .setThumbnail(message.guild.iconURL({ dynamic: true, format: "png" }))
-      .setColor(client.guild.memberCount.displayHexColor);
+      .setColor(client.guild.me.displayHexColor);
 
     message.channel.send({embeds: [embed]});
   },
