@@ -36,11 +36,6 @@ module.exports = {
           inline: true,
         },
         {
-          name: `Server region 🌍`,
-          value: `${message.guild.region}`,
-          inline: true,
-        },
-        {
           name: `Verification Level 📑`,
           value: `${message.guild.verificationLevel}`,
           inline: true,
