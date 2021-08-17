@@ -235,8 +235,8 @@ module.exports = {
             });
 
             const Command =
-                client.Commands.get(args[0].toLowerCase()) ||
-                client.Commands.find(
+                client.commands.get(args[0].toLowerCase()) ||
+                client.commands.find(
                     (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
                 );
 
