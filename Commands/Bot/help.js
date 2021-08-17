@@ -298,6 +298,7 @@ module.exports = {
                 .setColor(color);
             return await message.reply({
                 embeds: [embed]
+                
             });
         }
     },
