@@ -32,13 +32,12 @@ const create_mh = (
     // now lets run it
     array.forEach(cca => {
         let name = cca;
-        let sName = `${name.toUpperCase()}`
-        let tName = name.toLowerCase();
+        let sName = `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`
         let fName = name.toUpperCase();
 
         return menus.push({
             label: sName,
-            description: `${tName} commands!`,
+            description: `Shows the ${sName} commands!`,
             value: fName
         })
     });

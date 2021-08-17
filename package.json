@@ -24,6 +24,7 @@
     "axios": "^0.21.1",
     "canvacord": "^5.1.0",
     "canvas": "^2.8.0",
+    "chalk": "^4.1.2",
     "discord-emoji-convert": "^1.6.0",
     "discord-image-generation": "^1.4.7",
     "discord.js": "^13.0.1",
