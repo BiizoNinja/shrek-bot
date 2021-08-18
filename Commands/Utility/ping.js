@@ -14,15 +14,11 @@ module.exports = {
   run: async (client, message, args) => {
     const msg = await message.channel.send(`🏓 Pinging...`);
     const embed = new MessageEmbed()
-      .setTitle("Pong!")
+      .setAuthor("Pong!", client.user.displayAvatarURL({dynamic:false}))
       .setDescription(
-        `**WebSocket** ping is\n> ${
-          client.ws.ping
-        }ms\n**Message edit** ping is\n> ${Math.floor(
-          msg.createdAt - message.createdAt
-        )}ms`
-      )
-      .setColor("RED");
+        `:globe_with_meridians: **WebSocket** ping is \`${client.ws.ping}ms\`\n :ping_pong: **Message edit** ping is \`${Math.floor(msg.createdAt - message.createdAt)}ms\``)
+      .setColor('#A6FE00')
+    .setFooter(`Requested by: ${message.author.tag}`, message.author.displayAvatarURL({dynamic:true}))
     await message.reply({embeds: [embed]});
     msg.delete();
   },

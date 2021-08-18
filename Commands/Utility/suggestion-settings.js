@@ -1,12 +1,13 @@
 const Discord = require("discord.js");
 const schema = require("../../models/sugSettings-schema");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "suggestion-settings",
   description: "View the server's suggestion settings",
   usage: "suggestion settings [Setting] [Value]",
   run: async (client, message, args) => {
-    if (!message.member.permissions.has('ADMINISTRATOR')) return message.channel.send('<:wrong:856162786319925270> You need the \`ADMINISTRATOR\` permission to use this!')
+    if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) return message.channel.send('<:wrong:856162786319925270> You need the \`ADMINISTRATOR\` permission to use this!')
 
     const setting = args[0]
     const suggestData = await schema.findOne({

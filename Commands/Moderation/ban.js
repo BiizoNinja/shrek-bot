@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "ban",
@@ -9,7 +10,7 @@ module.exports = {
   run: async (client, message, args) => {
     const target = message.mentions.members.first();
 
-    if (!message.member.permissions.has("BAN_MEMBERS"))
+    if (!message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS))
       return message.channel.send({
         content:
           " <:wrong:856162786319925270> You don't have the permission to do this! "

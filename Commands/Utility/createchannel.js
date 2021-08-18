@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "createchannel",
@@ -7,7 +8,7 @@ module.exports = {
   cooldown: 0,
   aliases: ["cchannel"],
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("MANAGE_CHANNELS"))
+    if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS))
       return message.channels.send({
         content:
           "You need the `MANAGE_CHANNELS` permission to use this command"

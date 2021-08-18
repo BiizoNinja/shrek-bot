@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "nuke",
@@ -6,7 +7,7 @@ module.exports = {
   usage: "nuke",
   cooldown: 0,
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("ADMINISTRATOR"))
+    if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
       return message.channel.send({content: 
         "<a:wrong:777910274011299850>You do not have the permission to do this!"
       });

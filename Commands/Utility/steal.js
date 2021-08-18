@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
 const { parse } = require("twemoji-parser");
+const {Permissions} = require('discord.js')
+
 module.exports = {
   name: "steal",
   description: "Steals Emojis",
@@ -7,7 +9,7 @@ module.exports = {
   aliases: ["stealemoji"],
   cooldown: 0,
   run: async (client, message, args) => {
-    if(!message.member.permission.has("MANAGE_EMOJIS")) return message.channel.send({content: "<:wrong:856162786319925270> You need the `MANAGE_EMOJIS` permission to use this command!"})
+    if(!message.member.permission.has(Permissions.FLAGS.MANAGE_EMOJIS_AND_STICKERS)) return message.channel.send({content: "<:wrong:856162786319925270> You need the `MANAGE_EMOJIS` permission to use this command!"})
 
     const emoji = args[0];
     const name = args.slice(1).join(" ");

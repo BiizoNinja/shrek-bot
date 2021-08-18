@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const schema = require("../../models/cr-schema");
 const crUserSchema = require("../../models/crUserSchema");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "customrole",
@@ -25,7 +26,7 @@ module.exports = {
     });
 
     if (settings.toLowerCase() == "cache") {
-      if (!message.member.permissions.has("ADMINISTRATOR"))
+      if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send({content: 
           "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! "
         });
@@ -53,7 +54,7 @@ module.exports = {
     }
 
     if (settings.toLowerCase() == "settings") {
-      if (!message.member.permissions.has("ADMINISTRATOR"))
+      if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send(
           "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! "
         );

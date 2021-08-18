@@ -22,18 +22,11 @@ const create_mh = (
 
     let menus = [];
 
-    const emo = {
-        fun: ":video_game:",
-        ticket: ":ticket:",
-        utility: ":gear:",
-        moderation: ":tools:",
-    }
-
     // now lets run it
     array.forEach(cca => {
         let name = cca;
         let sName = `${name[0].toUpperCase()}${name.slice(1).toLowerCase()}`
-        let fName = name.toUpperCase();
+        let fName = `**${name[0].toUpperCase()}${name.slice(1).toLowerCase()}**`
 
         return menus.push({
             label: sName,

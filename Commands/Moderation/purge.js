@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "purge",
@@ -6,7 +7,7 @@ module.exports = {
   usage: "purge <amount> [channel]",
   aliases: ["clear"],
   run: async (client, message, args) => {
-    if (!message.member.permissionas.has('MANAGE_MESSAGES')) return message.channel.send({ content: "<:wrong:856162786319925270> You need the `MANAGE_MESSAGES` permission to use this command."})
+    if (!message.member.permissionas.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send({ content: "<:wrong:856162786319925270> You need the `MANAGE_MESSAGES` permission to use this command."})
 
     const amount = parseInt(args[0]);
     if (!amount)

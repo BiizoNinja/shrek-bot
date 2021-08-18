@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const schema = require("../../models/memberRole");
+const {Permissions} = require('discord.js')
 
 module.exports = {
   name: "setmember",
@@ -8,7 +9,7 @@ module.exports = {
   usage: "setmember <role>",
   aliases: ["setmain"],
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("ADMINISTRATOR"))
+    if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
       return message.channel.send({
           content: "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this!"
         });

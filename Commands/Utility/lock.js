@@ -1,15 +1,16 @@
 const Discord = require("discord.js");
 const schema = require("../../models/memberRole");
-
+const {Permissions} = require('discord.js')
+  
 module.exports = {
   name: "lock",
   description: "locks the channel",
   usage: "lock",
   cooldown: 0,
   run: async (client, message, args) => {
-    if (!message.member.permissions.has("MANAGE_MESSAGES"))
+    if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS))
       return message.channel.send({content:
-        "<:wrong:856162786319925270> You need to be staff to use this! "
+        "<:wrong:856162786319925270> You need to be have the `MANAGE_CHANNELS` permission to use this! "
       });
 
     const data = await schema.findOne({
