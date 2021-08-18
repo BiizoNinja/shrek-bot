@@ -28,7 +28,7 @@ module.exports = {
 
       const reason = args.join(" ") || "None";
 
-      channel.permissionOverwites.edit(everyoneRole, {
+      channel.permissionOverwrites.edit(everyoneRole, {
         SEND_MESSAGES: true,
       });
       const msg = await channel.send({content:
@@ -59,7 +59,7 @@ module.exports = {
 
       const reason = args.join(" ") || "None";
 
-      channel.permissionOverwites.edit(role, {
+      channel.permissionOverwrites.edit(role, {
         SEND_MESSAGES: true,
       });
       const msg = await channel.send({ content:
