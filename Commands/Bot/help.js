@@ -203,7 +203,7 @@ module.exports = {
 
                     let name = file.name.replace(".js", "");
 
-                    if (client.Commands.get(name).hidden) return;
+                    if (client.commands.get(name).hidden) return;
 
 
                     let des = client.Commands.get(name).description;
