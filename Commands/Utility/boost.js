@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const schema = require("../../models/boostMessage");
+const { emojis } = require('../../assets.json')
 const {Permissions} = require('discord.js')
 
 module.exports = {
@@ -17,19 +18,19 @@ module.exports = {
     if (!mode)
       return message.channel.send({
         content:
-          "<:wrong:856162786319925270> Please mention a mode `.boost <settings | cache | help>`"
+          `${emojis.wrong} Please mention a mode \`.boost <settings | cache | help>\``
       });
 
     if (mode.toLowerCase() == `cache`) {
       if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send({
           content:
-            `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
+            `${emojis.wrong}  You need the \`ADMINISTRATOR\ permission to use this!`
         });
       if (boostData)
         return message.channel.send({
           conteht:
-            "<:wrong:856162786319925270> This server is already cached! Run `.boost settings` to view settings"
+            `${emojis.wrong} This server is already cached! Run \`.boost settings\` to view settings`
         });
       if (!boostData) {
         const msg = await message.channel.send({
@@ -54,11 +55,11 @@ module.exports = {
       if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send({
           content:
-            `<:wrong:856162786319925270>  You need the \`ADMINISTRATOR\ permission to use this!`
+            `${emojis.wrong}  You need the \`ADMINISTRATOR\ permission to use this!`
         });
       if (!boostData)
         return message.channel.send({content: 
-          "<:wrong:856162786319925270> This server isn't added to the database! Please run `.boost cache` to add it!"
+          `${emojis.wrong} This server isn't added to the database! Please run \`.boost cache\` to add it!`
         });
 
       const settings = args[1];
@@ -70,7 +71,7 @@ module.exports = {
             message.guild.iconURL({ dynamic: true })
           )
           .setDescription(
-            "You can change the settings by `.boost settings <Setting> <Value>`"
+            `You can change the settings by \`.boost settings <Setting> <Value>\``
           )
           .addFields(
             {
@@ -95,7 +96,7 @@ module.exports = {
         if (!message)
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> Provide a message!"
+              `${emojis.wrong} Provide a message!`
           });
         await schema.findOneAndUpdate(
           {
@@ -116,7 +117,7 @@ module.exports = {
         if (!channel)
           return message.channel.send({
             content:
-            "<:wrong:856162786319925270> Provide a channel!"
+            `${emojis.worng} Provide a channel!`
           });
         await schema.findOneAndUpdate(
           {

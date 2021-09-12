@@ -1,0 +1,20 @@
+{
+    "emojis": {
+       "wrong": "<:wrong:878649139443924992>",
+       "success": "<:greenTick:854228019312066571>",
+       "redcircle": "<a:redcircle:878652051763114025>",
+       "yellowcircle": "<a:yellowcircle:878652640865710100>",
+       "greencircle": "<a:greencircle:878652763410665482>"
+    },
+
+    "colors": {
+       "failColor": "#fc2323",
+       "successcolor": "#0ee331",
+       "defaultColor": "#A6FE00"
+    },
+
+    "others": {
+       "green_circle": "https://github.githubassets.com/images/icons/emoji/unicode/1f7e2.png?v8",
+       "red_circle": "https://github.githubassets.com/images/icons/emoji/unicode/1f534.png?v8"
+    }
+}

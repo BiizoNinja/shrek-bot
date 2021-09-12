@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const schema = require("../../models/memberRole");
+const {emojis} = require('../../assets.json')
 const {Permissions} = require('discord.js')
   
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   run: async (client, message, args) => {
     if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS))
       return message.channel.send({content:
-        "<:wrong:856162786319925270> You need to be have the `MANAGE_CHANNELS` permission to use this! "
+        `${emojis.wrong} You need to be have the \`MANAGE_CHANNELS\` permission to use this!`
       });
 
     const data = await schema.findOne({
@@ -31,7 +32,7 @@ module.exports = {
         SEND_MESSAGES: false,
       });
       const msg = await channel.send({ content:
-        `<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`
+        `${emojis.success} Successfully locked <#${channel.id}>! for the reason: **${reason}**`
       });
 
       const embed = new Discord.MessageEmbed()
@@ -62,7 +63,7 @@ module.exports = {
         SEND_MESSAGES: false,
       });
       const msg = await channel.send({content:
-        `<:greenTick:854228019312066571> Successfully locked <#${channel.id}>! for the reason: **${reason}**`
+        `${emojis.success} Successfully locked <#${channel.id}>! for the reason: **${reason}**`
     });
 
       const embed = new Discord.MessageEmbed()

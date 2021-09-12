@@ -30,7 +30,7 @@ module.exports = {
       })
     ).json();
     if (!invite.code)
-      return message.channel.send({content: `<:wrong:856162786319925270> There was a error!`});
+      return message.channel.send({content: `<:wrong:856162786319925270> There was an error!`});
     const e = new discord.MessageEmbed()
       .setAuthor(
         "YouTube but on discord?!!",

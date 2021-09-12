@@ -6,25 +6,39 @@ module.exports = {
   usage: "about",
   cooldown: 0,
   run: async (client, message, args) => {
+
+    const ghButton = new Discord.MessageButton()
+      .setStyle('LINK')
+      .setURL('https://github.com/BiizoNinja/shrek-bot')
+      .setLabel('Source Code')
+      .setEmoji('<:github:878516788013457450>')
+    
+    const invButton = new Discord.MessageButton()
+      .setStyle('LINK')
+      .setURL('https://dsc.gg/shrekbot')
+      .setLabel('Invite Me')
+      .setEmoji('<:addSymbol:870284681218768906>')
+    
+    const supportButton = new Discord.MessageButton()
+      .setStyle('LINK')
+      .setURL('https://discord.gg/V9DHGNtuUe')
+      .setLabel('Support Server')
+      .setEmoji('<a:support:878518477055483925>')
+    
+
     const embed = new Discord.MessageEmbed()
       .setAuthor(
         `About - ShrekBot`,
         client.user.displayAvatarURL({ dynamic: false })
       )
-      .setDescription(
-        `ShrekBot used to be a **verified** discord bot! But the idiot owner (me) decided to delete for some reason??? (prolly cause he smoked crack) So I've been thinking to bring it back and I don't what better way other than this!
-The new ShrekBot is designed to be **made by the community!** so forks are always welcomed! I'll be checking forks frequently and updating the bot frequently! Also make sure to post working code!`
-      )
-      .addFields(
-        { name: "Support", value: `[Click me](https://discord.gg/V9DHGNtuUe)` },
-        {
-          name: "GitHub",
-          value: `[Click me](https://github.com/BiizoNinja/shrek-bot)`,
-        },
-        { name: "Invite", value: `[Click me](https://dsc.gg/shrekbot)` }
-      )
-      .setColor(message.guild.me.displayHexColor);
+      .setDescription(`Shrekbot is an epic discord bot with moderation, utility, fun, tools, tickets etc! It is also an open Source bot`)
+      .setColor('A6FE00');
+    
+    const row = new Discord.MessageActionRow()
+      .addComponents(ghButton)
+      .addComponents(invButton)
+      .addComponents(supportButton)
 
-    message.channel.send({embeds: [embed]});
+    message.channel.send({ embeds: [embed], components: [row] });
   },
 };

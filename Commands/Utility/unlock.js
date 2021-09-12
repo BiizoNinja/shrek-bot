@@ -29,7 +29,7 @@ module.exports = {
       const reason = args.join(" ") || "None";
 
       channel.permissionOverwrites.edit(everyoneRole, {
-        SEND_MESSAGES: true,
+        SEND_MESSAGES: null,
       });
       const msg = await channel.send({content:
         `<:greenTick:854228019312066571> Successfully unlocked <#${channel.id}>! for the reason: **${reason}**.`
@@ -60,7 +60,7 @@ module.exports = {
       const reason = args.join(" ") || "None";
 
       channel.permissionOverwrites.edit(role, {
-        SEND_MESSAGES: true,
+        SEND_MESSAGES: null,
       });
       const msg = await channel.send({ content:
         `<:greenTick:854228019312066571> Successfully unlocked <#${channel.id}>! for the reason: **${reason}**`

@@ -1,5 +1,6 @@
 const { EmbedPages } = require("reconlx");
 const { MessageEmbed } = require("discord.js");
+const { colors } = require('../../assets.json')
 
 module.exports = {
   name: "emojis",
@@ -28,9 +29,9 @@ module.exports = {
     let Embed1 = new MessageEmbed()
       .setTitle(`Emojis in ${message.guild.name}.`)
       .setDescription(
-        `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n\n**Over all emojis [${OverallEmojis}]**`
+        `**Animated [${Animated}]**:\n${EmojisAnimated}\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**Over all emojis [${OverallEmojis}]**`
       )
-      .setColor(`RANDOM`);
+      .setColor(colors.defaultColor);
     message.channel.send({embeds: [Embed1]});
   },
 };

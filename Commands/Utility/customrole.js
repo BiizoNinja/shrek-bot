@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const schema = require("../../models/cr-schema");
 const crUserSchema = require("../../models/crUserSchema");
+const { emojis, colors } = require(`../../assets.json`)
 const {Permissions} = require('discord.js')
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
     const settings = args[0];
     if (!settings)
       return message.channel.send({ content:
-        `<:wrong:856162786319925270> You need to specify an option! \`.customrole [create | settings | cache | help]\``
+        `${emojis.wrong} You need to specify an option! \`.customrole <create | settings | cache | help | delete>\``
       });
 
     const crData = await schema.findOne({
@@ -28,7 +29,7 @@ module.exports = {
     if (settings.toLowerCase() == "cache") {
       if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send({content: 
-          "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! "
+          `${emojis.wrong} You need the \`ADMINISTRATOR\` permission to use this! `
         });
       if (crData)
         return message.channel.send({content:
@@ -41,14 +42,14 @@ module.exports = {
         });
         setTimeout(() => {
           msg.edit({content:
-            "<:greenTick:854228019312066571> Added this server! You can change the settings by running `.customrole settings`"
+            `${emojis.success} Added this server! You can change the settings by running \`.customrole settings\``
           });
         }, 3000);
 
         await new schema({
           GuildID: message.guild.id,
           MaxPos: 1,
-          AllowedRole: "Nones",
+          AllowedRole: "None",
         }).save();
       }
     }
@@ -56,11 +57,11 @@ module.exports = {
     if (settings.toLowerCase() == "settings") {
       if (!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         return message.channel.send(
-          "<:wrong:856162786319925270> You need the `ADMINISTRATOR` permission to use this! "
+          `${emojis.wrong} You need the \`ADMINISTRATOR\` permission to use this! `
         );
       if (!crData)
         return message.channel.send(
-          "<:wrong:856162786319925270> This server is not cached in the database! Please run `.customrole cache` to cache it!"
+          `${emojis.wrong} This server is not cached in the database! Please run \`.customrole cache\` to cache it!`
         );
 
       const setting = args[1];
@@ -80,7 +81,7 @@ module.exports = {
                 name: "Role Position",
                 value: `» Role Position: ${crData.MaxPos}`,
               },
-              { name: "Allowed Role", value: `» None` }
+              { name: "Allowed Role", value: `» ${emojis.wrong} - None` }
             )
             .setFooter("beep boop bap")
             .setTimestamp()
@@ -115,12 +116,12 @@ module.exports = {
         if (!MaxPosValue)
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> You need to provide a value to change!"
+              `${emojis.wrong} You need to provide a value to change!`
           });
         if (isNaN(MaxPosValue))
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> You need to provide a value that is a NUMBER for your role."
+              `${emojis.wrong} You need to provide a value that is a NUMBER for your role.`
           });
 
         await schema.findOneAndUpdate(
@@ -134,7 +135,7 @@ module.exports = {
         );
 
         message.channel.send({content: 
-          `<:greenTick:854228019312066571> Updated the role position to "${MaxPosValue}"`
+          `${emojis.success} Updated the role position to "${MaxPosValue}"`
         });
       }
 
@@ -148,7 +149,7 @@ module.exports = {
         if (!role)
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> Please provide a valid role id!"
+              `${emojis.wrong} Please provide a valid role id!`
           });
 
         await schema.findOneAndUpdate(
@@ -161,7 +162,7 @@ module.exports = {
           }
         );
         message.channel.send({content:
-          `<:greenTick:854228019312066571> Updated the allowed role to "**${role.name}**"`
+          `${emojis.success} Updated the allowed role to "**${role.name}**"`
         });
       }
     }
@@ -170,7 +171,7 @@ module.exports = {
       if (!crData)
         return message.channel.send({
           content:
-            "<:wrong:856162786319925270> This server is not cached in the database! Please run `.customrole cache` to cache it!"
+            `${emojis.wrong} This server is not cached in the database! Please run \`.customrole cache\` to cache it!`
         });
 
       if (!crUserData) {
@@ -179,28 +180,28 @@ module.exports = {
         );
         if (!message.member.roles.cache.has(AllowedRole.id))
           return message.channel.send({content: 
-            `<:wrong:856162786319925270> You must have the \`@${AllowedRole.name}\` role to edit custom roles!`
+            `${emojis.wrong} You must have the \`@${AllowedRole.name}\` role to edit custom roles!`
           });
 
         const name = args.slice(2).join(" ");
         if (!name)
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> Please provide a name for your role!"
+              `${emojis.wrong} Please provide a name for your role!`
           });
 
         const color = args[1];
         if (!color)
           return message.channel.send({
             content:
-              "<:wrong:856162786319925270> Please provide a color for your role!"
+              `${emojis.wrong} Please provide a color for your role!`
           });
 
         const reg = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
         const match = color.match(reg);
         if (!match)
           return message.channel.send({content: 
-            "<:wrong:856162786319925270> Please provide a valid hex code! Make sure to use `#` at the beginning"
+            `${emojis.wrong} Please provide a valid hex code! Make sure to use \`#\` at the beginning`
           });
 
         let role = await message.guild.roles.create(
@@ -212,7 +213,7 @@ module.exports = {
         message.member.roles.add(role);
         message.channel.send({
           content:
-            "<:greenTick:854228019312066571> I have made your custom role and have added it to you!"
+            `${emojis.success} I have made your custom role and have added it to you!`
         });
 
         await new crUserSchema({
@@ -225,7 +226,7 @@ module.exports = {
       if (crUserData) {
         message.channel.send({
           content:
-            "<:wrong:856162786319925270> You already have a customrole! Run `.customrole delete` to delete it!"
+            `<:wrong:856162786319925270> You already have a customrole! Run \`.customrole delete\` to delete it!`
         });
       }
     }
@@ -234,7 +235,7 @@ module.exports = {
       if (!crData)
         return message.channel.send({
           content:
-            "<:wrong:856162786319925270> This server is not cached in the database! Please run `.customrole cache` to cache it!"
+            `${emojis.wrong} This server is not cached in the database! Please run \`.customrole cache\` to cache it!`
         });
 
       const AllowedRole = message.guild.roles.cache.get(
@@ -243,20 +244,20 @@ module.exports = {
       if (!message.member.roles.cache.has(AllowedRole.id))
         return message.channel.send({
           content:
-            `<:wrong:856162786319925270> You must have the \`@${AllowedRole.name}\` role to edit custom roles!`
+            `${emojis.wrong}> You must have the \`@${AllowedRole.name}\` role to edit custom roles!`
         });
 
       if (!crUserData)
         return message.channel.send({
           content:
-            "<wrong:856162786319925270> You don't have a custom role! Run `.customrole create <Color> <name>` to create one!"
+            `${emojis.wrong} You don't have a custom role! Run \`.customrole create <Color> <name>\` to create one!`
         });
 
       message.guild.roles.cache.get(crUserData.CustomRole).delete();
       await crUserData.delete();
       message.channel.send({
         content:
-          "<:greenTick:854228019312066571> I have deleted your customrole!"
+          `${emojis.success} I have deleted your customrole!`
       });
     }
 

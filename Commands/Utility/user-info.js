@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
 
 const flags = {
   DISCORD_EMPLOYEE: "Discord Employee",
@@ -17,66 +16,70 @@ const flags = {
   VERIFIED_DEVELOPER: "Verified Bot Developer",
 };
 
+const moment = require("moment");
+const Discord = require('discord.js')
+const { emojis, colors, others } = require('../../assets.json')
+
 module.exports = {
-  name: "user-info",
-  description: "Shows a users info",
-  usage: "user-info [@mention]",
-  aliases: ["ui"],
-  cooldown: 0,
+  name: 'user-info',
+  description: 'Check the user-info',
+  usage: 'user-info',
+  aliases: ['userinfo', 'memberinfo', 'whois'],
   run: async (client, message, args) => {
+     
     const member = message.mentions.members.last() || message.member;
     const roles = member.roles.cache
       .sort((a, b) => b.position - a.position)
       .map((role) => role.toString())
       .slice(0, -1);
     const userFlags = member.user.flags.toArray();
-    if (!member.user.activities) member.user.activities = { name: "none" };
-    const embed = new MessageEmbed()
-      
-      .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-      .setColor("RANDOM")
-      .addField("User", [
-        `**❯ Username:** ${member.user.username}`,
-        `**❯ Discriminator:** ${member.user.discriminator}`,
-        `**❯ ID:** ${member.id}`,
-        `**❯ Badges:** ${
-          userFlags.length
-            ? userFlags.map((flag) => flags[flag]).join(", ")
-            : "None"
-        }`,
-        `**❯ Avatar:** [Link to avatar](${member.user.displayAvatarURL({
-          dynamic: true,
-        })})`,
-        `**❯ Time Created:** ${moment(member.user.createdTimestamp).format(
-          "LT"
-        )} ${moment(member.user.createdTimestamp).format("LL")} ${moment(
-          member.user.createdTimestamp
-        ).fromNow()}`,
-        `**❯ Activity:** *${
-          member.user.presence.activities[0] || "`No Activity`"
-        }*`,
-        `**❯ Nickname:** ${member.nickname || "None"}`,
-        `\u200b`,
-      ])
-      .addField("Member", [
-        `**❯ Highest Role:** ${
-          member.roles.highest.id === message.guild.id
-            ? "None"
-            : member.roles.highest.name
-        }`,
-        `**❯ Server Join Date:** ${moment(member.joinedAt).format("LL LTS")}`,
-        `**❯ Hoist Role:** ${
-          member.roles.hoist ? member.roles.hoist.name : "None"
-        }`,
-        `**❯ Roles [${roles.length}]:** ${
-          roles.length ? roles.join(", ") : "None"
-        }`,
-        `\u200b`,
-      ])
-      .setFooter(
+    if (!member.user.activities) member.user.activities = { name: `${emojis.wrong} - None` };
+    
+    const embed = new Discord.MessageEmbed()
+      .setAuthor(`Info about ${member.user.tag}`, member.user.displayAvatarURL({ dynamic: true }))
+      .setDescription(`Here is some info about the user!`)
+      .addFields(
+          {
+            name: 'Username',
+            value: member.user.username,
+            inline: true
+        }, {
+            name: 'Discriminator',
+            value: member.user.discriminator,
+            inline: true
+        }, {
+            name: 'ID',
+            value: member.user.id,
+            inline: true          
+        }, {
+            name: 'Badges',
+            value: userFlags.length ? userFlags.map((flag) => flags[flag]).join(", "): "None",
+            inline: true            
+        }, {
+            name: 'Avatar',
+            value: `[Link](${member.user.displayAvatarURL({dynamic:true})})`,
+            inline: true 
+       }, {
+            name: 'Time Created',
+            value: `${moment(member.user.createdTimestamp).format("LT")} ${moment(member.user.createdTimestamp).format("LL")} ${moment(member.user.createdTimestamp).fromNow()}`,
+            inline: true           
+       }, {
+           name: `Nickname`,
+           value: member.nickname || "None",
+           inline: true   
+       }, {
+           name: `Roles`,
+           value: roles.length ? roles.join(", ") : "None",
+           inline: true            
+       }
+        
+    )
+          .setFooter(
         `Requested by ${message.author.username}`,
         `${message.author.displayAvatarURL({ dynamic: true })}`
-      );
+    )
+    .setColor(colors.defaultColor)
     return message.channel.send({embeds: [embed]});
-  },
-};
+  }
+}
+

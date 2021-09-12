@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const {Permissions} = require('discord.js')
+const { Permissions } = require('discord.js')
+const { emojis } = require('../../assets.json')
 
 module.exports = {
   name: "createcategory",
@@ -17,7 +18,7 @@ module.exports = {
     if (!name)
       return message.channel.send({
         content:
-          "<:wrong:856162786319925270> You need to provide a name!"
+          `${emojis.wrong} You need to provide a name!`
       });
 
     const newChannel = message.guild.channels.create(`${name}`, {

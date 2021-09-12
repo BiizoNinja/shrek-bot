@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 0,
   run: async (client, message, args) => {
     const pokemon = await Spawn().catch((e) => {});
-    if (!pokemon) return message.channel.send({content: `<:wrong:856162786319925270> Something went wrong while fetching the pokemon!`});
+    if (!pokemon) return message.channel.send({content: `<:wrong:878649139443924992> Something went wrong while fetching the pokemon!`});
     const filter = (m) => m.author.id === message.author.id;
 
     const embed = new MessageEmbed()
@@ -21,7 +21,7 @@ module.exports = {
         message.author.displayAvatarURL({ dynamic: true })
       );
 
-    await message.channel.send(embed);
+    await message.channel.send({embeds: [embed]});
 
     try {
       let collected = await message.channel.awaitMessages(filter, {
@@ -31,14 +31,15 @@ module.exports = {
       });
       const m = collected.first();
       if (!m.content || m.content.toLowerCase() !== pokemon.name.toLowerCase())
-        return message.channel.send(
+        return message.channel.send({ content: 
           `❌ | Incorrect guess The answer was **${pokemon.name}**.`
-        );
+     });
       return message.channel.send(`✅ | Correct guess`);
     } catch (err) {
-      message.channel.send(
-        `❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`
-      );
+      message.channel.send({
+        content:
+          `❌ | You did not answer in time. The correct answer was **${pokemon.name}**!`
+      });
     }
   },
 };
