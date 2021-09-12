@@ -1,4 +1,4 @@
-> These commands haven't been tested **_yet_**, so you might have some errors.
+
 
 # Building ShrekBot
 
