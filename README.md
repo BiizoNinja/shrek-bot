@@ -2,27 +2,25 @@
   <p>
     <h1>ShrekBot! 🐸</h1>
 
-[![ShrekBot](https://top.gg/api/widget/855803758645870613.svg)](https://top.gg/bot/855803758645870613)
-
   </a>
   </p>
 </div>
 
 # Index
 
-- [About](#about): About ShrekBot
-- [Features](#features): Features of ShrekBot
-- [Building](#building): How to host your very own ShrekBot locally!
-- [Contributing](#contributing): Add something that you would like in the bot
+- [About](#about): About ShrekBot.
+- [Features](#features): Features of ShrekBot.
+- [Building](#building): How to host your very own ShrekBot locally.
+- [Contributing](#contributing): Add something that you would like in the bot.
 
 ## About
 
-ShrekBot is a discord bot written in discord.js v13. It has a lot of features from moderation to utility to fun! We got you covered! It is alos open source! That means the code of the bot is pubic. So you can host another version of shrekbot yourself! Code can be found in [this GitHub Repository.](https://github.com/BiizoNinja/shrek-bot)
+[Discountinued] Shrekbot used to be a verified discord bot with many features. The owner (me) then discountinued this bot in around September 2021. But, you still can use all code into your own bot without credit. Chreck the other tabs on instructions on how to build one yourself. 
 
 ## Features
 
 - ### **User Friendly Help Command!**
-  We have an amazing help command. You will not get confused wile navigating commands at all!
+  We have an amazing help command. You will not get confused while navigating commands at all!
 
 ![Help Command](https://media.discordapp.net/attachments/878140656688721950/886485641242763334/unknown.png?width=607&height=473)
 ![Util](https://media.discordapp.net/attachments/878140656688721950/886485913583091762/unknown.png)
@@ -39,6 +37,7 @@ ShrekBot is a discord bot written in discord.js v13. It has a lot of features fr
 ![8ball](https://media.discordapp.net/attachments/878140656688721950/886494364786905118/unknown.png)
 ![hack](https://media.discordapp.net/attachments/878140656688721950/886495897461080064/unknown.png)
 
+And more. 
 <br>
 
 ## Building
@@ -48,13 +47,14 @@ ShrekBot is a discord bot written in discord.js v13. It has a lot of features fr
 
 > - Node.js v16+
 > - Git v2.33+
+> - Working MongoDB cluster
 
 ## Contributing
 
 Feel free to create a pull request! If you want a command or feature to be added you can create an [issue](https://github.com/BiizoNinja/shrek-bot/issues/new), or you can fork it and add it yourself! Also give a ⭐ if you like it ;)
 Using the entire project/parts of the code is completely fine, but giving credit is appreciated >:)
 
-Although the code is completely free to use and without credit, I would realy like for you to give credit in some form as this takes me a lot of time to make. To see some plagiarizer to add it to their bot and say they made it, it drives me mad. It really demotivates me to make more open source projects.
+If you have any problems/errors reach out to me using my discord (BiizoNinja#7090) or [twitter](https://twitter.com/BiizoNinja)
 
 ## Contributors (Thank you all :D)
 
