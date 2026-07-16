@@ -15,7 +15,7 @@
 
 ## About
 
-[Discountinued] Shrekbot used to be a verified discord bot with many features. The owner (me) then discountinued this bot in around September 2021. But, you still can use all code into your own bot without credit. Chreck the other tabs on instructions on how to build one yourself. 
+# ⚠ [Warning] This bot is discontinued and the code is severely outdated. 
 
 ## Features
 
