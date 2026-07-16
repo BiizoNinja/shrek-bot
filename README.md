@@ -21,21 +21,12 @@
 
 - ### **User Friendly Help Command!**
   We have an amazing help command. You will not get confused while navigating commands at all!
-
-![Help Command](https://media.discordapp.net/attachments/878140656688721950/886485641242763334/unknown.png?width=607&height=473)
-![Util](https://media.discordapp.net/attachments/878140656688721950/886485913583091762/unknown.png)
-
+  
 - #### **Clean Suggestion system**
   ShrekBot has a suggestion system where the admin can set up a channel and a manager role! Your server members can suggest features for your server and you the owner can approve or deny them to your liking!
 
-![Suggestion Settings](https://media.discordapp.net/attachments/878140656688721950/886487846163185694/unknown.png)
-![Suggests](https://media.discordapp.net/attachments/878140656688721950/886488752967548948/unknown.png)
-
 - ### **Fun Commands!**
   ShrekBot has a variety of fun/meme commands you wil never get bored!
-
-![8ball](https://media.discordapp.net/attachments/878140656688721950/886494364786905118/unknown.png)
-![hack](https://media.discordapp.net/attachments/878140656688721950/886495897461080064/unknown.png)
 
 And more. 
 <br>
