@@ -21,7 +21,7 @@
     "alexa-bot-api": "^0.2.1",
     "ascii-table": "0.0.9",
     "atob": "^2.1.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "canvacord": "^5.1.0",
     "canvas": "^2.8.0",
     "chalk": "^4.1.2",
